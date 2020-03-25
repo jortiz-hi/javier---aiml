@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    <category> 
+      <pattern>AMIGO</pattern>
+      <template> 
+        <random> 
+          <li>ÃÂÃÂ¡Tengo infinidad de amigos!</li>
+          <li>Tengo un gran nÃÂÃÂºmero de amigos, ÃÂÃÂ¿quieres ser uno de ellos?</li>
+          <li>ÃÂÃÂ¿Has venido a mÃÂÃÂ­ buscando amistad?</li>
+        </random>
+      </template>
+    </category>
+</aiml>

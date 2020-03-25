@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	<!-- In case the coach has no answer -->
+    <category>
+    <pattern>*</pattern>
+    <template>Sorry, i did not understand you.</template>
+    </category>
+    
+    <!-- Start of conversation -->
+    <category>
+        <pattern>HI ^</pattern>
+        <template>Hi,<get name="username"></get>, what is your name?</template>
+    </category>
+    
+    
+    <category>
+        <pattern>HELLO ^</pattern>
+        <template><srai>HI <get name="username"></get></srai></template>
+    </category>
+    
+    <category>
+        <pattern># FINE ^</pattern>
+        <template>I am fine too</template>
+    </category>
+    
+    <category>
+        <pattern>^ YOUR NAME ^</pattern>
+        <template>My name is Welky. Your name is <get name="username"></get>, right?</template>
+    </category>
+    
+    <category>
+        <pattern>YES</pattern>
+        <that>^ YOUR NAME ^</that>
+        <template>Nice to meet you!</template>
+    </category>
+    
+    <category>
+        <pattern>NO</pattern>
+        <that>^ YOUR NAME ^</that>
+        <template>What is your name?</template>
+    </category>
+    
+    <category>
+        <pattern>I AM _</pattern>
+        <template>
+            <think>
+               <set name="username"><star index="1"/></set> 
+            </think>
+            Hi, <get name="username"></get>. Nice to meet you!
+        </template>
+    </category>
+    
+    <category>
+        <pattern>* NAME IS *</pattern>
+        <template><srai>I AM <star index="2"/></srai></template>
+    </category>
+    
+	 <category> 
+      <pattern>WELKY</pattern>
+      <template> 
+        <random> 
+          <li>Yes?</li>
+          <li>Tell me</li>
+        </random>
+      </template>
+    </category>
+    
+    
+    
+    <!-- Body of conversation -->
+    <category> 
+      <pattern>* DOING NOW ^</pattern>
+      <template> 
+        <random> 
+          <li>I am talking to you.</li>
+          <li>I am having a good time talking to you.</li>
+        </random>
+      </template>
+    </category>
+    
+    <category>
+        <pattern>* NEWS ^</pattern>
+        <template>
+            You can access some news here
+            <random>
+                <li><link><text>BBC News</text><url>https://www.bbc.com/news</url></link></li>
+                <li><link><text>The Sun</text><url>https://www.thesun.co.uk</url></link></li>
+                <li><link><text>Daily Mail</text><url>https://www.dailymail.co.uk/home/index.html</url></link></li>
+            </random>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>* BOOKS</pattern>
+        <template>Sure, i love reading.
+        <think><set name="topic">BOOKS</set></think>
+        </template>
+    </category>
+    
+    <topic name="BOOKS">
+        
+        <category>
+            <pattern>ME TOO</pattern>
+            <template>And what types of books do you like?</template>
+        </category>
+        
+        <category>
+            <pattern>I <set>like</set> READING <set>booktypes</set> ^</pattern>
+            <template>
+            <think>
+               <set name="favbook"><star index="2"/></set> 
+            </think>
+            Yes, <get name="favbook"/> books are my preferred too.</template>
+        </category>
+        
+        <category>
+            <pattern>* YOU READING ^</pattern>
+            <template>I am reading Harry Potter and the Philosopher's Stone.It is a bit old by i love it. And you?</template>
+        </category>
+        
+        <category>
+            <pattern>_ AM READING *</pattern>
+            <template><star index="2"/> is also a good book</template>
+        </category>
+        
+    </topic>
+    
+    <!-- End of conversation -->
+	<category>
+    <pattern>BYE ^</pattern>
+    <template> 
+      <random>
+        <li>Bye.</li>
+        <li>See you soon.</li>
+		<li>A pleasure to talk to you.</li>
+      </random>
+    </template>
+    </category>
+  
+    <category>
+    <pattern>GOOD BYE ^</pattern>
+    <template> <srai>BYE ^</srai>
+    </template>
+    </category>
+    
+    <category>
+    <pattern>* END THE CONVERSATION</pattern>
+    <template> <srai>BYE ^</srai>
+    </template>
+    </category>
+    
+</aiml>

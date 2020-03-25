@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	<!-- capture of biographical data -->
+	<!-- within a conversation, after several login's -->
+	
+	<category>
+	    <pattern>HI I AM A PARENT</pattern>
+	    <template>
+	        <think><set name='topic'>CHILDREN</set></think>
+	    Oh that's great. Do you have children or grandchildren?
+	    </template>
+    </category>
+    
+<topic name='CHILDREN'>
+	<category>
+	    <that>* HAVE CHILDREN *</that>
+	    <pattern>^ GRANDCHILDREN</pattern>
+	    <template>
+	        Cool. How many grandchildren do you have?
+	    </template>
+    </category>
+    
+    <category>
+	    <that>DO YOU HAVE CHILDREN *</that>
+	    <pattern>^ CHILDREN</pattern>
+	    <template>
+	        Cool. How many children do you have?
+	    </template>
+    </category>
+    
+    <category>
+	    <that>HOW MANY CHILDREN *</that>
+	    <pattern>^ *</pattern>
+	    <template>
+	        <think><set name='nchild'><star index='2'/></set></think>
+	        <condition name='nchild'>
+	        <li value='1'>What is the name of your child?</li>
+	        <li value='one'>What is the name of your child?</li>
+	        <li>Wow. What are the names of your children?</li>
+	        </condition>
+	    </template>
+    </category>
+    
+    <category>
+	    <that>HOW MANY GRANDCHILDREN *</that>
+	    <pattern> * </pattern>
+	    <template>
+	        <think><set name='nchild'><star/></set></think>
+	        <condition name='nchild'>
+	        <li value='1'>What is the name of your grandchild?</li>
+	        <li value='one'>What is the name of your grandchild?</li>
+	        <li>Wow. What are the names of your grandchildren?</li>
+	        </condition>
+	    </template>
+    </category>
+    
+    <category>
+	    <that>WHAT IS THE NAME OF YOUR *</that>
+	    <pattern>*</pattern>
+	    <template>
+	        <think><set name='grandchildren'><star/></set></think>
+	    </template>
+    </category>
+    
+    <category>
+	    <that>WHAT ARE THE NAMES OF YOUR *</that>
+	    <pattern>* AND *</pattern>
+	    <template>
+	        I see...
+	        <think><set name='grandchildren'><star/> <star index='2'/></set></think>
+	    </template>
+    </category>
+</topic>
+	
+	
+</aiml>
