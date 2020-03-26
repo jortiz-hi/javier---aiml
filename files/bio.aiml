@@ -1,76 +1,205 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
-	<!-- capture of biographical data -->
-	<!-- within a conversation, after several login's -->
-	
+    
+	<!-- Question about children to start children topic -->
 	<category>
-	    <pattern>HI I AM A PARENT</pattern>
+	    <pattern>_ MY CHILDREN</pattern>
 	    <template>
+	        Oh. Do you have children?
+	    </template>
+    </category>
+    
+    <category>
+        <that>DO YOU HAVE CHILDREN</that>
+	    <pattern>YES</pattern>
+	    <template>
+	        <think><set name="children">yes</set></think>
 	        <think><set name='topic'>CHILDREN</set></think>
-	    Oh that's great. Do you have children or grandchildren?
+	        Oh that's great. How many children do you have?
 	    </template>
     </category>
     
-<topic name='CHILDREN'>
+    <category>
+        <that>DO YOU HAVE CHILDREN</that>
+	    <pattern>NO</pattern>
+	    <template>
+	        <think><set name="children">no</set></think>
+	        It is ok. But are you married?
+	    </template>
+    </category>
+    
+    <!-- Question about grandchildren to start grandchildren topic -->
 	<category>
-	    <that>* HAVE CHILDREN *</that>
-	    <pattern>^ GRANDCHILDREN</pattern>
+	    <pattern>_ MY GRANDCHILDREN</pattern>
 	    <template>
-	        Cool. How many grandchildren do you have?
+	        Oh. Do you have grandchildren?
 	    </template>
     </category>
     
     <category>
-	    <that>DO YOU HAVE CHILDREN *</that>
-	    <pattern>^ CHILDREN</pattern>
+        <that>DO YOU HAVE GRANDCHILDREN</that>
+	    <pattern>YES</pattern>
 	    <template>
-	        Cool. How many children do you have?
+	        <think><set name="grandchildren">yes</set></think>
+	        <think><set name='topic'>GRANDCHILDREN</set></think>
+	        Oh that's great. How many grandchildren do you have?
 	    </template>
     </category>
     
     <category>
-	    <that>HOW MANY CHILDREN *</that>
-	    <pattern>^ *</pattern>
+        <that>DO YOU HAVE GRANDCHILDREN</that>
+	    <pattern>NO</pattern>
 	    <template>
-	        <think><set name='nchild'><star index='2'/></set></think>
-	        <condition name='nchild'>
-	        <li value='1'>What is the name of your child?</li>
-	        <li value='one'>What is the name of your child?</li>
-	        <li>Wow. What are the names of your children?</li>
-	        </condition>
+	        <think><set name="grandchildren">no</set></think>
+	        It is ok. But are you married?
 	    </template>
     </category>
     
     <category>
-	    <that>HOW MANY GRANDCHILDREN *</that>
-	    <pattern> * </pattern>
+        <that>BUT ARE YOU MARRIED</that>
+	    <pattern>YES</pattern>
 	    <template>
-	        <think><set name='nchild'><star/></set></think>
-	        <condition name='nchild'>
-	        <li value='1'>What is the name of your grandchild?</li>
-	        <li value='one'>What is the name of your grandchild?</li>
-	        <li>Wow. What are the names of your grandchildren?</li>
-	        </condition>
+	        <think><set name="married">yes</set></think>
+	        <!-- <think><set name='topic'>MARRIED</set></think> -->
+	        <!-- Empezar topic: busca preguntas sobre como se llama su mujer, 
+	        cuantos años han estado casados y así -->
+	        Congratulations. I would like to be married
 	    </template>
     </category>
     
     <category>
-	    <that>WHAT IS THE NAME OF YOUR *</that>
-	    <pattern>*</pattern>
+        <that>BUT ARE YOU MARRIED</that>
+	    <pattern>NO</pattern>
 	    <template>
-	        <think><set name='grandchildren'><star/></set></think>
+	        <think><set name="married">no</set></think>
+	        <!-- <think><set name='topic'>MARRIED</set></think> -->
+	        <!-- Empezar topic: busca preguntas sobre como se llama su mujer, 
+	        cuantos años han estado casados y así -->
+	        In my case i am single. Ask me another question
 	    </template>
     </category>
     
-    <category>
-	    <that>WHAT ARE THE NAMES OF YOUR *</that>
-	    <pattern>* AND *</pattern>
-	    <template>
-	        I see...
-	        <think><set name='grandchildren'><star/> <star index='2'/></set></think>
-	    </template>
-    </category>
-</topic>
-	
+    
+    <topic name='CHILDREN'>
+    	<category>
+    	    <that>HOW MANY CHILDREN DO YOU HAVE</that>
+    	    <pattern>I HAVE * </pattern>
+    	    <template>
+    	        <think><set name="nchild"><star/></set></think>
+    	        <condition name='nchild'>
+    	        <li value='1'>What is the name of your child?</li>
+    	        <li value='one'>What is the name of your child?</li>
+    	        <li>Wow. What are the names of your children?</li>
+    	        </condition>
+    	    </template>
+        </category>
+        
+        <category>
+    	    <that>WHAT IS THE NAME OF YOUR *</that>
+    	    <pattern>*</pattern>
+    	    <template>
+    	        <think><set name='children'><star/></set></think>
+    	        I would like to know <get name='children'></get>
+    	    </template>
+        </category>
+        
+        <category>
+    	    <that>WHAT ARE THE NAMES OF YOUR *</that>
+    	    <pattern>* AND *</pattern>
+    	    <template>
+    	        <think><set name='children'><star/> <star index='2'/></set></think>
+    	        I would like to know them. Which is your favorite? 
+    	    </template>
+        </category>
+        
+        <category>
+    	    <that>WHICH IS YOUR FAVORITE</that>
+    	    <pattern>MY FAVORITE IS *</pattern>
+    	    <template>
+    	        <think><set name='fav_children'><star/></set></think>
+    	        Ha ha ha. I am my mothers' favourite too
+    	    </template>
+        </category>
+        
+        <category>
+    	    <that>WHICH IS YOUR FAVORITE</that>
+    	    <pattern>* IS MY FAVORITE</pattern>
+    	    <template>
+    	        <srai>MY FAVORITE IS <star/></srai>
+    	    </template>
+        </category>
+        
+        <category>
+    	    <that>WHICH IS YOUR FAVORITE</that>
+    	    <pattern>* ANY FAVORITE ^</pattern>
+    	    <template>
+    	        <think><set name='fav_children'>0</set></think>
+    	        Yes, it is difficult to choose
+    	    </template>
+        </category>
+    </topic>
+    
+     <topic name='GRANDCHILDREN'>
+    	<category>
+    	    <that>HOW MANY GRANDCHILDREN DO YOU HAVE</that>
+    	    <pattern>I HAVE * </pattern>
+    	    <template>
+    	        <think><set name="ngrandchild"><star/></set></think>
+    	        <condition name='ngrandchild'>
+    	        <li value='1'>What is the name of your grandchild?</li>
+    	        <li value='one'>What is the name of your grandchild?</li>
+    	        <li>Wow. What are the names of your grandchildren?</li>
+    	        </condition>
+    	    </template>
+        </category>
+        
+        <category>
+    	    <that>WHAT IS THE NAME OF YOUR *</that>
+    	    <pattern>*</pattern>
+    	    <template>
+    	        <think><set name='grandchildren'><star/></set></think>
+    	        I would like to know <get name='grandchildren'></get>
+    	    </template>
+        </category>
+        
+        <category>
+    	    <that>WHAT ARE THE NAMES OF YOUR *</that>
+    	    <pattern>* AND *</pattern>
+    	    <template>
+    	        <think><set name='grandchildren'><star/> <star index='2'/></set></think>
+    	        I would like to know them. Which is your favorite? 
+    	    </template>
+        </category>
+        
+        <category>
+    	    <that>WHICH IS YOUR FAVORITE</that>
+    	    <pattern>MY FAVORITE IS *</pattern>
+    	    <template>
+    	        <think><set name='fav_grandchildren'><star/></set></think>
+    	        Ha ha ha. I am my grandma's favourite too
+    	    </template>
+        </category>
+        
+        <category>
+    	    <that>WHICH IS YOUR FAVORITE</that>
+    	    <pattern>* IS MY FAVORITE</pattern>
+    	    <template>
+    	        <srai>MY FAVORITE IS <star/></srai>
+    	    </template>
+        </category>
+        
+        <category>
+    	    <that>WHICH IS YOUR FAVORITE</that>
+    	    <pattern>* ANY FAVORITE ^</pattern>
+    	    <template>
+    	        <think><set name='fav_grandchildren'>0</set></think>
+    	        Yes, it is difficult to choose
+    	    </template>
+        </category>
+    </topic>
+    
+    <topic name='MARRIED'>
+    	
+    </topic>
 	
 </aiml>
