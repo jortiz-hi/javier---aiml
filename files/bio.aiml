@@ -4,12 +4,12 @@
 	<category>
 	    <pattern>^ MY CHILDREN</pattern>
 	    <template>
-	        Oh. Do you have children?
+	        Oh. Do you have children? (Indicate Yes or No)
 	    </template>
     </category>
     
     <category>
-        <that>DO YOU HAVE CHILDREN</that>
+        <that>LPAREN INDICATE YES OR NO RPAREN</that>
 	    <pattern>YES ^</pattern>
 	    <template>
 	        <think><set name='children'>yes</set></think>
@@ -19,7 +19,7 @@
     </category>
     
     <category>
-        <that>DO YOU HAVE CHILDREN</that>
+        <that>LPAREN INDICATE YES OR NO RPAREN</that>
 	    <pattern>NO ^</pattern>
 	    <template>
 	        <think><set name="children">no</set></think>
@@ -28,23 +28,23 @@
     </category>
     
     <category>
-        <that>DO YOU HAVE CHILDREN</that>
+        <that>LPAREN INDICATE YES OR NO RPAREN</that>
         <pattern>*</pattern>
         <template>
-            Sorry, I didn't understand you. Do you have children?    
+            Sorry, I didn't understand you. Did you say Yes?    
         </template>
     </category>
     
     <!-- Question about grandchildren to start grandchildren topic -->
 	<category>
-	    <pattern>_ MY GRANDCHILDREN</pattern>
+	    <pattern>^ MY GRANDCHILDREN</pattern>
 	    <template>
-	        Oh. Do you have grandchildren?
+	        Oh. Do you have grandchildren? (If you have it say Yes, if not say No)
 	    </template>
     </category>
     
     <category>
-        <that>DO YOU HAVE GRANDCHILDREN</that>
+        <that>LPAREN IF YOU HAVE IT SAY YES, IF NOT SAY NO RPAREN</that>
 	    <pattern>YES ^</pattern>
 	    <template>
 	        <think><set name="grandchildren">yes</set></think>
@@ -54,7 +54,7 @@
     </category>
     
     <category>
-        <that>DO YOU HAVE GRANDCHILDREN</that>
+        <that>LPAREN IF YOU HAVE IT SAY YES, IF NOT SAY NO RPAREN</that>
 	    <pattern>NO ^</pattern>
 	    <template>
 	        <think><set name="grandchildren">no</set></think>
@@ -63,7 +63,7 @@
     </category>
     
     <category>
-        <that>DO YOU HAVE GRANDCHILDREN</that>
+        <that>LPAREN IF YOU HAVE IT SAY YES, IF NOT SAY NO RPAREN</that>
         <pattern>*</pattern>
         <template>
             Sorry, I didn't understand you. Do you have grandchildren?    
@@ -77,7 +77,7 @@
 	        <think><set name="married">yes</set></think>
 	        <think><set name='topic'>MARRIED</set></think>
 	        <!-- Empezar topic: busca preguntas sobre como se llama su mujer, 
-	        cuantos años han estado casados y así -->
+	        cuantos aÃ±os han estado casados y asÃ­ -->
 	        Congratulations. I would like to be married. What is the name of your partner?
 	    </template>
     </category>
@@ -88,10 +88,21 @@
 	    <template>
 	        <think><set name="married">no</set></think>
 	        <!-- Empezar topic: busca preguntas sobre como se llama su mujer, 
-	        cuantos años han estado casados y así -->
-	        So, I understand you are single. Do you have any friend or someone who supports you on your daily life?
-	        
-	        <!-- Seguir con el topic de dependencia y apoyo de alguien -->
+	        cuantos aÃ±os han estado casados y asÃ­ -->
+	        And do you have anyone who supports you on your daily life?
+	    </template>
+    </category>
+    
+    <category>
+        <that>AND DO YOU HAVE ANYONE WHO SUPPORTS YOU ON YOUR DAILY LIFE</that>
+	    <pattern>*</pattern>
+	    <template>
+	        <think><set name='ans1'><star/></set></think>
+    	           <condition name='ans1'>
+    	               <li value='yes'><think><set name='topic'>SUPPORT</set></think>Which is the name of this person?</li>
+    	               <li value='no'>It is good to be independent.</li>
+    	               <li>Sorry I didn't understand you.</li>
+    	           </condition>
 	    </template>
     </category>
     
@@ -112,7 +123,7 @@
         
         <category>
     	    <that>HOW MANY CHILDREN DO YOU HAVE</that>
-    	    <pattern>_ GOT <set>number</set></pattern>
+    	    <pattern>* GOT <set>number</set></pattern>
     	    <template>
     	        <think><set name='nchild'><star index='2'/></set></think>
     	        <condition name='nchild'>
@@ -140,16 +151,33 @@
     	    <that>HOW MANY CHILDREN DO YOU HAVE</that>
     	    <pattern>I HAVE *</pattern>
     	    <template>
-    	        I didn't understand, can you put in numbers?
+    	        <think><set name='nchild'><map name="stringnum"><star/></map></set></think>
+    	        <condition name='nchild'>
+    	            <li value='1'>What is the name of your child?</li>
+    	            <li value='one'>What is the name of your child?</li>
+    	            <li>Wow. What are the names of your children?</li>
+    	        </condition>
+    	    </template>
+        </category>
+        
+        <category>
+    	    <that>HOW MANY CHILDREN DO YOU HAVE</that>
+    	    <pattern>*</pattern>
+    	    <template>
+    	        <think><set name='nchild'><map name="stringnum"><star/></map></set></think>
+    	        <condition name='nchild'>
+    	            <li value='1'>What is the name of your child?</li>
+    	            <li value='one'>What is the name of your child?</li>
+    	            <li>Wow. What are the names of your children?</li>
+    	        </condition>
     	    </template>
         </category>
     
-        
         <category>
     	    <that>WHAT IS THE NAME OF YOUR *</that>
     	    <pattern>*</pattern>
     	    <template>
-    	        <think><set name='children'><star/></set><set name='topic'></set></think>
+    	        <think><set name='children'><star/></set></think>
     	        I would like to know <get name='children'/>!
     	    </template>
         </category>
@@ -160,91 +188,78 @@
     	    <template>
     	        <think><set name='childreng'><star/> <star index='2'/></set></think>
     	         I would like to know them. Which is your favorite?
-    	            <learn>
-    	                <category>
-    	                    <pattern>* DO NOT HAVE *</pattern>
-    	                    <template>
-    	                       <think><set name='fav_children'>0</set><set name='topic'></set></think>
-    	                       Well that's ok too. 
-    	                    </template>
-	                    </category>
-	                    
-	                    <category>
-	                        <pattern>* IS MY FAVORITE</pattern>
-	                        <template>
-    	                       <think><set name='fav_child'><star/></set><set name='topic'></set></think>
-    	                       Ha ha ha. I am my mothers' favourite too. How old are they?
-	                        </template>
-                        </category>
-                        
-                        <category>
-	                        <pattern>* ARE MY FAVORITE</pattern>
-	                        <template><srai>* IS MY FAVOURITE</srai>
-	                        </template>
-                        </category>
-                        
-                        <category>
-                    	    <pattern>MY FAVORITE IS *</pattern>
-                    	    <template><srai>* IS MY FAVOURITE</srai>
-                    	    </template>
-                        </category>
-                        
-                        <category>
-                            <pattern>*</pattern>
-                            <template>Sorry, which is your favorite?</template>
-                        </category>
-    	            </learn>
-    	    </template>
+     	    </template>
         </category>
         
         <category>
-            <that>HOW OLD ARE THEY</that>
-            <pattern>*</pattern>
-            <template>So, does any of them live at walking distance from you?</template>
-        </category>
-        
-        <category>
-            <that>DOES ANY OF THEM LIVE AT WALKING DISTANCE FROM YOU</that>
-            <pattern>*</pattern>
+            <pattern>* DO NOT HAVE *</pattern>
             <template>
-    	           <think><set name='ans1'><star/></set></think>
-    	           <condition name='ans1'>
-    	               <li value='yes'>Oh that's great!</li>
-    	               <li value='no'>That's ok you can see them any time.</li>
-    	               <li>Sorry I didn't understand you. Does any of them live at walking distance from you?</li>
-    	           </condition>
-    	           That's great!
+               <think><set name='fav_children'>0</set></think>
+               Yes, it is difficult to choose. How old is the oldest?
             </template>
         </category>
         
         <category>
-            <pattern>*</pattern>
-            <template>Sorry I didn't understand you. How many children do you have?</template>
+            <pattern>* IS MY FAVORITE</pattern>
+            <template>
+               <think><set name='fav_child'><star/></set></think>
+               Ha ha ha. I am my mothers' favourite too. How old is the oldest?
+            </template>
         </category>
         
-    </topic>
-    
-    <category>
-            <that>HOW OLD ARE THEY</that>
-            <pattern>*</pattern>
-            <template>So, does any of them live at walking distance from you?</template>
+        <category>
+            <pattern>* ARE MY FAVORITE</pattern>
+            <template><srai>* IS MY FAVOURITE</srai>
+            </template>
         </category>
-    
-    <category>
+        
+        <category>
+    	    <pattern>MY FAVORITE IS *</pattern>
+    	    <template><srai>* IS MY FAVOURITE</srai>
+    	    </template>
+        </category>
+        
+        <category>
+            <pattern>*</pattern>
+            <template>
+                <think><set name='fav_child'><star/></set></think>
+                Ha ha ha. I am my mothers' favourite too. How old is the oldest?
+            </template>
+        </category>
+        
+        <category>
+            <that>HOW OLD IS THE OLDEST</that>
+            <pattern>*</pattern>
+            <template>It is a good age. So, does any of them live at walking distance from you?</template>
+        </category>
+        
+        <category>
             <that>SO, DOES ANY OF THEM LIVE AT WALKING DISTANCE FROM YOU</that>
             <pattern>*</pattern>
             <template>
     	           <think><set name='ans1'><star/></set></think>
     	           <condition name='ans1'>
-    	               <li value='yes'>Oh that's great!</li>
+    	               <li value='yes'>Who?</li>
     	               <li value='no'>That's ok you can see them any time.</li>
     	               <li>Sorry I didn't understand you. Does any of them live at walking distance from you?</li>
     	           </condition>
             </template>
         </category>
+        
+        <category>
+            <that>WHO</that>
+            <pattern>*</pattern>
+            <template>
+                <think><set name='close_children'><star/></set></think>
+                It is nice to have family close to you
+            </template>
+        </category>
+        
+    </topic>
+    
     
      <topic name='GRANDCHILDREN'>
-    	    	<category>
+	    <category>
     	    <that>HOW MANY GRANDCHILDREN DO YOU HAVE</that>
     	    <pattern>I HAVE <set>number</set></pattern>
     	    <template>
@@ -287,11 +302,28 @@
     	    <that>HOW MANY GRANDCHILDREN DO YOU HAVE</that>
     	    <pattern>I HAVE *</pattern>
     	    <template>
-    	        I didn't understand, can you put in numbers?
+    	        <think><set name='ngrandchild'><map name="stringnum"><star/></map></set></think>
+    	        <condition name='ngrandchild'>
+    	            <li value='1'>What is the name of your grandchild?</li>
+    	            <li value='one'>What is the name of your grandchild?</li>
+    	            <li>Wow. What are the names of your grandchildren?</li>
+    	        </condition>
+    	    </template>
+        </category>
+        
+        <category>
+    	    <that>HOW MANY GRANDCHILDREN DO YOU HAVE</that>
+    	    <pattern>*</pattern>
+    	    <template>
+    	        <think><set name='ngrandchild'><map name="stringnum"><star/></map></set></think>
+    	        <condition name='ngrandchild'>
+    	            <li value='1'>What is the name of your grandchild?</li>
+    	            <li value='one'>What is the name of your grandchild?</li>
+    	            <li>Wow. What are the names of your grandchildren?</li>
+    	        </condition>
     	    </template>
         </category>
     
-        
         <category>
     	    <that>WHAT IS THE NAME OF YOUR *</that>
     	    <pattern>*</pattern>
@@ -307,51 +339,74 @@
     	    <template>
     	        <think><set name='grandchildreng'><star/> <star index='2'/></set></think>
     	         I would like to know them. Which is your favorite?
-    	            <learn>
-    	                <category>
-    	                    <pattern>* DO NOT HAVE *</pattern>
-    	                    <template>
-    	                       <think><set name='fav_grandchildren'>0</set></think>
-    	                       Well that's ok too. How old are they?
-    	                    </template>
-	                    </category>
-	                    
-	                    <category>
-	                        <pattern>* IS MY FAVORITE</pattern>
-	                        <template>
-    	                       <think><set name='fav_grandchild'><star/></set></think>
-    	                       Ha ha ha. I am my grandmothers' favorite too. How old are they?
-	                        </template>
-                        </category>
-                        
-                        <category>
-	                        <pattern>* ARE MY FAVORITE</pattern>
-	                        <template><srai>* IS MY FAVOURITE</srai>
-	                        </template>
-                        </category>
-                        
-                        <category>
-                    	    <pattern>MY FAVORITE IS *</pattern>
-                    	    <template><srai>* IS MY FAVOURITE</srai>
-                    	    </template>
-                        </category>
-                        
-                        <category>
-                            <pattern>*</pattern>
-                            <template>Sorry, which is your favorite?</template>
-                        </category>
-    	            </learn>
+    	   </template>
+	    </category>
+	    
+	    <category>
+            <pattern>* DO NOT HAVE *</pattern>
+            <template>
+               <think><set name='fav_grandchildren'>0</set></think>
+               Yes, it is difficult to choose. How old is the oldest?
+            </template>
+        </category>
+	    
+	    <category>
+            <pattern>* IS MY FAVORITE</pattern>
+            <template>
+               <think><set name='fav_grandchild'><star/></set></think>
+               Ha ha ha. I am my mothers' favourite too. How old is the oldest?
+            </template>
+        </category>
+        
+        <category>
+            <pattern>* ARE MY FAVORITE</pattern>
+            <template><srai>* IS MY FAVOURITE</srai>
+            </template>
+        </category>
+        
+        <category>
+    	    <pattern>MY FAVORITE IS *</pattern>
+    	    <template><srai>* IS MY FAVOURITE</srai>
     	    </template>
         </category>
         
-        
         <category>
             <pattern>*</pattern>
-            <template>Sorry I didn't understand you. How many grandchildren do you have?</template>
+            <template>
+                <think><set name='fav_grandchild'><star/></set></think>
+                Ha ha ha. I am my mothers' favourite too. How old is the oldest?
+            </template>
         </category>
         
+        <category>
+            <that>HOW OLD IS THE OLDEST</that>
+            <pattern>*</pattern>
+            <template>So, does any of them live at walking distance from you?</template>
+        </category>
         
+        <category>
+            <that>SO, DOES ANY OF THEM LIVE AT WALKING DISTANCE FROM YOU</that>
+            <pattern>*</pattern>
+            <template>
+    	           <think><set name='ans1'><star/></set></think>
+    	           <condition name='ans1'>
+    	               <li value='yes'>Who?</li>
+    	               <li value='no'>That's ok you can see them any time.</li>
+    	               <li>Sorry I didn't understand you. Does any of them live at walking distance from you?</li>
+    	           </condition>
+            </template>
+        </category>
+        
+        <category>
+            <that>WHO</that>
+            <pattern>*</pattern>
+            <template>
+                <think><set name='close_grandchildren'><star/></set></think>
+                It is nice you have it so close. I love being with my family too
+            </template>
+        </category>
     </topic>
+    
     
     <topic name='MARRIED'>
     	
@@ -360,8 +415,7 @@
     	    <pattern>^ IS *</pattern>
     	    <template>
     	        <think><set name='partner'><star index='2'/></set></think>
-    	        I'd love to know <get name='partner'/>. How long are you married?
-    	        
+    	        I'd love to know <get name='partner'/>. How many years have you been married?
     	    </template>
 	    </category>
 	    
@@ -370,18 +424,77 @@
     	    <pattern>*</pattern>
     	    <template>
     	        <think><set name='partner'><star/></set></think>
-    	        I'd love to know <get name='partner'/>. How long are you married?
+    	        I'd love to know <get name='partner'/>. How many years have you been married?
     	        
     	    </template>
 	    </category>
 	    
 	    <category>
-	        <that>HOW LONG ARE YOU MARRIED</that>
-	        <pattern><set>number</set> *</pattern>
+	        <that>HOW MANY YEARS HAVE YOU BEEN MARRIED</that>
+	        <pattern>*</pattern>
 	        <template>
-	            Wow, <input/> is great.
-	            <think><set name='topic'></set></think>
+	            Wow, <star/> is a lot of time. This must be true love!
 	        </template>
         </category>
     	
     </topic>
+    
+    <topic name='SUPPORT'>
+    	
+    	<category>
+    	    <that>WHICH IS THE NAME OF THIS PERSON</that>
+    	    <pattern>^ IS *</pattern>
+    	    <template>
+    	        <think><set name='supporter'><star index='2'/></set></think>
+    	        <get name='supporter'/> is a pretty name. Are you family?
+    	    </template>
+	    </category>
+	    
+	    <category>
+    	    <that>WHICH IS THE NAME OF THIS PERSON</that>
+    	    <pattern>*</pattern>
+    	    <template>
+    	        <think><set name='supporter'><star/></set></think>
+    	        <get name='supporter'/> is a pretty name. Are you family?
+    	    </template>
+	    </category>
+	    
+	    <category>
+	        <that>ARE YOU FAMILY</that>
+	        <pattern>yes</pattern>
+	        <template>
+	            Does <get name='supporter'/> live close to you?
+	        </template>
+        </category>
+        
+        <category>
+	        <that>ARE YOU FAMILY</that>
+	        <pattern>no</pattern>
+	        <template>
+	            Does <get name='supporter'/> live close to you?
+	        </template>
+        </category>
+        
+        <category>
+	        <that>DOES * LIVE CLOSE TO YOU</that>
+	        <pattern>YES _</pattern>
+	        <template>
+	            <think><set name ='support_is_close'>yes</set></think>
+	            Then it is easier that you receive the appropriate support you  need
+	        </template>
+        </category>
+        
+        <category>
+	        <that>DOES * LIVE CLOSE TO YOU</that>
+	        <pattern>NO _</pattern>
+	        <template>
+	            <think><set name ='support_is_close'>no</set></think>
+	            It is ok because you have the phone and in case of emergy you can even call your children
+	        </template>
+        </category>
+    	
+    </topic>
+    
+    
+</aiml>
+
