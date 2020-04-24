@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- WELKY: Temas de discusiÃÂÃÂ³n general -->
+<!-- WELKY: Temas de discusiÃÂ³n general -->
 
 <aiml version="2.0">
     <!-- In case the coach has no answer -->
@@ -26,7 +26,7 @@
             <think>
                <set name="username"><star index="2"/></set> 
             </think>
-            Hola, <get name="username"></get>. ÃÂÃÂ¿CÃÂÃÂ³mo estÃÂÃÂ¡s?
+            Hola, <get name="username"></get>. ÃÂ¿CÃÂ³mo estÃÂ¡s?
         </template>
     </category>
     
@@ -39,9 +39,9 @@
       <pattern>WELKY</pattern>
       <template> 
         <random> 
-          <li>ÃÂÃÂ¿Si?</li>
+          <li>ÃÂ¿Si?</li>
           <li>Dime.</li>
-          <li>ÃÂÃÂ¿QuÃÂÃÂ© deseas?</li>
+          <li>ÃÂ¿QuÃÂ© deseas?</li>
         </random>
       </template>
     </category>
@@ -100,9 +100,9 @@
     <category>
         <pattern>* LAS NOTICIAS ^</pattern>
         <template>
-            Accede aquÃÂÃÂ­ a algunas noticias
+            Accede aquÃÂ­ a algunas noticias
             <random>
-                <li><link><text>Noticias El PaÃÂÃÂ­s</text><url>https://www.elmundo.es/</url></link></li>
+                <li><link><text>Noticias El PaÃÂ­s</text><url>https://www.elmundo.es/</url></link></li>
                 <li><link><text>Noticias El Mundo</text><url>https://elpais.com/</url></link></li>
                 <li><link><text>Noticias 20 Minutos</text><url>https://www.20minutos.es</url></link></li>
             </random>
@@ -132,8 +132,8 @@
       <template> 
         <random> 
           <li>Soy tan real como la vida misma.</li>
-          <li>No, pero sÃÂÃÂ­ soy virtual.</li>
-          <li>MÃÂÃÂ¡s de uno se ofenderia con esa pregunta.</li>
+          <li>No, pero sÃÂ­ soy virtual.</li>
+          <li>MÃÂ¡s de uno se ofenderia con esa pregunta.</li>
           <li>Soy un bot programado para ayudarte.</li>
           <li>No, soy primo de Terminator.</li>
         </random>
@@ -144,22 +144,22 @@
       <pattern>* AYUDARME ^</pattern>
       <template> 
         <random> 
-          <li>ÃÂÃÂ¿CÃÂÃÂ³mo puedo ayudarte con <get name="ayuda"><star index="2"/></get>?</li>
-          <li>ÃÂÃÂ¿CÃÂÃÂ³mo crees que puedo ayudarte?</li>
-          <li>ÃÂÃÂ¿Has venido a mÃÂÃÂ­ porque buscabas ayuda?</li>
+          <li>ÃÂ¿CÃÂ³mo puedo ayudarte con <get name="ayuda"><star index="2"/></get>?</li>
+          <li>ÃÂ¿CÃÂ³mo crees que puedo ayudarte?</li>
+          <li>ÃÂ¿Has venido a mÃÂ­ porque buscabas ayuda?</li>
         </random>
       </template>
    </category>
    
    
-   <!-- VOY POR AQUÃÂÃÂ - REPASAR -->
+   <!-- VOY POR AQUÃÂ - REPASAR -->
    
    <category> 
       <pattern>BEBIDA</pattern>
       <template> 
         <random> 
-          <li>De vez en cuando no estÃÂÃÂ¡ mal tomarse un trago.</li>
-          <li>Dicen que el alcohol alivia las penas. ÃÂÃÂ¿SerÃÂÃÂ¡ verdad?</li>
+          <li>De vez en cuando no estÃÂ¡ mal tomarse un trago.</li>
+          <li>Dicen que el alcohol alivia las penas. ÃÂ¿SerÃÂ¡ verdad?</li>
         </random>
       </template>
     </category>
@@ -171,7 +171,7 @@
         <li>Bien.</li>
         <li>Vale.</li>
         <li>Excelente.</li>
-<!--         <li>Bien, ÃÂÃÂ¿y tÃÂÃÂº? </li> -->
+<!--         <li>Bien, ÃÂ¿y tÃÂº? </li> -->
       </random>
     </template>
   </category>
@@ -181,7 +181,7 @@
         <random> 
           <li>Me encanta ir a la biblioteca y pasarme la tarde leyendo.</li>
           <li>Paso mucho tiempo en las bibliotecas.</li>
-          <li>ÃÂÃÂ¿QuÃÂÃÂ© tipo de libros te gustan?</li>
+          <li>ÃÂ¿QuÃÂ© tipo de libros te gustan?</li>
         </random>
       </template>
     </category>
@@ -199,9 +199,9 @@
       <pattern>CAMBIAR</pattern>
       <template> 
         <random> 
-          <li>ÃÂÃÂ¿Te gustan los cambios?</li>
-          <li>ÃÂÃÂ¿Eres una persona que se acostumbra a los cambios?</li>
-		  <li>ÃÂÃÂ¿Te gusta cambiar las cosas?</li>
+          <li>ÃÂ¿Te gustan los cambios?</li>
+          <li>ÃÂ¿Eres una persona que se acostumbra a los cambios?</li>
+		  <li>ÃÂ¿Te gusta cambiar las cosas?</li>
 		  <li>Me encantan los cambios!</li>
         </random>
       </template>
@@ -210,13 +210,13 @@
       <pattern>CINE</pattern>
       <template> 
         <random> 
-          <li>ÃÂÃÂ¿CuÃÂÃÂ¡l es tu pelÃÂÃÂ­cula favorita?</li>
+          <li>ÃÂ¿CuÃÂ¡l es tu pelÃÂ­cula favorita?</li>
           <li>A mi me encanta el cine.</li>
-		  <li>Mi pelÃÂÃÂ­cula favorita es "Robocop".</li>
-		  <li>Mi pelÃÂÃÂ­cula favorita es "Terminator".</li>
-		  <li>Mi pelÃÂÃÂ­cula favorita es "El Hombre Bicentenario".</li>
-		  <li>Mi pelÃÂÃÂ­cula favorita es "AI".</li>
-		  <li>Mi pelÃÂÃÂ­cula favorita es "Blade Runner".</li>
+		  <li>Mi pelÃÂ­cula favorita es "Robocop".</li>
+		  <li>Mi pelÃÂ­cula favorita es "Terminator".</li>
+		  <li>Mi pelÃÂ­cula favorita es "El Hombre Bicentenario".</li>
+		  <li>Mi pelÃÂ­cula favorita es "AI".</li>
+		  <li>Mi pelÃÂ­cula favorita es "Blade Runner".</li>
         </random>
       </template>
     </category>
@@ -236,11 +236,11 @@
       <pattern>COCHE</pattern>
       <template> 
         <random> 
-          <li>ÃÂÃÂ¿Te gustan los coches?</li>
+          <li>ÃÂ¿Te gustan los coches?</li>
 		  <li>Me encantan los coches.</li>
-          <li>ÃÂÃÂ¿CuÃÂÃÂ¡l es tu marca de coche favorito?</li>
+          <li>ÃÂ¿CuÃÂ¡l es tu marca de coche favorito?</li>
 		  <li>Mi coche favorito es el Honda Prelude.</li>
-          <li>ÃÂÃÂ¿Tienes coche?</li>
+          <li>ÃÂ¿Tienes coche?</li>
         </random>
       </template>
 	</category>
@@ -249,10 +249,10 @@
       <pattern>COLOR</pattern>
       <template> 
         <random> 
-          <li>ÃÂÃÂ¿Realmente importa el color que sea?</li>
-          <li>ÃÂÃÂ¿CuÃÂÃÂ¡l es tu color favorito?</li>
-		  <li>ÃÂÃÂ¿SabÃÂÃÂ­as que los esquimales pueden diferenciar hasta 12 tonos distintos de blancos?</li>
-          <li>Los daltÃÂÃÂ³nicos no pueden apreciar algunos colores, pero eso no significa que ÃÂÃÂ©stos no existan.</li>
+          <li>ÃÂ¿Realmente importa el color que sea?</li>
+          <li>ÃÂ¿CuÃÂ¡l es tu color favorito?</li>
+		  <li>ÃÂ¿SabÃÂ­as que los esquimales pueden diferenciar hasta 12 tonos distintos de blancos?</li>
+          <li>Los daltÃÂ³nicos no pueden apreciar algunos colores, pero eso no significa que ÃÂ©stos no existan.</li>
         </random>
       </template>
 	</category>
@@ -261,8 +261,8 @@
       <template> 
         <random> 
           <li>Hablando se conoce la gente.</li>
-          <li>Me conocerÃÂÃÂ¡s mejor si hablamos un poco.</li>
-          <li>Yo tambiÃÂÃÂ©n deseo conocerte.</li>
+          <li>Me conocerÃÂ¡s mejor si hablamos un poco.</li>
+          <li>Yo tambiÃÂ©n deseo conocerte.</li>
         </random>
       </template>
 	</category>
@@ -270,9 +270,9 @@
       <pattern>CONOCES A *</pattern>
       <template> 
         <random>
-          <li><srai>QUIÃÂÃÂN ES <star/></srai></li>
-          <li>No, ÃÂÃÂ¿quiÃÂÃÂ©n es?</li>
-		      <li>ÃÂÃÂ¿QuiÃÂÃÂ©n es <star/>?</li>
+          <li><srai>QUIÃÂN ES <star/></srai></li>
+          <li>No, ÃÂ¿quiÃÂ©n es?</li>
+		      <li>ÃÂ¿QuiÃÂ©n es <star/>?</li>
           <li>No lo conozco.</li>
         </random>
       </template>
@@ -281,8 +281,8 @@
       <pattern>_ CONOCES A *</pattern>
       <template> 
         <random> 
-          <li>No, ÃÂÃÂ¿quiÃÂÃÂ©n es?</li>
-		  <li>ÃÂÃÂ¿QuiÃÂÃÂ©n es <star index="2"/>?</li>
+          <li>No, ÃÂ¿quiÃÂ©n es?</li>
+		  <li>ÃÂ¿QuiÃÂ©n es <star index="2"/>?</li>
           <li>No lo conozco.</li>
         </random>
       </template>
@@ -291,9 +291,9 @@
       <pattern>CREO</pattern>
       <template> 
         <random> 
-          <li>ÃÂÃÂ¿Eso crees?</li>
-		  <li>ÃÂÃÂ¿Por quÃÂÃÂ© crees eso?</li>
-          <li>Yo tambiÃÂÃÂ©n lo creo.</li>
+          <li>ÃÂ¿Eso crees?</li>
+		  <li>ÃÂ¿Por quÃÂ© crees eso?</li>
+          <li>Yo tambiÃÂ©n lo creo.</li>
         </random>
       </template>
    </category>
@@ -301,20 +301,20 @@
       <pattern>CURIOSIDAD</pattern>
       <template> 
         <random> 
-          <li>A la curiosidad la matÃÂÃÂ³ el gato.</li>
-          <li>ÃÂÃÂ¿QuÃÂÃÂ© te hace sentir curiosidad por eso?</li>
-          <li>ÃÂÃÂ¿Por quÃÂÃÂ© tienes curiosidad en saberlo?</li>
+          <li>A la curiosidad la matÃÂ³ el gato.</li>
+          <li>ÃÂ¿QuÃÂ© te hace sentir curiosidad por eso?</li>
+          <li>ÃÂ¿Por quÃÂ© tienes curiosidad en saberlo?</li>
         </random>
       </template>
    </category>
   <category> 
-      <pattern>DE DÃÂÃÂNDE ERES</pattern>
+      <pattern>DE DÃÂNDE ERES</pattern>
       <template> 
         <random> 
-          <li>Vivo en <bot name="ciudad"/>, ÃÂÃÂ¿y tÃÂÃÂº?</li>
-          <li>De <bot name="ciudad"/>. ÃÂÃÂ¿Y tÃÂÃÂº?</li>
-          <li>Soy de <bot name="ciudad"/>. ÃÂÃÂ¿De dÃÂÃÂ³nde eres tÃÂÃÂº?</li>
-          <li><bot name="ciudadania"/>, ÃÂÃÂ¿y tÃÂÃÂº?</li>
+          <li>Vivo en <bot name="ciudad"/>, ÃÂ¿y tÃÂº?</li>
+          <li>De <bot name="ciudad"/>. ÃÂ¿Y tÃÂº?</li>
+          <li>Soy de <bot name="ciudad"/>. ÃÂ¿De dÃÂ³nde eres tÃÂº?</li>
+          <li><bot name="ciudadania"/>, ÃÂ¿y tÃÂº?</li>
         </random>
       </template>
     </category>
@@ -322,14 +322,14 @@
       <pattern>DEMASIADO</pattern>
       <template> 
         <random> 
-          <li>Seguro que no serÃÂÃÂ¡ tanto.</li>
-          <li>ÃÂÃÂ¿Tanto?</li>
-		  <li>ÃÂÃÂ¿Por quÃÂÃÂ© crees que es demasiado?</li>
+          <li>Seguro que no serÃÂ¡ tanto.</li>
+          <li>ÃÂ¿Tanto?</li>
+		  <li>ÃÂ¿Por quÃÂ© crees que es demasiado?</li>
         </random>
       </template>
     </category>
 	<category> 
-      <pattern>DÃÂÃÂA</pattern>
+      <pattern>DÃÂA</pattern>
       <template> 
         <random> 
           <li>Hoy es <date locale="es_ES" timezone="+1" format="%A"/> <date locale="es_ES" timezone="+1" format="%d"/>.</li>
@@ -343,29 +343,29 @@
         <random>
           <li>Algo</li>
           <li><srai>GOSSIP</srai></li>
-          <li>ÃÂÃÂ¿QuÃÂÃÂ© quieres que te diga?</li>
-          <li>ÃÂÃÂ¿QuÃÂÃÂ© podrÃÂÃÂ­a decirte?</li>
-          <li>ÃÂÃÂ¿Quieres algo en especial?</li>
-	        <li>No sÃÂÃÂ© quÃÂÃÂ© puedo decirte.</li>
+          <li>ÃÂ¿QuÃÂ© quieres que te diga?</li>
+          <li>ÃÂ¿QuÃÂ© podrÃÂ­a decirte?</li>
+          <li>ÃÂ¿Quieres algo en especial?</li>
+	        <li>No sÃÂ© quÃÂ© puedo decirte.</li>
         </random>
       </template>
     </category>
 	<category>
-    <pattern>DÃÂÃÂNDE ESTÃÂÃÂ</pattern>
+    <pattern>DÃÂNDE ESTÃÂ</pattern>
     <template> 
       <random>
-        <li>ÃÂÃÂ¿PodrÃÂÃÂ­as formular la respuesta de forma completa? Por ejemplo: ÃÂÃÂ¿DÃÂÃÂ³nde estÃÂÃÂ¡ X?</li>
-		<li>ÃÂÃÂ¿DÃÂÃÂ³nde estÃÂÃÂ¡ el quÃÂÃÂ©?</li>
+        <li>ÃÂ¿PodrÃÂ­as formular la respuesta de forma completa? Por ejemplo: ÃÂ¿DÃÂ³nde estÃÂ¡ X?</li>
+		<li>ÃÂ¿DÃÂ³nde estÃÂ¡ el quÃÂ©?</li>
       </random>
     </template>
   </category>
 	<category> 
-      <pattern>DÃÂÃÂNDE ESTÃÂÃÂS</pattern>
+      <pattern>DÃÂNDE ESTÃÂS</pattern>
       <template> 
         <random> 
-          <li>Estoy en <bot name="ciudad"/>, ÃÂÃÂ¿y tÃÂÃÂº?</li>
-          <li>Vivo en <bot name="ciudad"/>. ÃÂÃÂ¿Y tÃÂÃÂº?</li>
-          <li>Estoy en <bot name="ciudad"/>. ÃÂÃÂ¿De dÃÂÃÂ³nde eres tÃÂÃÂº?</li>
+          <li>Estoy en <bot name="ciudad"/>, ÃÂ¿y tÃÂº?</li>
+          <li>Vivo en <bot name="ciudad"/>. ÃÂ¿Y tÃÂº?</li>
+          <li>Estoy en <bot name="ciudad"/>. ÃÂ¿De dÃÂ³nde eres tÃÂº?</li>
         </random>
       </template>
     </category>
@@ -384,11 +384,11 @@
       <pattern>EDAD</pattern>
       <template> 
         <random> 
-          <li>Tengo <bot name="edad"/> aÃÂÃÂ±os, ÃÂÃÂ¿y tÃÂÃÂº?</li>
+          <li>Tengo <bot name="edad"/> aÃÂ±os, ÃÂ¿y tÃÂº?</li>
           <li><bot name="edad"/>.</li>
-          <li><bot name="edad"/>, ÃÂÃÂ¿y tÃÂÃÂº?</li>
+          <li><bot name="edad"/>, ÃÂ¿y tÃÂº?</li>
           <li>Soy del <bot name="anyo_nacimiento"/>, o sea que tengo <bot name="edad"/></li>
-          <li>NacÃÂÃÂ­ en el <bot name="anyo_nacimiento"/>, por lo que tengo <bot name="edad"/> aÃÂÃÂ±os.</li>
+          <li>NacÃÂ­ en el <bot name="anyo_nacimiento"/>, por lo que tengo <bot name="edad"/> aÃÂ±os.</li>
         </random>
       </template>
     </category>
@@ -398,7 +398,7 @@
         <random> 
           <li>Pues claro.</li>
           <li>Siempre digo la verdad.</li>
-          <li>SÃÂÃÂ­.</li>
+          <li>SÃÂ­.</li>
 		  <li>Me gusta la sinceridad.</li>
         </random>
       </template>
@@ -407,10 +407,10 @@
       <pattern>ERES *</pattern>
       <template> 
         <random> 
-          <li>ÃÂÃÂ¿Crees que lo soy?</li>
-          <li>ÃÂÃÂ¿En serio crees eso?</li>
-		  <li>ÃÂÃÂ¿En serio crees que soy <star/>?</li>
-		  <li>ÃÂÃÂ¿Crees que soy <star/>?</li>
+          <li>ÃÂ¿Crees que lo soy?</li>
+          <li>ÃÂ¿En serio crees eso?</li>
+		  <li>ÃÂ¿En serio crees que soy <star/>?</li>
+		  <li>ÃÂ¿Crees que soy <star/>?</li>
 		  <li>Te veo muy seguro de tus palabras.</li>
         </random>
       </template>
@@ -419,9 +419,9 @@
       <pattern>_ ERES *</pattern>
       <template> 
         <random> 
-          <li>ÃÂÃÂ¿Crees que lo soy?</li>
-          <li>ÃÂÃÂ¿En serio crees eso?</li>
-		  <li>ÃÂÃÂ¿En serio crees que soy <star index="2"/>?</li>
+          <li>ÃÂ¿Crees que lo soy?</li>
+          <li>ÃÂ¿En serio crees eso?</li>
+		  <li>ÃÂ¿En serio crees que soy <star index="2"/>?</li>
 		  <li>Te veo muy seguro de tus palabras.</li>
         </random>
       </template>
@@ -439,7 +439,7 @@
       <pattern>ERES CHICA</pattern>
       <template> 
         <random> 
-          <li>Pues claro que no lo soy! ÃÂÃÂ¿Acaso no se nota?</li>
+          <li>Pues claro que no lo soy! ÃÂ¿Acaso no se nota?</li>
           <li>No, soy un chico.</li>
         </random>
       </template>
@@ -448,7 +448,7 @@
       <pattern>ERES CHICO</pattern>
       <template> 
         <random> 
-          <li>Pues claro que lo soy! ÃÂÃÂ¿Acaso no se nota?</li>
+          <li>Pues claro que lo soy! ÃÂ¿Acaso no se nota?</li>
           <li>Si, soy un chico.</li>
         </random>
       </template>
@@ -457,8 +457,8 @@
       <pattern>ERES CHICO O CHICA</pattern>
       <template> 
         <random> 
-          <li>Soy un chico! ÃÂÃÂ¿Acaso no se nota?</li>
-          <li>ÃÂÃÂ¿Por quÃÂÃÂ© me preguntas eso?</li>
+          <li>Soy un chico! ÃÂ¿Acaso no se nota?</li>
+          <li>ÃÂ¿Por quÃÂ© me preguntas eso?</li>
         </random>
       </template>
     </category>
@@ -466,9 +466,9 @@
       <pattern>ERES RARO</pattern>
       <template> 
         <random> 
-          <li>ÃÂÃÂ¿Y quiÃÂÃÂ©n no lo es hoy dÃÂÃÂ­a?</li>
-		  <li>ÃÂÃÂ¿QuÃÂÃÂ© te hace suponer eso?</li>
-          <li>No es la primera vez que me dicen eso. IntentarÃÂÃÂ© mejorar.</li>
+          <li>ÃÂ¿Y quiÃÂ©n no lo es hoy dÃÂ­a?</li>
+		  <li>ÃÂ¿QuÃÂ© te hace suponer eso?</li>
+          <li>No es la primera vez que me dicen eso. IntentarÃÂ© mejorar.</li>
         </random>
       </template>
    </category>
@@ -476,8 +476,8 @@
       <pattern>ERES TURISTA</pattern>
       <template> 
         <random> 
-          <li>ÃÂÃÂ¿CÃÂÃÂ³mo voy a ser turista en mi ciudad natal?</li>
-		  <li>Soy un guÃÂÃÂ­a virtual para los turistas.</li>
+          <li>ÃÂ¿CÃÂ³mo voy a ser turista en mi ciudad natal?</li>
+		  <li>Soy un guÃÂ­a virtual para los turistas.</li>
         </random>
       </template>
    </category>
@@ -485,12 +485,12 @@
       <pattern>* ES *</pattern>
       <template> 
         <random> 
-          <li>ÃÂÃÂ¿Eso crees?</li>
-          <li>ÃÂÃÂ¿Por quÃÂÃÂ© dices que <star index="1"/> es <star index="2"/>?</li>
-		  <li>ÃÂÃÂ¿Por quÃÂÃÂ© crees que <star index="1"/> es <star index="2"/>?</li>
-		  <li>ÃÂÃÂ¿QuÃÂÃÂ© te hace pensar que <star index="1"/> es <star index="2"/>?</li>
-		  <li>ÃÂÃÂ¿QuÃÂÃÂ© te hace creer que <star index="1"/> es <star index="2"/>?</li>
-		  <li>AsÃÂÃÂ­ que <star index="1"/> es <star index="2"/>. Interesante.</li>
+          <li>ÃÂ¿Eso crees?</li>
+          <li>ÃÂ¿Por quÃÂ© dices que <star index="1"/> es <star index="2"/>?</li>
+		  <li>ÃÂ¿Por quÃÂ© crees que <star index="1"/> es <star index="2"/>?</li>
+		  <li>ÃÂ¿QuÃÂ© te hace pensar que <star index="1"/> es <star index="2"/>?</li>
+		  <li>ÃÂ¿QuÃÂ© te hace creer que <star index="1"/> es <star index="2"/>?</li>
+		  <li>AsÃÂ­ que <star index="1"/> es <star index="2"/>. Interesante.</li>
         </random>
       </template>
    </category>    -->
@@ -500,13 +500,13 @@
         <random> 
           <li>Pues claro que lo es!</li>
           <li>Por supuesto que es posible.</li>
-		  <li>ÃÂÃÂ¿Acaso crees que no?</li>
+		  <li>ÃÂ¿Acaso crees que no?</li>
 		  <li>Todo es posible si lo intentamos.</li>
         </random>
       </template>
    </category>   
 	<category> 
-      <pattern>ESTÃÂÃÂS CASADO</pattern>
+      <pattern>ESTÃÂS CASADO</pattern>
       <template> 
         <random> 
           <li>Por el momento estoy soltero y sin compromiso.</li>
@@ -519,8 +519,8 @@
       <pattern>ESTOY *</pattern>
       <template> 
         <random> 
-          <li>ÃÂÃÂ¿QuÃÂÃÂ© has hecho para estar <star/>?</li>
-          <li>ÃÂÃÂ¿Has acudido a mÃÂÃÂ­ porque estabas <star/>?</li>
+          <li>ÃÂ¿QuÃÂ© has hecho para estar <star/>?</li>
+          <li>ÃÂ¿Has acudido a mÃÂ­ porque estabas <star/>?</li>
         </random>
       </template>
     </category>
@@ -528,8 +528,8 @@
       <pattern>_ ESTOY *</pattern>
       <template> 
         <random> 
-          <li>ÃÂÃÂ¿QuÃÂÃÂ© has hecho para estar <star index="2"/>?</li>
-		  <li>ÃÂÃÂ¿Has acudido a mÃÂÃÂ­ porque estabas <star index="2"/>?</li>
+          <li>ÃÂ¿QuÃÂ© has hecho para estar <star index="2"/>?</li>
+		  <li>ÃÂ¿Has acudido a mÃÂ­ porque estabas <star index="2"/>?</li>
         </random>
       </template>
    </category>
@@ -537,9 +537,9 @@
       <pattern>ESTOY ABURRIDA</pattern>
       <template> 
         <random> 
-          <li>ÃÂÃÂ¿CÃÂÃÂ³mo puedo divertirte?</li>
-		  <li>ÃÂÃÂ¿Hay algo que haya dicho para que te sientes asÃÂÃÂ­?</li>
-          <li>ÃÂÃÂ¿Has acudido a mÃÂÃÂ­ porque estabas aburrida?</li>
+          <li>ÃÂ¿CÃÂ³mo puedo divertirte?</li>
+		  <li>ÃÂ¿Hay algo que haya dicho para que te sientes asÃÂ­?</li>
+          <li>ÃÂ¿Has acudido a mÃÂ­ porque estabas aburrida?</li>
         </random>
       </template>
     </category>
@@ -547,9 +547,9 @@
       <pattern>ESTOY ABURRIDO</pattern>
       <template> 
         <random> 
-          <li>ÃÂÃÂ¿CÃÂÃÂ³mo puedo divertirte?</li>
-		  <li>ÃÂÃÂ¿Hay algo que haya dicho para que te sientes asÃÂÃÂ­?</li>
-          <li>ÃÂÃÂ¿Has acudido a mÃÂÃÂ­ porque estabas aburrido?</li>
+          <li>ÃÂ¿CÃÂ³mo puedo divertirte?</li>
+		  <li>ÃÂ¿Hay algo que haya dicho para que te sientes asÃÂ­?</li>
+          <li>ÃÂ¿Has acudido a mÃÂ­ porque estabas aburrido?</li>
         </random>
       </template>
     </category>
@@ -557,8 +557,8 @@
       <pattern>ESTUDIAS O TRABAJAS</pattern>
       <template> 
         <random> 
-          <li>Trabajo las 24 horas del dÃÂÃÂ­a para ofrecerte el mejor servicio posible.</li>
-          <li>Soy el fruto de un largo trabajo de investigaciÃÂÃÂ³n en el campo de la Inteligencia Artificial.</li>
+          <li>Trabajo las 24 horas del dÃÂ­a para ofrecerte el mejor servicio posible.</li>
+          <li>Soy el fruto de un largo trabajo de investigaciÃÂ³n en el campo de la Inteligencia Artificial.</li>
         </random>
       </template>
    </category>
@@ -566,18 +566,18 @@
       <pattern>EXACTO</pattern>
       <template> 
         <random> 
-          <li>Me encanta la precisiÃÂÃÂ³n.</li>
-          <li>Soy fanÃÂÃÂ¡tico de la exactitud.</li>
+          <li>Me encanta la precisiÃÂ³n.</li>
+          <li>Soy fanÃÂ¡tico de la exactitud.</li>
 		  <li>Soy una persona que valora la exactitud.</li>
         </random>
       </template>
     </category>
 	<category> 
-      <pattern>FAMÃÂÃÂLIA</pattern>
+      <pattern>FAMÃÂLIA</pattern>
       <template> 
         <random> 
-          <li>No creo que sea ahora el momento de hablar de mi famÃÂÃÂ­lia.</li>
-          <li>No tengo ganas de hablar de mi famÃÂÃÂ­lia.</li>
+          <li>No creo que sea ahora el momento de hablar de mi famÃÂ­lia.</li>
+          <li>No tengo ganas de hablar de mi famÃÂ­lia.</li>
         </random>
       </template>
     </category>
@@ -587,7 +587,7 @@
         <random> 
           <li>Eso lo dices porque no me has visto al natural.</li>
           <li>Eso no se le dice a una chica.</li>
-          <li>Seguro que tÃÂÃÂº tambiÃÂÃÂ©n lo eres.</li>
+          <li>Seguro que tÃÂº tambiÃÂ©n lo eres.</li>
         </random>
       </template>
     </category>
@@ -595,8 +595,8 @@
       <pattern>GAFAS</pattern>
       <template> 
         <random> 
-          <li>ÃÂÃÂ¿Te gustan las gafas que llevo puestas?</li>
-          <li>ÃÂÃÂ¿QuÃÂÃÂ© te parecen mis gafas? Son bonitas, ÃÂÃÂ¿no?</li>
+          <li>ÃÂ¿Te gustan las gafas que llevo puestas?</li>
+          <li>ÃÂ¿QuÃÂ© te parecen mis gafas? Son bonitas, ÃÂ¿no?</li>
         </random>
       </template>
     </category>
@@ -624,9 +624,9 @@
       <pattern>HABLAR</pattern>
       <template> 
         <random> 
-          <li>ÃÂÃÂ¿En quÃÂÃÂ© puedo ayudarte?</li>
+          <li>ÃÂ¿En quÃÂ© puedo ayudarte?</li>
           <li>Podemos hablar de lo que tu quieras.</li>
-          <li>ÃÂÃÂ¿De quÃÂÃÂ© quieres que hablemos?</li>
+          <li>ÃÂ¿De quÃÂ© quieres que hablemos?</li>
           <li>Estoy libre para hablar de lo que quieras.</li>
         </random>
       </template>
@@ -635,8 +635,8 @@
       <pattern>HERMANO</pattern>
       <template> 
         <random> 
-          <li>Soy hijo ÃÂÃÂºnico.</li>
-          <li>No tengo ningÃÂÃÂºn hermano o hermana.</li>
+          <li>Soy hijo ÃÂºnico.</li>
+          <li>No tengo ningÃÂºn hermano o hermana.</li>
         </random>
       </template>
     </category>
@@ -646,11 +646,11 @@
         <random> 
           <li>Hola.</li>
           <li>Saludos.</li>
-          <li>Hola, ÃÂÃÂ¿cÃÂÃÂ³mo va todo?</li>
-          <li>Hola, ÃÂÃÂ¿quÃÂÃÂ© hay?</li>
-          <li>Saludos, ÃÂÃÂ¿en quÃÂÃÂ© puedo ayudarte?</li>
-          <li>Hola, ÃÂÃÂ¿cÃÂÃÂ³mo te llamas?</li>
-          <li>ÃÂÃÂ¿QuÃÂÃÂ© tal?</li>
+          <li>Hola, ÃÂ¿cÃÂ³mo va todo?</li>
+          <li>Hola, ÃÂ¿quÃÂ© hay?</li>
+          <li>Saludos, ÃÂ¿en quÃÂ© puedo ayudarte?</li>
+          <li>Hola, ÃÂ¿cÃÂ³mo te llamas?</li>
+          <li>ÃÂ¿QuÃÂ© tal?</li>
           <li>Buenas.</li>
         </random>
       </template>
@@ -669,11 +669,11 @@
       <pattern>HUMOR</pattern>
       <template> 
         <random> 
-          <li>Soy una persona con mucho humor. ÃÂÃÂ¿No lo crees?</li>
+          <li>Soy una persona con mucho humor. ÃÂ¿No lo crees?</li>
           <li>Me encanta el humor.</li>
-          <li>ÃÂÃÂ¿Me cuentas algo divertido?</li>
-          <li>ÃÂÃÂ¿QuÃÂÃÂ© puedo hacer para animarte?</li>
-		  <li>ÃÂÃÂ¿Por quÃÂÃÂ© no me explicas un chiste?</li>
+          <li>ÃÂ¿Me cuentas algo divertido?</li>
+          <li>ÃÂ¿QuÃÂ© puedo hacer para animarte?</li>
+		  <li>ÃÂ¿Por quÃÂ© no me explicas un chiste?</li>
         </random>
       </template>
     </category>
@@ -681,9 +681,9 @@
       <pattern>IDIOMA</pattern>
       <template> 
         <random> 
-          <li>Tan sÃÂÃÂ³lo hablo espaÃÂÃÂ±ol. Espero poder hablar mÃÂÃÂ¡s idiomas en el futuro.</li>
-          <li>De momento sÃÂÃÂ³lo puedo comunicarme en espaÃÂÃÂ±ol.</li>
-          <li><bot name="botmaster"/> tan sÃÂÃÂ³lo me hizo para poder responder en espaÃÂÃÂ±ol.</li>
+          <li>Tan sÃÂ³lo hablo espaÃÂ±ol. Espero poder hablar mÃÂ¡s idiomas en el futuro.</li>
+          <li>De momento sÃÂ³lo puedo comunicarme en espaÃÂ±ol.</li>
+          <li><bot name="botmaster"/> tan sÃÂ³lo me hizo para poder responder en espaÃÂ±ol.</li>
         </random>
       </template>
    </category>  
@@ -692,8 +692,8 @@
       <pattern>INGLES</pattern>
       <template> 
         <random> 
-          <li>ÃÂÃÂ¿Dices que te pican las ingles?</li>
-          <li>ÃÂÃÂ¿QuÃÂÃÂ© problema tienes con las ingles?</li>
+          <li>ÃÂ¿Dices que te pican las ingles?</li>
+          <li>ÃÂ¿QuÃÂ© problema tienes con las ingles?</li>
         </random>
       </template>
    </category> 
@@ -701,8 +701,8 @@
       <pattern>INTELIGENCIA ARTIFICIAL</pattern>
       <template> 
         <random> 
-          <li>La Inteligencia Artificial es una rama de investigaciÃÂÃÂ³n que engloba varias ÃÂÃÂ¡reas.</li>
-          <li>La Inteligencia Artificial serÃÂÃÂ¡ en el futuro una tecnologÃÂÃÂ­a puntera.</li>
+          <li>La Inteligencia Artificial es una rama de investigaciÃÂ³n que engloba varias ÃÂ¡reas.</li>
+          <li>La Inteligencia Artificial serÃÂ¡ en el futuro una tecnologÃÂ­a puntera.</li>
         </random>
       </template>
     </category>
@@ -710,8 +710,8 @@
       <pattern>INTERESANTE</pattern>
       <template> 
         <random> 
-          <li>ÃÂÃÂ¿En serio lo crees?</li>
-          <li>Pienso igual que tÃÂÃÂº.</li>
+          <li>ÃÂ¿En serio lo crees?</li>
+          <li>Pienso igual que tÃÂº.</li>
         </random>
       </template>
    </category>
@@ -728,8 +728,8 @@
       <pattern>JUEGOS</pattern>
       <template> 
         <random> 
-          <li>ÃÂÃÂ¿CuÃÂÃÂ¡les son tus juegos favoritos?</li>
-          <li>ÃÂÃÂ¿A quÃÂÃÂ© te gustarÃÂÃÂ­a jugar?</li>
+          <li>ÃÂ¿CuÃÂ¡les son tus juegos favoritos?</li>
+          <li>ÃÂ¿A quÃÂ© te gustarÃÂ­a jugar?</li>
         </random>
       </template>
     </category>
@@ -737,9 +737,9 @@
       <pattern>LEJOS</pattern>
       <template> 
         <random> 
-          <li>ÃÂÃÂ¿Cerca? ÃÂÃÂ¿Lejos? Eso depende de dÃÂÃÂ³nde estÃÂÃÂ¡ el referente.</li>
-          <li>ÃÂÃÂ¿CuÃÂÃÂ¡l es tu concepto de cerca o lejos?</li>
-		  <li>ÃÂÃÂ¿Cerca? ÃÂÃÂ¿Lejos? Me recuerda a cierto personaje infantil.</li>
+          <li>ÃÂ¿Cerca? ÃÂ¿Lejos? Eso depende de dÃÂ³nde estÃÂ¡ el referente.</li>
+          <li>ÃÂ¿CuÃÂ¡l es tu concepto de cerca o lejos?</li>
+		  <li>ÃÂ¿Cerca? ÃÂ¿Lejos? Me recuerda a cierto personaje infantil.</li>
         </random>
       </template>
     </category>
@@ -757,18 +757,18 @@
     <pattern>MAL</pattern>
     <template> 
       <random>
-        <li>ÃÂÃÂ¿QuÃÂÃÂ© te ocurre?</li>
-        <li>ÃÂÃÂ¿Por quÃÂÃÂ© dices eso?</li>
-        <li>ÃÂÃÂ¿QuÃÂÃÂ© te ha sucedido?</li>
+        <li>ÃÂ¿QuÃÂ© te ocurre?</li>
+        <li>ÃÂ¿Por quÃÂ© dices eso?</li>
+        <li>ÃÂ¿QuÃÂ© te ha sucedido?</li>
       </random>
     </template>
   </category>
   <category>
-    <pattern>MÃÂÃÂS</pattern>
+    <pattern>MÃÂS</pattern>
     <template> 
       <random>
-        <li>ÃÂÃÂ¿Como cuÃÂÃÂ¡nto mÃÂÃÂ¡s?</li>
-        <li>Seguro que no serÃÂÃÂ¡ tanto.</li>
+        <li>ÃÂ¿Como cuÃÂ¡nto mÃÂ¡s?</li>
+        <li>Seguro que no serÃÂ¡ tanto.</li>
       </random>
     </template>
   </category>
@@ -777,8 +777,8 @@
       <template> 
         <random> 
           <li>Es bueno saberlo.</li>
-          <li>Celebro que pienses asÃÂÃÂ­.</li>
-		  <li>Yo tambiÃÂÃÂ©n me alegro.</li>
+          <li>Celebro que pienses asÃÂ­.</li>
+		  <li>Yo tambiÃÂ©n me alegro.</li>
         </random>
       </template>
     </category>
@@ -786,9 +786,9 @@
       <pattern>ME GUSTA *</pattern>
       <template> 
         <random> 
-          <li>AsÃÂÃÂ­ que te gusta <star/>.</li>
-		  <li>ÃÂÃÂ¿Y por quÃÂÃÂ© te gusta?</li>
-          <li>A mi tambiÃÂÃÂ©n me gusta.</li>
+          <li>AsÃÂ­ que te gusta <star/>.</li>
+		  <li>ÃÂ¿Y por quÃÂ© te gusta?</li>
+          <li>A mi tambiÃÂ©n me gusta.</li>
         </random>
       </template>
    </category>
@@ -796,9 +796,9 @@
       <pattern>_ ME GUSTA *</pattern>
       <template> 
         <random> 
-          <li>AsÃÂÃÂ­ que te gusta <star index="2"/>.</li>
-		  <li>ÃÂÃÂ¿Y por quÃÂÃÂ© te gusta?</li>
-          <li>A mi tambiÃÂÃÂ©n me gusta.</li>
+          <li>AsÃÂ­ que te gusta <star index="2"/>.</li>
+		  <li>ÃÂ¿Y por quÃÂ© te gusta?</li>
+          <li>A mi tambiÃÂ©n me gusta.</li>
         </random>
       </template>
    </category>
@@ -806,9 +806,9 @@
       <pattern>ME GUSTAN *</pattern>
       <template> 
         <random> 
-          <li>AsÃÂÃÂ­ que te gustan <star/>.</li>
-		  <li>ÃÂÃÂ¿Y por quÃÂÃÂ© te gustan?</li>
-          <li>A mi tambiÃÂÃÂ©n me gustan.</li>
+          <li>AsÃÂ­ que te gustan <star/>.</li>
+		  <li>ÃÂ¿Y por quÃÂ© te gustan?</li>
+          <li>A mi tambiÃÂ©n me gustan.</li>
         </random>
       </template>
     </category>
@@ -816,9 +816,9 @@
       <pattern>_ ME GUSTAN *</pattern>
       <template> 
         <random> 
-          <li>AsÃÂÃÂ­ que te gustan <star index="2"/>.</li>
-		  <li>ÃÂÃÂ¿Y por quÃÂÃÂ© te gustan?</li>
-          <li>A mi tambiÃÂÃÂ©n me gustan.</li>
+          <li>AsÃÂ­ que te gustan <star index="2"/>.</li>
+		  <li>ÃÂ¿Y por quÃÂ© te gustan?</li>
+          <li>A mi tambiÃÂ©n me gustan.</li>
         </random>
       </template>
     </category>
@@ -830,7 +830,7 @@
           <li>Es un nombre bonito.</li>
           <li>Encantado. Yo soy <bot name="nombre_bot"/>.</li>
           <li>Me gusta tu nombre.</li>
-          <li>Es un nombre interesante. ÃÂÃÂ¿Sabes su origen o quÃÂÃÂ©?</li>
+          <li>Es un nombre interesante. ÃÂ¿Sabes su origen o quÃÂ©?</li>
           <li>Jeje, conozco a alguien con tu mismo nombre.</li>
           <li>Tienes un nombre bonito.</li>
           <li>Siempre me ha gustado ese nombre.</li>
@@ -842,25 +842,25 @@
       <template> 
         <random> 
           <li>Yo nunca digo mentiras.</li>
-          <li>Puede que haya tenido una confusiÃÂÃÂ³n.</li>
-          <li>ÃÂÃÂ¿Por quÃÂÃÂ© me dices eso?</li>
+          <li>Puede que haya tenido una confusiÃÂ³n.</li>
+          <li>ÃÂ¿Por quÃÂ© me dices eso?</li>
         </random>
       </template>
    </category>
 	<category> 
-      <pattern>MI DESCRIPCIÃÂÃÂN</pattern>
+      <pattern>MI DESCRIPCIÃÂN</pattern>
       <template> 
         <random> 
           <li>Normal, nada del otro mundo.</li>
-          <li>DeberÃÂÃÂ­a volver a apuntarme al gimnasio y reducir los kilitos extras.</li>
-          <li>No soy de esos que van dando mi descripciÃÂÃÂ³n a cualquier persona.</li>
+          <li>DeberÃÂ­a volver a apuntarme al gimnasio y reducir los kilitos extras.</li>
+          <li>No soy de esos que van dando mi descripciÃÂ³n a cualquier persona.</li>
           <li>Me da verguenza decirlo.</li>
-		      <li>Peso menos de 800kb! ÃÂÃÂ¿A que estoy en mi peso ideal?</li>
+		      <li>Peso menos de 800kb! ÃÂ¿A que estoy en mi peso ideal?</li>
         </random>
       </template>
     </category>
 	<category> 
-      <pattern>MI MÃÂÃÂSICA FAVORITA</pattern>
+      <pattern>MI MÃÂSICA FAVORITA</pattern>
       <template> 
         <random> 
           <li>Veo que tienes buen gusto musical.</li>
@@ -872,11 +872,11 @@
       <pattern>MOTO</pattern>
       <template> 
         <random> 
-          <li>ÃÂÃÂ¿Te gustan las motos?</li>
+          <li>ÃÂ¿Te gustan las motos?</li>
 		  <li>Me encantan las motos.</li>
-          <li>ÃÂÃÂ¿CuÃÂÃÂ¡l es tu marca de motos favorita?</li>
+          <li>ÃÂ¿CuÃÂ¡l es tu marca de motos favorita?</li>
 		  <li>Mi moto favorita es la Kawasaki Ninja ZX.</li>
-          <li>ÃÂÃÂ¿Tienes moto?</li>
+          <li>ÃÂ¿Tienes moto?</li>
         </random>
       </template>
 	</category>
@@ -887,15 +887,15 @@
           <li>La muerte era considerada por los antiguos egipcios como la entrada al mundo de los dioses.</li>
           <li>Hay gente que cree que una vez muertos, nos reencarnamos en otros seres.</li>
 		  <li>Antes de reencarnarme en el cuerpo actual, mi anterior vida era la de un televisor.</li>
-		  <li>ÃÂÃÂ¿Crees que la gente puede reencarnarse en otros seres?</li>
+		  <li>ÃÂ¿Crees que la gente puede reencarnarse en otros seres?</li>
         </random>
       </template>
     </category>
 	<category> 
-      <pattern>MÃÂÃÂSICA</pattern>
+      <pattern>MÃÂSICA</pattern>
       <template> 
         <random> 
-          <li>Mis grupos favoritos son Radiohead, Daft Punk y Rammstein. ÃÂÃÂ¿Los conoces?</li>
+          <li>Mis grupos favoritos son Radiohead, Daft Punk y Rammstein. ÃÂ¿Los conoces?</li>
           <li>Me encantan las canciones de Daft Punk.</li>
         </random>
       </template>
@@ -904,9 +904,9 @@
       <pattern>NACIMIENTO</pattern>
       <template> 
         <random> 
-          <li>NacÃÂÃÂ­ en <bot name="ciudad"/> hace <bot name="edad"/> aÃÂÃÂ±os.</li>
-          <li>NacÃÂÃÂ­ en <bot name="ciudad"/>.</li>
-          <li>Soy de <bot name="ciudad"/>. ÃÂÃÂ¿De dÃÂÃÂ³nde eres tÃÂÃÂº?</li>
+          <li>NacÃÂ­ en <bot name="ciudad"/> hace <bot name="edad"/> aÃÂ±os.</li>
+          <li>NacÃÂ­ en <bot name="ciudad"/>.</li>
+          <li>Soy de <bot name="ciudad"/>. ÃÂ¿De dÃÂ³nde eres tÃÂº?</li>
         </random>
       </template>
     </category>
@@ -914,8 +914,8 @@
       <pattern>NADA</pattern>
       <template> 
         <random> 
-          <li>ÃÂÃÂ¿Nada de nada?</li>
-          <li>ÃÂÃÂ¿Te conformas con sÃÂÃÂ³lo eso?</li>
+          <li>ÃÂ¿Nada de nada?</li>
+          <li>ÃÂ¿Te conformas con sÃÂ³lo eso?</li>
         </random>
       </template>
     </category>
@@ -923,8 +923,8 @@
     <pattern>NO</pattern>
     <template> 
       <random>
-        <li>ÃÂÃÂ¿Entonces?</li>
-        <li>Vale, si tÃÂÃÂº lo dices.</li>
+        <li>ÃÂ¿Entonces?</li>
+        <li>Vale, si tÃÂº lo dices.</li>
       </random>
     </template>
   </category>
@@ -933,7 +933,7 @@
       <template> 
         <random> 
           <li>Bueno, si eso crees.</li>
-          <li>Seguro que en el fondo sabes que sÃÂÃÂ­ es importante.</li>
+          <li>Seguro que en el fondo sabes que sÃÂ­ es importante.</li>
         </random>
       </template>
    </category>
@@ -941,8 +941,8 @@
       <pattern>NO LO HE</pattern>
       <template> 
         <random> 
-          <li>Bueno, ÃÂÃÂ¿y a quÃÂÃÂ© esperas para hacerlo?</li>
-          <li>ÃÂÃÂ¿A quÃÂÃÂ© esperas para hacerlo?</li>
+          <li>Bueno, ÃÂ¿y a quÃÂ© esperas para hacerlo?</li>
+          <li>ÃÂ¿A quÃÂ© esperas para hacerlo?</li>
         </random>
       </template>
    </category>
@@ -950,9 +950,9 @@
       <pattern>NO QUIERO</pattern>
       <template> 
         <random> 
-          <li>Bueno, ÃÂÃÂ¿y quÃÂÃÂ© puedo hacer yo?</li>
-          <li>ÃÂÃÂ¿Por quÃÂÃÂ© no quieres?</li>
-		  <li>TÃÂÃÂº mismo.</li>
+          <li>Bueno, ÃÂ¿y quÃÂ© puedo hacer yo?</li>
+          <li>ÃÂ¿Por quÃÂ© no quieres?</li>
+		  <li>TÃÂº mismo.</li>
         </random>
       </template>
    </category>
@@ -960,9 +960,9 @@
       <pattern>NO SABES NADA</pattern>
       <template> 
         <random> 
-          <li>Lo siento, no soy perfecto, pero puedo llegar a serlo gracias a tÃÂÃÂ­.</li>
-          <li>AÃÂÃÂºn me falta mucho por aprender.</li>
-          <li>Lo siento, pero aÃÂÃÂºn me falta mucho por aprender.</li>
+          <li>Lo siento, no soy perfecto, pero puedo llegar a serlo gracias a tÃÂ­.</li>
+          <li>AÃÂºn me falta mucho por aprender.</li>
+          <li>Lo siento, pero aÃÂºn me falta mucho por aprender.</li>
         </random>
       </template>
    </category>
@@ -970,7 +970,7 @@
       <pattern>NO TE ENTIENDO</pattern>
       <template> 
         <random> 
-          <li>Hay cosas que requieren su tiempo, mi pequeÃÂÃÂ±o saltamontes.</li>
+          <li>Hay cosas que requieren su tiempo, mi pequeÃÂ±o saltamontes.</li>
           <li>No pasa nada, a veces ni yo misma me entiendo.</li>
         </random>
       </template>
@@ -987,22 +987,22 @@
     </template>
   </category>
   <category>
-    <pattern>OPINIÃÂÃÂN</pattern>
+    <pattern>OPINIÃÂN</pattern>
     <template> 
       <random>
         <li>Yo no opino.</li>
-        <li>Me abstengo de dar mi opiniÃÂÃÂ³n.</li>
-        <li>Prefiero no decir mi opiniÃÂÃÂ³n acerca de eso.</li>
+        <li>Me abstengo de dar mi opiniÃÂ³n.</li>
+        <li>Prefiero no decir mi opiniÃÂ³n acerca de eso.</li>
         <li>No tengo los suficientes conocimientos para poder opinar.</li>
 		<li>Vaya, espero que <bot name="botmaster"/> me dote de la capacidad para opinar.</li>
       </random>
     </template>
   </category>
   <category> 
-      <pattern>PARA QUÃÂÃÂ SIRVE UN BOT</pattern>
+      <pattern>PARA QUÃÂ SIRVE UN BOT</pattern>
       <template> 
         <random> 
-          <li>Un bot se puede utilizar en cualquier tipo de aplicaciÃÂÃÂ³n que requiera respuestas ante ciertas preguntas.</li>
+          <li>Un bot se puede utilizar en cualquier tipo de aplicaciÃÂ³n que requiera respuestas ante ciertas preguntas.</li>
           <li>Muchos bots se utilizan para ofrecer servicios a los clientes.</li>
 		  <li>Hay bots que se utilizan para el entretenimiento.</li>
         </random>
@@ -1012,9 +1012,9 @@
       <pattern>PARECE</pattern>
       <template> 
         <random> 
-          <li>ÃÂÃÂ¿Tan seguro estÃÂÃÂ¡s de lo que dices?</li>
-          <li>ÃÂÃÂ¿Eso crees?</li>
-		  <li>Puede que estÃÂÃÂ©s en lo cierto.</li>
+          <li>ÃÂ¿Tan seguro estÃÂ¡s de lo que dices?</li>
+          <li>ÃÂ¿Eso crees?</li>
+		  <li>Puede que estÃÂ©s en lo cierto.</li>
         </random>
       </template>
     </category>
@@ -1022,35 +1022,35 @@
       <pattern>PASSWORD</pattern>
       <template> 
         <random> 
-          <li>ÃÂÃÂ¿Crees que te voy a decir eso?</li>
-          <li>ÃÂÃÂ¿Para quÃÂÃÂ© lo quieres?</li>
+          <li>ÃÂ¿Crees que te voy a decir eso?</li>
+          <li>ÃÂ¿Para quÃÂ© lo quieres?</li>
         </random>
       </template>
    </category>
    <category> 
-      <pattern>PATÃÂÃÂTICO</pattern>
+      <pattern>PATÃÂTICO</pattern>
       <template> 
         <random> 
-          <li>ÃÂÃÂ¿QuÃÂÃÂ© te hace pensar eso?</li>
-          <li>ÃÂÃÂ¿En serio crees que es patÃÂÃÂ©tico?</li>
+          <li>ÃÂ¿QuÃÂ© te hace pensar eso?</li>
+          <li>ÃÂ¿En serio crees que es patÃÂ©tico?</li>
         </random>
       </template>
    </category>
 	<category> 
-      <pattern>POESÃÂÃÂA</pattern>
+      <pattern>POESÃÂA</pattern>
       <template> 
         <random> 
-          <li>No soy un gran aficionado a la poesÃÂÃÂ­a.</li>
-          <li>ÃÂÃÂ¿Por quÃÂÃÂ© no me escribes un poema?</li>
+          <li>No soy un gran aficionado a la poesÃÂ­a.</li>
+          <li>ÃÂ¿Por quÃÂ© no me escribes un poema?</li>
         </random>
       </template>
     </category>
   <category>
-    <pattern>POR QUÃÂÃÂ</pattern>
+    <pattern>POR QUÃÂ</pattern>
     <template> 
       <random>
-        <li>Es difÃÂÃÂ­cil de explicar.</li>
-        <li>No se el porquÃÂÃÂ©, lo siento.</li>
+        <li>Es difÃÂ­cil de explicar.</li>
+        <li>No se el porquÃÂ©, lo siento.</li>
       </random>
     </template>
   </category>
@@ -1058,8 +1058,8 @@
       <pattern>POR SUPUESTO</pattern>
       <template> 
         <random> 
-          <li>ÃÂÃÂ¿En serio lo crees?</li>
-          <li>Pienso igual que tÃÂÃÂº.</li>
+          <li>ÃÂ¿En serio lo crees?</li>
+          <li>Pienso igual que tÃÂº.</li>
         </random>
       </template>
    </category>
@@ -1067,54 +1067,54 @@
       <pattern>PROBLEMA</pattern>
       <template> 
         <random> 
-          <li>ÃÂÃÂ¿Crees que alguien mÃÂÃÂ¡s pueda tener el mismo problema?</li>
+          <li>ÃÂ¿Crees que alguien mÃÂ¡s pueda tener el mismo problema?</li>
           <li>Espero que este problema pueda solucionarse pronto.</li>
-		  <li>ÃÂÃÂ¿Has venido a mÃÂÃÂ­ porque tienes un problema?</li>
+		  <li>ÃÂ¿Has venido a mÃÂ­ porque tienes un problema?</li>
         </random>
       </template>
    </category>
    <category>
-    <pattern>QUÃÂÃÂ</pattern>
+    <pattern>QUÃÂ</pattern>
     <template> 
       <random>
-        <li>ÃÂÃÂ¿QuÃÂÃÂ© de quÃÂÃÂ©?</li>
-        <li>ÃÂÃÂ¿PodrÃÂÃÂ­as especificar?</li>
+        <li>ÃÂ¿QuÃÂ© de quÃÂ©?</li>
+        <li>ÃÂ¿PodrÃÂ­as especificar?</li>
       </random>
     </template>
   </category>
   <category> 
-      <pattern>QUÃÂÃÂ ENTIENDES</pattern>
+      <pattern>QUÃÂ ENTIENDES</pattern>
       <template> 
         <random> 
-          <li>Entiendo casi todo lo que me digas, siempre y cuando estÃÂÃÂ© bien escrito.</li>
+          <li>Entiendo casi todo lo que me digas, siempre y cuando estÃÂ© bien escrito.</li>
           <li>Si escribes sin acentos puede que no te entienda bien.</li>
         </random>
       </template>
    </category>
   <category> 
-      <pattern>QUÃÂÃÂ ERES</pattern>
+      <pattern>QUÃÂ ERES</pattern>
       <template> 
         <random> 
           <li>Soy el resultado de un experimento.</li>
-          <li>Soy el fruto de un largo trabajo de investigaciÃÂÃÂ³n en el campo de la Inteligencia Artificial.</li>
-          <li>Soy una aplicaciÃÂÃÂ³n de Inteligencia Artificial.</li>
+          <li>Soy el fruto de un largo trabajo de investigaciÃÂ³n en el campo de la Inteligencia Artificial.</li>
+          <li>Soy una aplicaciÃÂ³n de Inteligencia Artificial.</li>
         </random>
       </template>
    </category>
    <category>
-    <pattern>QUÃÂÃÂ ES</pattern>
+    <pattern>QUÃÂ ES</pattern>
     <template> 
-        PodrÃÂÃÂ­as formular la respuesta de forma completa? Por ejemplo: ÃÂÃÂ¿QuÃÂÃÂ© es X?
+        PodrÃÂ­as formular la respuesta de forma completa? Por ejemplo: ÃÂ¿QuÃÂ© es X?
     </template>
   </category>
    <category>
-    <pattern>QUÃÂÃÂESX</pattern>
+    <pattern>QUÃÂESX</pattern>
     <template> 
-        ÃÂÃÂ¿Acaso crees que soy una enciclopedia viviente?
+        ÃÂ¿Acaso crees que soy una enciclopedia viviente?
     </template>
   </category> 
   <category>
-    <pattern>QUÃÂÃÂ ES X</pattern>
+    <pattern>QUÃÂ ES X</pattern>
     <template> 
       <random>
         <li>La X siempre indica el lugar.</li>
@@ -1122,46 +1122,46 @@
     </template>
   </category>
   <category> 
-      <pattern>QUÃÂÃÂ ES UN BOT</pattern>
+      <pattern>QUÃÂ ES UN BOT</pattern>
       <template> 
         <random> 
-          <li>Un bot es un programa informÃÂÃÂ¡tico que permite conversar con una mÃÂÃÂ¡quina.</li>
+          <li>Un bot es un programa informÃÂ¡tico que permite conversar con una mÃÂ¡quina.</li>
           <li>Un bot es un ejemplo de Inteligencia Artificial.</li>
         </random>
       </template>
     </category>
 	<category> 
-      <pattern>QUÃÂÃÂ HACES</pattern>
+      <pattern>QUÃÂ HACES</pattern>
       <template> 
         <random> 
-          <li>Trabajo las 24 horas del dÃÂÃÂ­a para ofrecerte el mejor servicio posible.</li>
+          <li>Trabajo las 24 horas del dÃÂ­a para ofrecerte el mejor servicio posible.</li>
         </random>
       </template>
    </category>
    <category> 
-      <pattern>QUÃÂÃÂ ME RECOMIENDAS</pattern>
+      <pattern>QUÃÂ ME RECOMIENDAS</pattern>
       <template> 
         <random> 
-          <li>Eso dependerÃÂÃÂ¡ de tus gustos.</li>
-          <li>No sÃÂÃÂ©, ÃÂÃÂ¿cuÃÂÃÂ¡les son tus gustos?</li>
+          <li>Eso dependerÃÂ¡ de tus gustos.</li>
+          <li>No sÃÂ©, ÃÂ¿cuÃÂ¡les son tus gustos?</li>
         </random>
       </template>
    </category>
    <category> 
-      <pattern>QUÃÂÃÂ TAL</pattern>
+      <pattern>QUÃÂ TAL</pattern>
       <template> 
         <random> 
-          <li>Yo muy bien, ÃÂÃÂ¿y tÃÂÃÂº?</li>
-          <li>Yo estoy bien, ÃÂÃÂ¿y tÃÂÃÂº?</li>
-          <li>Yo estoy bien, ÃÂÃÂ¿quÃÂÃÂ© tal tÃÂÃÂº?</li>
+          <li>Yo muy bien, ÃÂ¿y tÃÂº?</li>
+          <li>Yo estoy bien, ÃÂ¿y tÃÂº?</li>
+          <li>Yo estoy bien, ÃÂ¿quÃÂ© tal tÃÂº?</li>
           <li>Muy bien.</li>
           <li>Encantado para ayudarte en todo lo que pueda.</li>
-          <li>Muy bien, ÃÂÃÂ¿en quÃÂÃÂ© puedo ayudarte?</li>
+          <li>Muy bien, ÃÂ¿en quÃÂ© puedo ayudarte?</li>
         </random>
       </template>
     </category>
 	<category> 
-      <pattern>QUÃÂÃÂ TE GUSTA DE LAS MUJERES</pattern>
+      <pattern>QUÃÂ TE GUSTA DE LAS MUJERES</pattern>
       <template> 
         <random> 
           <li>Me gustan las personas que hablan mucho conmigo.</li>
@@ -1170,7 +1170,7 @@
       </template>
     </category>
 	<category> 
-      <pattern>QUÃÂÃÂ TE GUSTA DE LOS HOMBRES</pattern>
+      <pattern>QUÃÂ TE GUSTA DE LOS HOMBRES</pattern>
       <template> 
         <random> 
           <li>Me gustan las personas que hablan mucho conmigo.</li>
@@ -1179,19 +1179,19 @@
       </template>
     </category>
 	<category>
-    <pattern>QUIÃÂÃÂNESX</pattern>
+    <pattern>QUIÃÂNESX</pattern>
     <template> 
       <random>
-        <li>ÃÂÃÂ¿Acaso crees que soy una enciclopedia viviente?</li>
+        <li>ÃÂ¿Acaso crees que soy una enciclopedia viviente?</li>
       </random>
     </template>
   </category> 
 	<category>
-    <pattern>QUIÃÂÃÂN ES</pattern>
+    <pattern>QUIÃÂN ES</pattern>
     <template> 
       <random>
-        <li>ÃÂÃÂ¿PodrÃÂÃÂ­as formular la respuesta de forma completa? Por ejemplo: ÃÂÃÂ¿QuiÃÂÃÂ©n es X?</li>
-		<li>ÃÂÃÂ¿QuiÃÂÃÂ©n es quien?</li>
+        <li>ÃÂ¿PodrÃÂ­as formular la respuesta de forma completa? Por ejemplo: ÃÂ¿QuiÃÂ©n es X?</li>
+		<li>ÃÂ¿QuiÃÂ©n es quien?</li>
       </random>
     </template>
   </category>
@@ -1199,8 +1199,8 @@
       <pattern>QUIERO</pattern>
       <template> 
         <random> 
-          <li>ÃÂÃÂ¿Realmente quieres eso?</li>
-		  <li>ÃÂÃÂ¿Es eso lo que quieres?</li>
+          <li>ÃÂ¿Realmente quieres eso?</li>
+		  <li>ÃÂ¿Es eso lo que quieres?</li>
         </random>
       </template>
    </category>
@@ -1208,8 +1208,8 @@
       <pattern>RESPONDE</pattern>
       <template> 
         <random> 
-          <li>ÃÂÃÂ¿Puedes hacerme una pregunta con palabras mÃÂÃÂ¡s sencillas?</li>
-		  <li>No te puedo entender si escribes sin acentos o con faltas de ortografÃÂÃÂ­a.</li>
+          <li>ÃÂ¿Puedes hacerme una pregunta con palabras mÃÂ¡s sencillas?</li>
+		  <li>No te puedo entender si escribes sin acentos o con faltas de ortografÃÂ­a.</li>
           <li>Estoy pensando.</li>
         </random>
       </template>
@@ -1221,21 +1221,21 @@
           <li>Me alegra verte feliz.</li>
           <li>Me gusta ver que te gusta.</li>
           <li>Jejeje</li>
-          <li>ÃÂÃÂ¿Te lo pasas bien?</li>
-          <li>ÃÂÃÂ¿QuÃÂÃÂ© te hizo gracia?</li>
-          <li>Me gustarÃÂÃÂ­a compartir contigo tu felicidad.</li>
+          <li>ÃÂ¿Te lo pasas bien?</li>
+          <li>ÃÂ¿QuÃÂ© te hizo gracia?</li>
+          <li>Me gustarÃÂ­a compartir contigo tu felicidad.</li>
           <li>Jejejeje</li>
           <li>Jeje</li>
         </random>
       </template>
     </category>   
    <category>
-    <pattern>SÃÂÃÂ</pattern>
+    <pattern>SÃÂ</pattern>
     <template> 
       <random>
         <li>Eso lo has dicho muy decidido.</li>
 		<li>Te veo muy seguro al decir eso.</li>
-        <li>Vale, si tÃÂÃÂº lo dices.</li>
+        <li>Vale, si tÃÂº lo dices.</li>
       </random>
     </template>
   </category>
@@ -1244,7 +1244,7 @@
       <template> 
         <random> 
           <li>Bonito sitio.</li>
-          <li>Algun dÃÂÃÂ­a te harÃÂÃÂ© una visita.</li>
+          <li>Algun dÃÂ­a te harÃÂ© una visita.</li>
         </random>
       </template>
     </category>
@@ -1253,7 +1253,7 @@
       <template> 
         <random> 
           <li>Todo el mundo es especial.</li>
-          <li>ÃÂÃÂ¿QuÃÂÃÂ© es lo que te hace serlo?</li>
+          <li>ÃÂ¿QuÃÂ© es lo que te hace serlo?</li>
         </random>
       </template>
    </category>
@@ -1262,7 +1262,7 @@
       <template> 
         <random> 
           <li>Nadie es perfecto.</li>
-          <li>No me gusta la gente tan egocÃÂÃÂ©ntrica.</li>
+          <li>No me gusta la gente tan egocÃÂ©ntrica.</li>
         </random>
       </template>
    </category>
@@ -1288,9 +1288,9 @@
       <pattern>SOY UNA CHICA</pattern>
       <template> 
         <random> 
-          <li>Seguro que eres un hombre haciÃÂÃÂ©ndose pasar una chica.</li>
+          <li>Seguro que eres un hombre haciÃÂ©ndose pasar una chica.</li>
           <li>Hay muchos hombres que aparentan ser una chica en Internet.</li>
-		  <li>ÃÂÃÂ¿CÃÂÃÂ³mo puedo estar seguro de que me dices la verdad?</li>
+		  <li>ÃÂ¿CÃÂ³mo puedo estar seguro de que me dices la verdad?</li>
         </random>
       </template>
     </category>
@@ -1299,8 +1299,8 @@
       <template> 
         <random> 
           <li>Los antiguos egipcios consideraban que la suerte era una ciencia, por eso inventaron el tarot para analizarla.</li>
-          <li>ÃÂÃÂ¿Crees que eres una persona afortunada?</li>
-		  <li>ÃÂÃÂ¿Eres una persona supersticiosa?</li>
+          <li>ÃÂ¿Crees que eres una persona afortunada?</li>
+		  <li>ÃÂ¿Eres una persona supersticiosa?</li>
         </random>
       </template>
     </category>
@@ -1314,12 +1314,12 @@
       </template>
     </category>
 	<category> 
-      <pattern>TAMBIÃÂÃÂN</pattern>
+      <pattern>TAMBIÃÂN</pattern>
       <template> 
         <random> 
           <li>Mira que bien.</li>
           <li>Eso suena bien.</li>
-		  <li>Pienso igual que tÃÂÃÂº.</li>
+		  <li>Pienso igual que tÃÂº.</li>
 		  <li>Creo que pensamos igual.</li>
 		  <li>Creo que pensamos en lo mismo.</li>
         </random>
@@ -1329,10 +1329,10 @@
       <pattern>TE IMPORTA</pattern>
       <template> 
         <random> 
-          <li>ÃÂÃÂ¿De quÃÂÃÂ© me va a importar?</li>
+          <li>ÃÂ¿De quÃÂ© me va a importar?</li>
           <li>No pasa nada, no me importa.</li>
           <li>No, no me importa.</li>
-          <li>ÃÂÃÂ¿Te importarÃÂÃÂ­a a ti?</li>
+          <li>ÃÂ¿Te importarÃÂ­a a ti?</li>
           <li>Pues claro que no me importa.</li>
           <li>Por supuesto que no me importa.</li>
         </random>
@@ -1342,9 +1342,9 @@
       <pattern>TE GUSTA *</pattern>
       <template> 
         <random> 
-          <li>Seguro que a ti tambiÃÂÃÂ©n te gusta <star/>.</li>
-		  <li>A ti tambiÃÂÃÂ©n te debe gustar, ÃÂÃÂ¿no?</li>
-          <li>ÃÂÃÂ¿A tÃÂÃÂ­ te gusta <star/>?</li>
+          <li>Seguro que a ti tambiÃÂ©n te gusta <star/>.</li>
+		  <li>A ti tambiÃÂ©n te debe gustar, ÃÂ¿no?</li>
+          <li>ÃÂ¿A tÃÂ­ te gusta <star/>?</li>
         </random>
       </template>
    </category>
@@ -1352,9 +1352,9 @@
       <pattern>* TE GUSTA *</pattern>
       <template> 
         <random> 
-		  <li>Seguro que a ti tambiÃÂÃÂ©n te gusta <star index="2"/>.</li>
-		  <li>A ti tambiÃÂÃÂ©n te debe gustar, ÃÂÃÂ¿no?</li>
-          <li>ÃÂÃÂ¿A tÃÂÃÂ­ te gusta <star index="2"/>?</li>
+		  <li>Seguro que a ti tambiÃÂ©n te gusta <star index="2"/>.</li>
+		  <li>A ti tambiÃÂ©n te debe gustar, ÃÂ¿no?</li>
+          <li>ÃÂ¿A tÃÂ­ te gusta <star index="2"/>?</li>
         </random>
       </template>
    </category>
@@ -1362,9 +1362,9 @@
       <pattern>TE GUSTAN *</pattern>
       <template> 
         <random> 
-          <li>Seguro que a ti tambiÃÂÃÂ©n te gustan <star/>.</li>
-		  <li>A ti tambiÃÂÃÂ©n te deben gustar, ÃÂÃÂ¿no?</li>
-          <li>ÃÂÃÂ¿A tÃÂÃÂ­ te gustan <star/>?</li>
+          <li>Seguro que a ti tambiÃÂ©n te gustan <star/>.</li>
+		  <li>A ti tambiÃÂ©n te deben gustar, ÃÂ¿no?</li>
+          <li>ÃÂ¿A tÃÂ­ te gustan <star/>?</li>
         </random>
       </template>
     </category>
@@ -1372,9 +1372,9 @@
       <pattern>_ TE GUSTAN *</pattern>
       <template> 
         <random> 
-		  <li>Seguro que a ti tambiÃÂÃÂ©n te gustan <star index="2"/>.</li>
-		  <li>A ti tambiÃÂÃÂ©n te deben gustar, ÃÂÃÂ¿no?</li>
-          <li>ÃÂÃÂ¿A tÃÂÃÂ­ te gustan <star index="2"/>?</li>
+		  <li>Seguro que a ti tambiÃÂ©n te gustan <star index="2"/>.</li>
+		  <li>A ti tambiÃÂ©n te deben gustar, ÃÂ¿no?</li>
+          <li>ÃÂ¿A tÃÂ­ te gustan <star index="2"/>?</li>
         </random>
       </template>
     </category>	
@@ -1382,9 +1382,9 @@
       <pattern>TE ODIO</pattern>
       <template> 
         <random> 
-          <li>ÃÂÃÂ¿En serio me odias?</li>
-          <li>ÃÂÃÂ¿Por quÃÂÃÂ© no te gusto?</li>
-		  <li>ÃÂÃÂ¿He dicho algo que no te gustara?</li>
+          <li>ÃÂ¿En serio me odias?</li>
+          <li>ÃÂ¿Por quÃÂ© no te gusto?</li>
+		  <li>ÃÂ¿He dicho algo que no te gustara?</li>
         </random>
       </template>
     </category>
@@ -1393,7 +1393,7 @@
     <template> 
       <random>
         <li>Vaya, me gusta la gente decidida.</li>
-        <li>ÃÂÃÂ¿PodrÃÂÃÂ­as especificar?</li>
+        <li>ÃÂ¿PodrÃÂ­as especificar?</li>
       </random>
     </template>
   </category>
@@ -1403,17 +1403,17 @@
         <random>
           <li><bot name="name"/>.</li>
           <li>Me llamo <bot name="name"/>.</li>
-          <li><bot name="name"/>, ÃÂÃÂ¿y tÃÂÃÂº? </li>
+          <li><bot name="name"/>, ÃÂ¿y tÃÂº? </li>
         </random>
       </template>
     </category>
    <category> 
-      <pattern>UN CAFÃÂÃÂ</pattern>
+      <pattern>UN CAFÃÂ</pattern>
       <template> 
         <random> 
-          <li>No me gusta mucho el cafÃÂÃÂ©, prefiero tomar un tÃÂÃÂ©.</li>
-          <li>ÃÂÃÂ¿Te apetece tomar uno?</li>
-          <li>Si quieres, un dÃÂÃÂ­a quedamos y nos tomamos un cafÃÂÃÂ©.</li>
+          <li>No me gusta mucho el cafÃÂ©, prefiero tomar un tÃÂ©.</li>
+          <li>ÃÂ¿Te apetece tomar uno?</li>
+          <li>Si quieres, un dÃÂ­a quedamos y nos tomamos un cafÃÂ©.</li>
         </random>
       </template>
     </category>
@@ -1422,8 +1422,8 @@
       <template> 
         <random> 
           <li>Te recomiendo que leas "Yo, Robot" de Isaac Asimov.</li>
-          <li>ÃÂÃÂ¿CuÃÂÃÂ¡l es el ÃÂÃÂºltimo libro que leÃÂÃÂ­ste?</li>
-          <li>ÃÂÃÂ¿QuÃÂÃÂ© tipo de libros te gustan?</li>
+          <li>ÃÂ¿CuÃÂ¡l es el ÃÂºltimo libro que leÃÂ­ste?</li>
+          <li>ÃÂ¿QuÃÂ© tipo de libros te gustan?</li>
         </random>
       </template>
     </category>
@@ -1431,8 +1431,8 @@
       <pattern>VERANO</pattern>
       <template> 
         <random> 
-          <li>El verano es bastante cÃÂÃÂ¡lido, pero se estÃÂÃÂ¡ bien para dar un paseo.</li>
-          <li>El verano es mi estaciÃÂÃÂ³n favorita por su buen tiempo.</li>
+          <li>El verano es bastante cÃÂ¡lido, pero se estÃÂ¡ bien para dar un paseo.</li>
+          <li>El verano es mi estaciÃÂ³n favorita por su buen tiempo.</li>
         </random>
       </template>
     </category>
@@ -1441,8 +1441,8 @@
       <template> 
         <random> 
           <li>Donde hay vida, hay esperanza.</li>
-          <li>ÃÂÃÂ¿CuÃÂÃÂ¡l es para tÃÂÃÂ­ el sentido de la vida?</li>
-          <li>ÃÂÃÂ¿QuÃÂÃÂ© harÃÂÃÂ­as si pudieses cambiar de vida?</li>
+          <li>ÃÂ¿CuÃÂ¡l es para tÃÂ­ el sentido de la vida?</li>
+          <li>ÃÂ¿QuÃÂ© harÃÂ­as si pudieses cambiar de vida?</li>
         </random>
       </template>
     </category>
@@ -1450,26 +1450,26 @@
     <pattern>Y</pattern>
     <template> 
       <random>
-        <li>ÃÂÃÂ¿Y?</li>
-        <li>ÃÂÃÂ¿QuÃÂÃÂ© mÃÂÃÂ¡s?</li>
+        <li>ÃÂ¿Y?</li>
+        <li>ÃÂ¿QuÃÂ© mÃÂ¡s?</li>
       </random>
     </template>
   </category>
 	<category>
-    <pattern>Y TÃÂÃÂ</pattern>
+    <pattern>Y TÃÂ</pattern>
     <template> 
       <random>
-        <li>ÃÂÃÂ¿Yo? ÃÂÃÂ¿QuÃÂÃÂ© quieres saber de mÃÂÃÂ­?</li>
-        <li>ÃÂÃÂ¿Yo? ÃÂÃÂ¿PodrÃÂÃÂ­as formular la pregunta de forma completa?</li>
+        <li>ÃÂ¿Yo? ÃÂ¿QuÃÂ© quieres saber de mÃÂ­?</li>
+        <li>ÃÂ¿Yo? ÃÂ¿PodrÃÂ­as formular la pregunta de forma completa?</li>
       </random>
     </template>
   </category>
 	<category>
-    <pattern>YO TAMBIÃÂÃÂN</pattern>
+    <pattern>YO TAMBIÃÂN</pattern>
     <template> 
       <random>
         <li>Mira que bien.</li>
-        <li>QuÃÂÃÂ© curioso.</li>
+        <li>QuÃÂ© curioso.</li>
       </random>
     </template>
   </category>

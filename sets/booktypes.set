@@ -1,1 +1,24 @@
-[["Short Story"], ["Young Fiction"], ["Classics"], ["Crime"], ["Mistery"], ["Fantasy"], ["Horror"], ["Fiction"], ["Romance"], ["SciFi"], ["Art"], ["Crafts"], ["Autiobiography"], ["Cooking"], ["Gardening"], ["History"], ["Memoir"], ["Science"], ["Self-Help"], ["Technology"], ["Travel"], ["Poetry"]]
+[
+["Short", "Story"],
+["Young", "Fiction"],
+["Classics"],
+["Crime"],
+["Mistery"],
+["Fantasy"],
+["Horror"],
+["Fiction"],
+["Romance"],
+["SciFi"],
+["Art"],
+["Crafts"],
+["Autiobiography"],
+["Cooking"],
+["Gardening"],
+["History"],
+["Memoir"],
+["Science"],
+["Self-Help"],
+["Technology"],
+["Travel"],
+["Poetry"]
+]
