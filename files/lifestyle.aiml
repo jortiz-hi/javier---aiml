@@ -4,9 +4,9 @@
       <pattern>AMIGO</pattern>
       <template> 
         <random> 
-          <li>ÃÂ¡Tengo infinidad de amigos!</li>
-          <li>Tengo un gran nÃÂºmero de amigos, ÃÂ¿quieres ser uno de ellos?</li>
-          <li>ÃÂ¿Has venido a mÃÂ­ buscando amistad?</li>
+          <li>¡Tengo infinidad de amigos!</li>
+          <li>Tengo un gran número de amigos, ¿quieres ser uno de ellos?</li>
+          <li>¿Has venido a mí buscando amistad?</li>
         </random>
       </template>
     </category>

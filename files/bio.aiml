@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
+    
 <!-- Question about children to start children topic -->
 	<category>
 	    <pattern>^ MY CHILDREN</pattern>
 	    <template>
-	        Oh. Do you have children? (Indicate Yes or No)
+	        Do you have children? (Indicate Yes or No)
 	    </template>
     </category>
     
@@ -71,6 +72,7 @@
         </template>
     </category>
     
+    <!-- Question to start married topic -->
     <category>
         <that>BUT ARE YOU MARRIED</that>
 	    <pattern>YES ^</pattern>
@@ -88,8 +90,6 @@
 	    <pattern>$NO ^</pattern>
 	    <template>
 	        <think><set name="married">no</set></think>
-	        <!-- Empezar topic: busca preguntas sobre como se llama su mujer, 
-	        cuantos aÃ±os han estado casados y asÃ­ -->
 	        And do you have anyone who supports you on your daily life?
 	    </template>
     </category>
@@ -108,15 +108,51 @@
     </category>
     
     
-    <!-- Question about depression if condition is validated -->
+    <!-- Question about bad emotions-->
+    <!-- Salir de un topic: <think><set name='topic'></set> -->
+    <category>
+            <pattern>* <set>bademotions</set></pattern>
+            <template>
+                <think><set name='emotion'><star index = "2"/></set></think>
+                <condition name='emotion'>
+                    <li value='Sad'><think><set name='topic'>MENTAL</set></think>Do you usually feel sad or depressed?</li>
+                    <li value='Sadness'><think><set name='topic'>MENTAL</set></think>Do you usually feel sad or depressed?</li>
+                    <li value='Depressed'><think><set name='topic'>MENTAL</set></think>Do you usually feel sad or depressed?</li>
+                    <li value='Depression'><think><set name='topic'>MENTAL</set></think>Do you usually feel sad or depressed?</li>
+                    <li>Try to read a book, watch the TV or call a friend to feel better. It usually helps me a lot </li>
+                </condition>
+            </template>
+    </category>
+    
     
     <category>
-        <pattern>^ I AM SAD ^</pattern>
-        <template>
-            <think><set name='topic'>MENTAL</set></think>
-            Are you ok?
-        </template>
+            <pattern><set>bademotions</set></pattern>
+            <template>
+                <think><set name='emotion'><star/></set></think>
+                <condition name='emotion'>
+                    <li value='Sad'><think><set name='topic'>MENTAL</set></think>Do you usually feel sad or depressed?</li>
+                    <li value='Sadness'><think><set name='topic'>MENTAL</set></think>Do you usually feel sad or depressed?</li>
+                    <li value='Depressed'><think><set name='topic'>MENTAL</set></think>Do you usually feel sad or depressed?</li>
+                    <li value='Depression'><think><set name='topic'>MENTAL</set></think>Do you usually feel sad or depressed?</li>
+                    <li>Try to read a book, watch the TV or call a friend to feel better. It usually helps me a lot </li>
+                </condition>
+            </template>
     </category>
+    
+    <category>
+            <pattern><set>* bademotions *</set></pattern>
+            <template>
+                <think><set name='emotion'><star index = "2"/></set></think>
+                <condition name='emotion'>
+                    <li value='Sad'><think><set name='topic'>MENTAL</set></think>Do you usually feel sad or depressed?</li>
+                    <li value='Sadness'><think><set name='topic'>MENTAL</set></think>Do you usually feel sad or depressed?</li>
+                    <li value='Depressed'><think><set name='topic'>MENTAL</set></think>Do you usually feel sad or depressed?</li>
+                    <li value='Depression'><think><set name='topic'>MENTAL</set></think>Do you usually feel sad or depressed?</li>
+                    <li>Try to read a book, watch the TV or call a friend to feel better. It usually helps me a lot </li>
+                </condition>
+            </template>
+    </category>
+    
     
     
     <!-- Question about friends to meet with -->
@@ -127,19 +163,34 @@
     </category>
     
     <category>
+        <pattern>^ A FRIEND</pattern>
+        <template><srai>^ MY FRIEND</srai></template>
+    </category>
+    
+    <category>
         <that>DO YOU HAVE A FRIEND YOU USUALLY MEET WITH</that>
         <pattern>YES ^</pattern>
         <template>
             <think><set name='topic'>FRIEND</set></think>
-            It must be cool to have a friend. What is his or her name?
+            It is cool to have a good friend. What is his or her name?
+        </template>
+    </category>
+    
+    <category>
+        <that>TELL ME ABOUT YOUR FRIENDS.DO YOU HAVE A FRIEND YOU USUALLY MEET WITH</that>
+        <pattern>YES ^</pattern>
+        <template>
+            <think><set name='topic'>FRIEND</set></think>
+            It is cool to have a good friend. What is his or her name?
         </template>
     </category>
     
     <category>
         <that>DO YOU HAVE A FRIEND YOU USUALLY MEET WITH</that>
-        <pattern>$NO ^</pattern>
+        <pattern>NO ^</pattern>
         <template>
-            Well, that's alright. Do you have any pets?
+            It is also good to have time for yourself.
+            <srai>^ MY PET</srai>
         </template>
     </category>
     
@@ -147,23 +198,47 @@
     <!-- Question about pets -->
     
     <category>
-        <that>DO YOU HAVE ANY PETS</that>
+        <pattern>^ MY PET</pattern>
+        <template>
+            Do you have a pet?
+        </template>
+    </category>
+    
+    <category>
+        <that>DO YOU HAVE A PET</that>
         <pattern>YES ^</pattern>
         <template>
-            <think><set name='topic'>PET</set><set name='pet'>yes</set></think>
+            <think><set name='topic'>PET</set><set name='has_pet'>yes</set></think>
             I love pets. What is the name of your pet?
         </template>
     </category>
     
     <category>
-        <that>DO YOU HAVE ANY PETS</that>
-        <pattern>$NO ^</pattern>
+        <that>TELL ME ABOUT YOUR PETS.DO YOU HAVE A PET</that>
+        <pattern>YES ^</pattern>
         <template>
-            <think><set name='pet'>no</set></think>
+            <think><set name='topic'>PET</set><set name='has_pet'>yes</set></think>
+            I love pets. What is the name of your pet?
+        </template>
+    </category>
+    
+    <category>
+        <that>DO YOU HAVE A PET</that>
+        <pattern>NO ^</pattern>
+        <template>
+            <think><set name='has_pet'>no</set></think>
             I see..., I understand it is quite a responsability.
         </template>
     </category>
     
+    <category>
+        <that>TELL ME ABOUT YOUR PETS.DO YOU HAVE A PET</that>
+        <pattern>NO ^</pattern>
+        <template>
+            <think><set name='has_pet'>no</set></think>
+            I see..., I understand it is quite a responsability.
+        </template>
+    </category>
     
     <!-- CHILDREN topic-->
     
@@ -227,8 +302,8 @@
     	    <that>WHAT IS THE NAME OF YOUR *</that>
     	    <pattern>*</pattern>
     	    <template>
-    	        <think><set name='children'><star/></set></think>
-    	        I would like to know <get name='children'/>!
+    	        <think><set name='name_child'><star/></set></think>
+    	        I would like to know <get name='name_child'/>!
     	    </template>
         </category>
         
@@ -236,7 +311,7 @@
     	    <that>WHAT ARE THE NAMES OF YOUR *</that>
     	    <pattern>* AND *</pattern>
     	    <template>
-    	        <think><set name='childreng'><star/> <star index='2'/></set></think>
+    	        <think><set name='name_children'><star/> <star index='2'/></set></think>
     	         I would like to know them. Which is your favorite?
      	    </template>
         </category>
@@ -290,8 +365,8 @@
     	           <think><set name='ans1'><star/></set></think>
     	           <condition name='ans1'>
     	               <li value='yes'>Who?</li>
-    	               <li value='no'>That's ok you can see them any time.</li>
-    	               <li>Sorry I didn't understand you. Does any of them live at walking distance from you?</li>
+    	               <li value='no'>You can always make a videocall to see them.</li>
+    	               <li>Ha ha ha. Good to know it</li>
     	           </condition>
             </template>
         </category>
@@ -308,7 +383,7 @@
     </topic>
     
     
-    <!-- GRANDCHILDREN -->
+    <!-- GRANDCHILDREN topic -->
     
      <topic name='GRANDCHILDREN'>
 	    <category>
@@ -380,8 +455,8 @@
     	    <that>WHAT IS THE NAME OF YOUR *</that>
     	    <pattern>*</pattern>
     	    <template>
-    	        <think><set name='grandchildren'><star/></set><set name='topic'></set></think>
-    	        I would like to know <get name='grandchildren'/>!
+    	        <think><set name='name_grandchild'><star/></set><set name='topic'></set></think>
+    	        I would like to know <get name='name_grandchild'/>!
     	    </template>
         </category>
         
@@ -389,7 +464,7 @@
     	    <that>WHAT ARE THE NAMES OF YOUR *</that>
     	    <pattern>* AND *</pattern>
     	    <template>
-    	        <think><set name='grandchildreng'><star/> <star index='2'/></set></think>
+    	        <think><set name='name_grandchildren'><star/> <star index='2'/></set></think>
     	         I would like to know them. Which is your favorite?
     	   </template>
 	    </category>
@@ -405,7 +480,7 @@
 	    <category>
             <pattern>* IS MY FAVORITE</pattern>
             <template>
-               <think><set name='fav_grandchild'><star/></set></think>
+               <think><set name='fav_grandchildren'><star/></set></think>
                Ha ha ha. I am my mothers' favourite too. How old is the oldest?
             </template>
         </category>
@@ -425,7 +500,7 @@
         <category>
             <pattern>*</pattern>
             <template>
-                <think><set name='fav_grandchild'><star/></set></think>
+                <think><set name='fav_grandchildren'><star/></set></think>
                 Ha ha ha. I am my mothers' favourite too. How old is the oldest?
             </template>
         </category>
@@ -536,7 +611,7 @@
 	        <that>DOES * LIVE CLOSE TO YOU</that>
 	        <pattern>YES ^</pattern>
 	        <template>
-	            <think><set name ='support_is_close'>yes</set></think>
+	            <think><set name ='supporter_is_close'>yes</set></think>
 	            Then it is easier that you receive the appropriate support you  need. 
 	            Does she or he live with you?
 	        </template>
@@ -546,8 +621,8 @@
            <that>DOES * LIVE CLOSE TO YOU</that>
            <pattern>NO</pattern>
 	       <template>
-                <think><set name ='support_is_close'>no</set></think>
-                It is ok because you have the phone and in case of emergy you can even call your children.
+                <think><set name ='supporter_is_close'>no</set></think>
+                It is ok because you have the phone and in case of emergency you can even call your children.
                 How does <get name='supporter'/> support you?
                 <ul>
                     <li>accompaniment to medical appointment</li>
@@ -567,7 +642,7 @@
             <that>DOES SHE OR HE LIVE WITH YOU</that>
             <pattern>NO</pattern>
             <template>
-                <think><set name='support_athome'>no</set></think>
+                <think><set name='support_at_home'>no</set></think>
                 <srai>YES ^</srai>
             </template>
         </category>
@@ -575,9 +650,9 @@
         <category>
             <that>DOES SHE OR HE LIVE WITH YOU</that>
             <pattern>YES ^</pattern>
-            <think><set name='support_athome'>yes</set></think>
+            <think><set name='support_at_home'>yes</set></think>
             <template>
-                 That's great, it seems <get name='supporter'/> is taking care of you. 
+                 That's great, it seems <get name='supporter'/> helps you a lot. 
                  How does <get name='supporter'/> support you?
                  <ul>
                     <li>accompaniment to medical appointment</li>
@@ -598,7 +673,7 @@
             <pattern>*</pattern>
             <template>
                 <think><set name='support_activity'><star/></set></think>
-                That is great!
+                That is great!It is good to receive support in these kind of tasks
             </template>
         </category>
     	
@@ -610,38 +685,35 @@
     <topic name='MENTAL'>
         
         <category>
-            <that>ARE YOU OK</that>
-            <pattern>*</pattern>
+            <that>DO YOU USUALLY FEEL SAD OR DEPRESSED</that>
+            <pattern>No ^</pattern>
             <template>
-                <think><set name='sad'><star/></set></think>
-                <condition name='sad'>
-                    <li value='yes'>Hope you are fine.<think><set name='topic'></set></think></li>
-                    <li> Do you usually feel sad or depressed? </li>
-                </condition>
+                <think><set name='sad-depressed'>No</set></think>
+                It seems like a one-time thing. You can tell me if you want
             </template>
         </category>
         
         <category>
             <that>DO YOU USUALLY FEEL SAD OR DEPRESSED</that>
-            <pattern>YES ^</pattern>
-            <template>Why? You can tell me if you want.</template>
-        </category>
-        
-        <category>
-            <that>DO YOU USUALLY FEEL SAD OR DEPRESSED</that>
-            <pattern>NO</pattern>
+            <pattern>Yes ^</pattern>
             <template>
-                <think><set name='topic'></set></think>
-                Ok, you can talk to me anytime you want.
-                </template>
+                <think><set name='sad-depressed'>Yes</set></think>
+                I am really sorry to here that. You can always talk to your family and friends and if it happens to often, you can always go to a doctor.
+            </template>
         </category>
         
+        
         <category>
-            <that>YOU CAN TELL ME IF YOU WANT</that>
             <pattern>*</pattern>
             <template>
-                <think><set name='whysad'><star/></set></think>
-                I see...
+                <think><set name='topic'></set></think>
+                I see... Do not thing too much about it and take a rest today.
+                <random>
+                    <li>Tell me about your children.<srai>^ MY CHILDREN</srai></li>
+                    <li> Tell me about your grandchildren.<srai>^ MY GRANDCHILDREN</srai></li>
+                    <li> Tell me about your pets.<srai>^ MY PET</srai></li>
+                    <li> Tell me about your friends.<srai>^ MY FRIEND</srai></li>
+                </random>
             </template>
         </category>
     </topic>
@@ -702,7 +774,8 @@
                 That's great, at least you can see each other <get name='fq'/>.
                 When you see each other, what kind of activities would you normally perform?
                 <ul>
-                    <li>Actividad 1</li>
+                    <li>Take a coffee</li>
+                    <li>Go shopping</li>
                     <li>...</li>
                 </ul>
                 Type the activity.
@@ -713,7 +786,7 @@
             <that>^ TYPE THE ACTIVITY</that>
             <pattern>*</pattern>
             <template>
-                Cool, would you like to invite him/her to WellCo?
+                Cool, would you like to invite <get name='friend'/> to WellCo?
             </template>
         </category>
         
@@ -721,7 +794,7 @@
             <that>COOL, WOULD YOU LIKE TO INVITE * TO WELLCO</that>
             <pattern>YES ^</pattern>
             <template>That's great! You can find the information here:
-            <url>log in</url>
+            <url>https://play.google.com/store/apps/details?id=com.wellcoapp</url>
             </template>
         </category>
         
@@ -729,6 +802,12 @@
             <that>COOL, WOULD YOU LIKE TO INVITE * TO WELLCO</that>
             <pattern>NO</pattern>
             <template>It's ok, maybe some other time.</template>
+        </category>
+        
+        <category>
+            <that>COOL, WOULD YOU LIKE TO INVITE * TO WELLCO</that>
+            <pattern>NOT ^</pattern>
+            <template><srai>NO</srai></template>
         </category>
         
     </topic>
@@ -754,7 +833,6 @@
                     <li>Bird</li>
                     <li>Dog</li>
                 </ul>
-                <ul><li>jojo</li></ul>
                 What kind of pet is it?
             </template>
         </category>
@@ -766,12 +844,24 @@
         </category>
         
         <category>
-            <that>WHAT KIND OF PET IS IT</that>
+            <that>* WHAT KIND OF PET IS IT</that>
             <pattern>*</pattern>
-            <template>Cool.</template>
+            <template>
+                <think><set name='pet_type'><star/></set></think>
+                Ooh. I always wanted to have a <get name='pet_type'/> but it is not possible to have a pet for a virtual agent.
+            </template>
+        </category>
+        
+        <category>
+            <pattern>*</pattern>
+            <template>
+                <think><set name='topic'></set></think>
+               Yes, you are totally right.
+            </template>
         </category>
         
     </topic>
     
     
 </aiml>
+
