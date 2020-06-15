@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [
 ["Play cards"],
 ["Go"],
@@ -16,3 +17,6 @@
 ["Parchis"],
 ["Oca"]
 ]
+=======
+[["Play cards"], ["Go"], ["Chess"], ["Monopoly"], ["Draughts"], ["Scrabble"], ["Catan"], ["Trivial"], ["Pictionary"], ["Battleship"], ["Connected"], ["Mancala"], ["Jenga"], ["Scattergories"], ["Parchis"], ["Oca"]]
+>>>>>>> 3613964353302bbaa3eb395820c439dc837167dd

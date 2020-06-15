@@ -9,9 +9,8 @@
     <!-- Start of conversation -->
     <category>
         <pattern>HI ^</pattern>
-        <template>Hi,<get name="username"></get>, what is your name?</template>
+        <template>Hi,<get name="username"></get>, how are you?</template>
     </category>
-    
     
     <category>
         <pattern>HELLO ^</pattern>
@@ -19,8 +18,33 @@
     </category>
     
     <category>
+        <pattern>* HOW ARE YOU</pattern>
+        <template>I am fine. And you?</template>
+    </category>
+    
+    <category>
         <pattern># FINE ^</pattern>
-        <template>I am fine too</template>
+        <template>Me too. How are feeling today?</template>
+    </category>
+    
+    <category>
+        <pattern>* AND YOU</pattern>
+        <template><srai><star index = "1"/> FINE <star index = "2"/></srai></template>
+    </category>
+    
+    <category>
+            <pattern>* <set>emotions</set> *</pattern>
+            <template>I celebrate that you are <star index = "2"/> today. It is important to avoid bad thoughts.</template>
+    </category>
+    
+    <category>
+            <pattern>* <set>emotions</set></pattern>
+            <template>I celebrate that you are <star index = "2"/> today. It is important to avoid bad thoughts.</template>
+    </category>
+    
+    <category>
+            <pattern><set>emotions</set></pattern>
+            <template>I celebrate that you are <star/> today. It is important to avoid bad thoughts.</template>
     </category>
     
     <category>
@@ -31,29 +55,49 @@
     <category>
         <pattern>YES</pattern>
         <that>^ YOUR NAME ^</that>
-        <template>Nice to meet you!</template>
+        <template><srai>HI <get name="username"></get></srai></template>
     </category>
     
     <category>
         <pattern>NO</pattern>
         <that>^ YOUR NAME ^</that>
-        <template>What is your name?</template>
-    </category>
-    
-    <category>
-        <pattern>I AM _</pattern>
         <template>
-            <think>
-               <set name="username"><star index="1"/></set> 
-            </think>
-            Hi, <get name="username"></get>. Nice to meet you!
+            <think><set name='topic'>NAME</set></think>
+            What is your name?
         </template>
     </category>
     
-    <category>
-        <pattern>* NAME IS *</pattern>
-        <template><srai>I AM <star index="2"/></srai></template>
-    </category>
+    
+    <!-- Possible questions to get the name of the user -->
+    <topic name='NAME'>
+        
+        <category>
+            <pattern>I AM *</pattern>
+            <template>
+                <think><set name="username"><star index="1"/></set></think>
+                <srai>HI <get name="username"></get></srai>
+                <think><set name='topic'></set></think>
+            </template>
+        </category>
+        
+        <category>
+            <pattern>* NAME IS *</pattern>
+            <template>
+                <srai>I AM <star index="2"/></srai>
+                <think><set name='topic'></set></think>
+            </template>
+        </category>
+        
+        <category>
+            <pattern>*</pattern>
+            <template>
+                <srai>I AM <star/></srai>
+                <think><set name='topic'></set></think>
+            </template>
+        </category>
+        
+    </topic>
+    
     
 	 <category> 
       <pattern>WELKY</pattern>
@@ -76,6 +120,24 @@
           <li>I am having a good time talking to you.</li>
         </random>
       </template>
+    </category>
+    
+    <category> 
+      <pattern>* SOMETHING ^</pattern>
+      <template> 
+        <random>
+            <li>Tell me about your children.<srai>^ MY CHILDREN</srai></li>
+            <li> Tell me about your grandchildren.<srai>^ MY GRANDCHILDREN</srai></li>
+            <li> Tell me about your pets.<srai>^ MY PET</srai></li>
+            <li> Tell me about your friends.<srai>^ MY FRIEND</srai></li>
+            <li> Tell me about your hobbies. <srai>^ MY HOBBIES</srai></li>
+        </random>
+      </template>
+    </category>
+    
+    <category> 
+      <pattern>* TALK ^</pattern>
+      <template><srai>* SOMETHING ^</srai></template>
     </category>
     
     <category>
@@ -105,12 +167,13 @@
         </category>
         
         <category>
-            <pattern>I <set>like</set> READING <set>booktypes</set> ^</pattern>
-            <template>
-            <think>
-               <set name="favbook"><star index="2"/></set> 
-            </think>
-            Yes, <get name="favbook"/> books are my preferred too.</template>
+            <pattern>I LOVE READING <set>booktypes</set> ^</pattern>
+            <template>Yes, <star/> books are my preferred too.</template>
+        </category>
+        
+        <category>
+            <pattern>I LIKE READING <set>booktypes</set> ^</pattern>
+            <template>Yes, <star/> books are my preferred too.</template>
         </category>
         
         <category>

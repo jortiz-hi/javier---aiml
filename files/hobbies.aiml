@@ -1,16 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
+	<!-- insert your AIML categories here -->
 	
     	<category>
     	    <pattern>^ MY HOBBIES</pattern>
     	    <template>
     	        Are you interested in outdoor activities?
-    	        </template>
+    	    </template>
         </category>
 
         <category>
             <that>ARE YOU INTERESTED IN OUTDOOR ACTIVITIES</that>
-            <pattern>$YES ^</pattern>
+            <pattern>yes ^</pattern>
+            <template>
+                <think><set name='topic'>OUTDOOR</set></think>
+                <think><set name='outdoor_activities'>yes</set></think>
+                Oh, what outdoor activity are you interested in?
+            </template>
+        </category>
+        
+        <category>
+            <that>PLEASE, ANSWER YES OR NO.ARE YOU INTERESTED IN OUTDOOR ACTIVITIES</that>
+            <pattern>yes ^</pattern>
             <template>
                 <think><set name='topic'>OUTDOOR</set></think>
                 <think><set name='outdoor_activities'>yes</set></think>
@@ -20,11 +31,19 @@
         
         <category>
             <that>ARE YOU INTERESTED IN OUTDOOR ACTIVITIES</that>
-            <pattern>$NO ^</pattern>
+            <pattern>no ^</pattern>
             <template>
                 <think><set name='outdoor_activities'>no</set></think>
                 That's a pity! Do you usually do any activity in your daily life?
-                
+            </template>
+        </category>
+        
+        <category>
+            <that>PLEASE, ANSWER YES OR NO.ARE YOU INTERESTED IN OUTDOOR ACTIVITIES</that>
+            <pattern>no ^</pattern>
+            <template>
+                <think><set name='outdoor_activities'>no</set></think>
+                That's a pity! Do you usually do any activity in your daily life?
             </template>
         </category>
         
@@ -32,14 +51,14 @@
             <that>ARE YOU INTERESTED IN OUTDOOR ACTIVITIES</that>
             <pattern>*</pattern>
             <template>
-                Please, answer yes or no. Are you interested in outdoor activities?
-                
+                Please, answer yes or no.
+                <srai>^ MY HOBBIES</srai>
             </template>
         </category>
         
         <category>
             <that>DO YOU USUALLY DO ANY ACTIVITY IN YOUR DAILY LIFE</that>
-            <pattern>$YES ^</pattern>
+            <pattern>Yes ^</pattern>
             <template>
                 <think><set name='topic'>DAILY</set></think>
                 What kind of activity do you usually do?
@@ -48,7 +67,7 @@
         
         <category>
             <that>DO YOU USUALLY DO ANY ACTIVITY IN YOUR DAILY LIFE</that>
-            <pattern>$NO ^</pattern>
+            <pattern>No ^</pattern>
             <template>That's a pity.</template>
         </category>
 	
@@ -342,11 +361,5 @@
                 <get name='fav_sport'/> is very interesting.
             </template>
         </category>
-        
-	    
 	</topic>
-	
-	
-	
-	
 </aiml>

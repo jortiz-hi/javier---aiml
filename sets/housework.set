@@ -1,14 +1,1 @@
-[
-["Washing", "the", "floor"],
-["Cleaning", "the", "car"],
-["Weeding", "the", "garden"],
-["Washing", "Dishes"],
-["Feeding", "Pets"],
-["Doing", "Laundry"],
-["Preparing", "meals"],
-["Cleaning", "Bathrooms"],
-["Prune", "trees"],
-["Dusting"],
-["Sweeping"],
-["Vacuuming"]
-]
+[["Washing the floor"], ["Cleaning the car"], ["Weeding the garden"], ["Washing Dishes"], ["Feeding Pets"], ["Doing Laundry"], ["Preparing meals"], ["Cleaning Bathrooms"], ["Prune trees"], ["Dusting"], ["Sweeping"], ["Vacuuming"]]
