@@ -302,8 +302,8 @@
     	    <that>WHAT IS THE NAME OF YOUR *</that>
     	    <pattern>*</pattern>
     	    <template>
-    	        <think><set name='name_child'><star/></set></think>
-    	        I would like to know <get name='name_child'/>!
+    	        <think><set name='name_children'><star/></set></think>
+    	        I would like to know <get name='name_children'/>!
     	    </template>
         </category>
         
@@ -455,8 +455,8 @@
     	    <that>WHAT IS THE NAME OF YOUR *</that>
     	    <pattern>*</pattern>
     	    <template>
-    	        <think><set name='name_grandchild'><star/></set><set name='topic'></set></think>
-    	        I would like to know <get name='name_grandchild'/>!
+    	        <think><set name='name_grandchildren'><star/></set><set name='topic'></set></think>
+    	        I would like to know <get name='name_grandchildren'/>!
     	    </template>
         </category>
         
