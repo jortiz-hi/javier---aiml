@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	<!-- In case the coach has no answer -->
+    <category>
+    <pattern>*</pattern>
+    <template><srai>* ALGO ^</srai></template>
+    </category>
+    
+    <!-- Start of conversation -->
+    <category>
+        <pattern>HOLA ^</pattern>
+        <template>Hola,<get name="username"></get>, ¿cómo estás?</template>
+    </category>
+    
+    <category>
+        <pattern>BUENOS DÍAS ^</pattern>
+        <template><srai>Hola <get name="username"></get></srai></template>
+    </category>
+    
+    <category>
+        <pattern>* ¿CÓMO ESTAS</pattern>
+        <template>Estoy bien. ¿Tú cómo estás?</template>
+    </category>
+    
+    <category>
+        <that>* ¿CÓMO ESTÁS ^</that>   
+        <pattern>^ BIEN ^</pattern>
+        <template>Yo también. ¿Cómo te sientes hoy?</template>
+    </category>
+    
+    <category>
+        <pattern>^ Y TÚ</pattern>
+        <template><srai><star index = "1"/> FINE <star index = "2"/></srai></template>
+    </category>
+    
+    <category>
+            <pattern>* <set>emociones</set> *</pattern>
+            <template>Celebro que estés <star index = "2"/> hoy. Es importante evitar malos pensamientos.</template>
+    </category>
+    
+    <category>
+            <pattern>* <set>emociones</set></pattern>
+            <template>Celebro que estés <star index = "2"/> hoy. Es importante evitar malos pensamientos.</template>
+    </category>
+    
+    <category>
+            <pattern><set>emociones</set></pattern>
+            <template>Celebro que estés <star/> hoy. Es importante evitar malos pensamientos.</template>
+    </category>
+    
+    <category>
+            <pattern>MI NOMBRE ES *</pattern>
+            <template>
+                <think><set name="username"><star index="1"/></set></think>
+                <srai>Hola <get name="username"></get></srai>
+            </template>
+        </category>
+    
+    <category>
+        <pattern>^ TU NOMBRE ^</pattern>
+        <template>Mi nombre es Wellky. Tu nombre es <get name="username"></get>, ¿correcto?</template>
+    </category>
+    
+    <category>
+        <that>^ TU NOMBRE ^</that>
+        <pattern>SI</pattern>
+        <template><srai>HOLA <get name="username"></get></srai></template>
+    </category>
+    
+    <category>
+        <that>^ TU NOMBRE ^</that>
+        <pattern>SÍ</pattern>
+        <template><srai>SI</srai></template>
+    </category>
+    
+    <category>
+        <pattern>NO</pattern>
+        <that>^ TU NOMBRE ^</that>
+        <template>
+            <think><set name='topic'>NAME</set></think>
+            ¿Cuál es tu nombre?
+        </template>
+    </category>
+    
+    <category>
+        <pattern>GRACIAS</pattern>
+        <template>De nada</template>
+    </category>
+    
+    <category>
+        <pattern>OK</pattern>
+        <template>Me encanta que nos entendamos</template>
+    </category>
+    
+    <category>
+        <pattern>VALE</pattern>
+        <template><srai>OK</srai></template>
+    </category>
+    
+    
+    <!-- Possible questions to get the name of the user -->
+    <topic name='NAME'>
+        
+        <category>
+            <pattern>SOY *</pattern>
+            <template>
+                <think><set name="username"><star index="1"/></set></think>
+                <srai>HOLA <get name="username"></get></srai>
+                <think><set name='topic'></set></think>
+            </template>
+        </category>
+        
+        <category>
+            <pattern>* NOMBRE ES *</pattern>
+            <template>
+                <srai>SOY <star index="2"/></srai>
+                <think><set name='topic'></set></think>
+            </template>
+        </category>
+        
+        <category>
+            <pattern>*</pattern>
+            <template>
+                <srai>SOY <star/></srai>
+                <think><set name='topic'></set></think>
+            </template>
+        </category>
+        
+    </topic>
+    
+    
+	 <category> 
+      <pattern>WELLKY</pattern>
+      <template> 
+        <random> 
+          <li>¿sí?</li>
+          <li>Dime</li>
+        </random>
+      </template>
+    </category>
+    
+    
+    
+    <!-- Body of conversation -->
+    <category> 
+      <pattern>* HACIENDO AHORA ^</pattern>
+      <template> 
+        <random> 
+          <li>Estoy hablando contigo.</li>
+          <li>Pasando un buen rato hablando contigo.</li>
+        </random>
+      </template>
+    </category>
+    
+    <category> 
+      <pattern>* ALGO ^</pattern>
+      <template> 
+        <random>
+            <li> No te he entendido bien. Qué te parece si hablamos sobre tus hijos.<srai>^ MIS HIJOS</srai></li>
+            <li> No te he entendido bien. Qué te parece si hablamos sobre tus nietos.<srai>^ MIS NIETOS</srai></li>
+            <li> No te he entendido bien. Qué te parece si hablamos sobre tus mascotas.<srai>^ MI MASCOTA</srai></li>
+            <li> No te he entendido bien. Qué te parece si hablamos sobre tus amigos.<srai>^ MI AMIGO</srai></li>
+            <li> No te he entendido bien. Qué te parece si hablamos sobre tus aficiones. <srai>^ MIS AFICIONES</srai></li>
+        </random>
+      </template>
+    </category>
+    
+    <category> 
+      <pattern>* HABLAR ^</pattern>
+      <template><srai>* ALGO ^</srai></template>
+    </category>
+    
+    <category>
+        <pattern>* NOTICIAS ^</pattern>
+        <template>
+            Puedes acceder a algunas noticias aquí:
+            <random>
+                <li><link><text>El Mundo</text><url>https://www.elmundo.es</url></link></li>
+                <li><link><text>El País</text><url>https://elpais.com</url></link></li>
+                <li><link><text>Revista Hola</text><url>https://www.hola.com</url></link></li>
+            </random>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>* LIBROS</pattern>
+        <template>Sí, me gusta leer.
+        <think><set name="topic">BOOKS</set></think>
+        </template>
+    </category>
+    
+    <topic name="BOOKS">
+        
+        <category>
+            <pattern>A MÍ TAMBIÉN</pattern>
+            <template>¿Y qué tipo de libros te gustán?</template>
+        </category>
+        
+        <category>
+            <pattern>ME ENCANTA LEER SOBRE <set>tiposdelibros</set> ^</pattern>
+            <template>Sí, los libros sobre <star/> son mis preferidos.</template>
+        </category>
+        
+        <category>
+            <pattern>ME GUSTA LEER SOBRE <set>tiposdelibros</set> ^</pattern>
+            <template>Sí, los libros sobre <star/> son mis preferidos.</template>
+        </category>
+        
+        <category>
+            <pattern>* ESTÁS LEYENDO ^</pattern>
+            <template>Estoy leyendo Harry Potter y La Piedra Filosofal.Es un poco viejo pero me encanta. ¿Y tú?</template>
+        </category>
+        
+        <category>
+            <pattern>_ ESTOY LEYENDO *</pattern>
+            <template><star index="2"/> es un buen libro también.</template>
+        </category>
+        
+    </topic>
+    
+    <!-- End of conversation -->
+	<category>
+    <pattern>ADIÓS ^</pattern>
+    <template> 
+      <random>
+        <li>Adiós.</li>
+        <li>Nos vemos.</li>
+		<li>Un placer hablar contigo.</li>
+      </random>
+    </template>
+    </category>
+  
+    <category>
+    <pattern>HASTA LUEGO ^</pattern>
+    <template> <srai>ADIÓS ^</srai>
+    </template>
+    </category>
+    
+    <category>
+    <pattern>* TERMINA LA CONVERSACIÓN</pattern>
+    <template> <srai>ADIÓS ^</srai>
+    </template>
+    </category>
+    
+</aiml>
