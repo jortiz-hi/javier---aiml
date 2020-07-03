@@ -3,137 +3,138 @@
 	<!-- insert your AIML categories here -->
 	
     	<category>
-    	    <pattern>^ MIS HOBBIES</pattern>
+    	    <pattern>^ MIEI HOBBY</pattern>
     	    <template>
-    	        ¿Estas interesado o interesada en actividades al aire libre? 
+    	        Sei interessato ad attività all'aperto?
     	    </template>
         </category>
 
         <category>
-            <that> ESTAS INTERESADO O INTERESADA EN ACTIVIDADES AL AIRE LIBRE</that>
+            <that> SEI INTERESSATO AD ATTIVITÀ ALL'APERTO</that>
             <pattern>SI ^</pattern>
             <template>
                 <think><set name='topic'>OUTDOOR</set></think>
                 <think><set name='outdoor_activities'>yes</set></think>
-                ¡Anda! ¿En que actividad al aire libre estas interesado o interesada?
+                Quanto è buono! A quale attività all'aperto sei interessato?
             </template>
         </category>
-        
+
         <category>
-            <that>POR FAVOR, RESPONDE SI O NO. ESTAS INTERESADO O INTERESADA EN ACTIVIDADES AL AIRE LIBRE</that>
+            <that>SI PREGA DI RISPONDERE SÌ O NO. SEI INTERESSATO AD ATTIVITÀ ALL'APERTO</that>
             <pattern>SI ^</pattern>
             <template>
                 <think><set name='topic'>OUTDOOR</set></think>
                 <think><set name='outdoor_activities'>yes</set></think>
-                ¡Anda! ¿En que actividad al aire libre estas interesado o interesada?
+                Quanto è buono! A quale attività all'aperto sei interessato?
             </template>
         </category>
         
         <category>
-            <that>ESTAS INTERESADO O INTERESADA EN ACTIVIDADES AL AIRE LIBRE</that>
+            <that>SEI INTERESSATO AD ATTIVITÀ ALL'APERTO</that>
             <pattern>NO ^</pattern>
             <template>
                 <think><set name='outdoor_activities'>no</set></think>
-                ¡Que pena! ¿Sueles hacer alguna actividad en tu dia a dia?
+                Che peccato! Di solito svolgi attività quotidiane?
             </template>
         </category>
-        
+
         <category>
-            <that>POR FAVOR, RESPONDE SI O NO. ESTAS INTERESADO O INTERESADA EN ACTIVIDADES AL AIRE LIBRE</that>
+            <that>SI PREGA DI RISPONDERE SÌ O NO. SEI INTERESSATO AD ATTIVITÀ ALL'APERTO</that>
             <pattern>NO ^</pattern>
             <template>
-                <think><set name='outdoor_activities'>no</set></think>
-                ¡Que pena! ¿Sueles hacer alguna actividad en tu dia a dia?
+                <think><set name='topic'>OUTDOOR</set></think>
+                <think><set name='outdoor_activities'>yes</set></think>
+                Che peccato! Di solito svolgi attività quotidiane?
             </template>
         </category>
         
         <category>
-            <that>ESTAS INTERESADO O INTERESADA EN ACTIVIDADES AL AIRE LIBRE</that>
+            <that>SEI INTERESSATO AD ATTIVITÀ ALL'APERTO</that>
             <pattern>*</pattern>
             <template>
-                Por favor, responde si o no.
-                <srai>^ MIS HOBBIES</srai>
+                Si prega di rispondere sì o no.
+                <srai>^ MIEI HOBBY</srai>
             </template>
         </category>
         
         <category>
-            <that>SUELES HACER ALGUNA ACTIVIDAD EN TU DIA A DIA</that>
+            <that>DI </that>
             <pattern>SI ^</pattern>
             <template>
                 <think><set name='topic'>DAILY</set></think>
-                ¿Que tipo de actividad sueles hacer?
+                Che tipo di attività fai di solito?
             </template>
         </category>
         
         <category>
-            <that>SUELES HACER ALGUNA ACTIVIDAD EN TU DIA A DIA</that>
+            <that>DI SOLITO SVOLGI ATTIVITÀ QUOTIDIANE</that>
             <pattern>NO ^</pattern>
-            <template>Que pena.</template>
+            <template>Che peccato.</template>
         </category>
 	
 	<topic name='OUTDOOR'>
 	    
         
         <category>
-            <that>^ EN QUE ACTIVIDAD AL AIRE LIBRE ESTAS INTERESADO O INTERESADA WHAT OUTDOOR ACTIVITY ARE YOU INTERESTED IN</that>
-            <pattern><set>actividadesalairelibre</set></pattern>
+            <that>^ A QUALE ATTIVITÀ ALL'APERTO SEI INTERESSATO</that>
+            <pattern><set>attivitaallaperto</set></pattern>
             <template>
                 <think><set name='fav_out_activity'><star/></set></think>
-                Hala, <star/> es muy  interesante.
-                ¿Con que frecuencia lo haces?
+                Wow, <star/> è molto interessante.
+                Quanto spesso lo fai?
             </template>
         </category>
         
         <category>
-            <that>^ EN QUE ACTIVIDAD AL AIRE LIBRE ESTAS INTERESADO O INTERESADA</that>
-            <pattern>EN <set>actividadesalairelibre</set></pattern>
+            <that>^ A QUALE ATTIVITÀ ALL'APERTO SEI INTERESSATO</that>
+            <pattern>NEL <set>attivitaallaperto</set></pattern>
             <template>
                 <srai><star/></srai>
             </template>
         </category>
         
         <category>
-            <that>^ EN QUE ACTIVIDAD AL AIRE LIBRE ESTAS INTERESADO O INTERESADA</that>
-            <pattern>^ <set>gustos</set> <set>actividadesalairelibre</set></pattern>
+            <that>^ A QUALE ATTIVITÀ ALL'APERTO SEI INTERESSATO</that>
+            <pattern>^ <set>piaceri</set> <set>attivitaallaperto</set></pattern>
             <template>
                 <srai><star index='3'/></srai>
             </template>
         </category>
         
         <category>
-            <that>^ EN QUE ACTIVIDAD AL AIRE LIBRE ESTAS INTERESADO O INTERESADA</that>
-            <pattern>^ <set>gustos</set> *</pattern>
+            <that>^ A QUALE ATTIVITÀ ALL'APERTO SEI INTERESSATO</that>
+            <pattern>^ <set>piaceri</set> *</pattern>
             <template>
                 <think><set name='fav_out_activity'><star index='3'></star></set></think>
-                ¡Que guay! Ojala yo pudiera hacer alguna actividad al aire libre tambien.
-                ¿Con que frecuencia lo haces?
+                Fantastico! Vorrei poter fare anche qualche attività all'aperto.
+                Quanto spesso lo fai?
             </template>
         </category>
         
         <category>
-            <that>^ EN QUE ACTIVIDAD AL AIRE LIBRE ESTAS INTERESADO O INTERESADA</that>
+            <that>^ A QUALE ATTIVITÀ ALL'APERTO SEI INTERESSATO</that>
             <pattern>*</pattern>
             <template>
-                Lo siento, no lo he entendido. ¿En que actividad al aire libre estas interesado o interesada?
+                Mi dispiace non ho capito. A quale attività all'aperto sei interessato?
             </template>
         </category>
         
         
         <category>
-            <that>^ CON QUE FRECUENCIA LO HACES</that>
-            <pattern><set>fq_spanish</set></pattern>
+            <that>^ QUANTO SPESSO LO FAI</that>
+            <pattern><set>fq_italian</set></pattern>
             <template>
                 <think><set name='activity_fq'><star/></set></think>
-                <star/> es un buen ritmo.
+                <star/> è un buon ritmo.
                 <set name='topic'></set>
             </template>
         </category>
         
         <category>
-            <that>^ CON QUE FRECUENCIA LO HACES</that>
+            <that>^ QUANTO SPESSO LO FAI</that>
             <pattern>*</pattern>
             <template>
-                Lo siento, no lo he entendido. ¿Con que frecuencia lo haces?
+                Mi dispiace non ho capito. Quanto spesso lo fai?
             </template>
         </category>
 	    
@@ -142,25 +143,25 @@
 	<topic name='DAILY'>
 	    
 	    <category>
-	        <that>^ QUE TIPO DE ACTIVIDAD SUELES HACER </that>
+	        <that>^ CHE TIPO DI ATTIVITÀ FAI DI SOLITO</that>
 	        <pattern>^ <set>actividaddiaria</set></pattern>
 	        <template>
 	            <think><set name='fav_daily'><star index='2'></star></set></think>
-	            <get name='fav_daily'/> es interesante.
+	            <get name='fav_daily'/> è interessante.
 	            <srai><get name='fav_daily'/></srai>
 	        </template>
         </category>
         
         <category>
-            <pattern>VER LA TELEVISION</pattern>
+            <pattern>GUARDARE LA TV</pattern>
             <template>
-                ¿Que programas te gustan?
+                Quali programmi ti piacciono?
             </template>
         </category>
         
         <category>
-            <that>QUE PROGRAMAS TE GUSTAN</that>
-            <pattern><set>television</set></pattern>
+            <that>QUALI PROGRAMMI TI PIACCIONO</that>
+            <pattern><set>televisionitalian</set></pattern>
             <template>
             <think><set name='fav_tvshow'><star/></set></think>
             Ya veo...
@@ -170,176 +171,176 @@
         </category>
         
         <category>
-            <pattern>LEER LIBROS</pattern>
+            <pattern>LEGGERE LIBRI</pattern>
             <template>
-                ¿Sobre que te gusta leer?
+                Cosa ti piace leggere?
             </template>
         </category>
         
         <category>
-            <that>SOBRE QUE TE GUSTA LEER</that>
-            <pattern><set>tiposdelibros</set></pattern>
+            <that>COSA TI PIACE LEGGERE</that>
+            <pattern><set>tipodilibri</set></pattern>
             <template>
                 <think><set name='fav_book'><star/></set></think>
-                Interesante.
+                Interessante.
             <think><set name='topic'></set></think>
             </template>
         </category>
         
         <category>
-            <pattern>ESCUCHAR LA RADIO</pattern>
+            <pattern>ASCOLTA LA RADIO</pattern>
             <template>
-                ¿Que programas te gustan?
+                quali programmi ti piacciono?
             </template>
         </category>
 	    
 	    <category>
-	        <that>QUE PROGRAMAS TE GUSTAN</that>
+	        <that>QUALI PROGRAMMI TI PIACCIONO</that>
 	        <pattern><set>radio</set></pattern>
 	        <template>
 	            <think><set name='fav_radio'><star/></set></think>
-	            De acuerdo.
+	            Essere d'accordo.
                 <think><set name='topic'></set></think>
 	        </template>
         </category>
 	    
 	    <category>
-	        <pattern>ESCUCHAR MUSICA</pattern>
+	        <pattern>ASCOLTARE LA MUSICA</pattern>
 	        <template>
-	            ¿Que tipo de musica te gusta?
+	            Che tipo di musica ti piace?
 	        </template>
         </category>
         
         <category>
-            <that>QUE TIPO DE MUSICA TE GUSTA</that>
+            <that>CHE TIPO DI MUSICA TI PIACE</that>
             <pattern><set>musica</set></pattern>
             <template>
                 <think><set name='fav_music'><star/></set></think>
-                Guay.
+                Freddo.
                 <think><set name='topic'></set></think>
             </template>
         </category>
         
         <category>
-            <pattern>PINTAR</pattern>
+            <pattern>DIPINGERE</pattern>
             <template>
-                ¿Que tipo de pintura te gusta?
+                Che tipo di pittura ti piace?
             </template>
         </category>
         
         <category>
-            <that>QUE TIPO DE PINTURA TE GUSTA</that>
-            <pattern><set>pinturas</set></pattern>
+            <that>CHE TIPO DI PITTURA TI PIACE</that>
+            <pattern><set>dipinti</set></pattern>
             <template>
                 <think><set name='fav_painting'><star/></set></think>
-                <get name='fav_painting'/> pintar es guay.
+                Dipingere <get name='fav_painting'/> è divertente.
             </template>
         </category>
         
         <category>
-            <pattern>JUGAR A JUEGOS DE MESA</pattern>
+            <pattern>GIOCA GIOCHI DA TAVOLO</pattern>
             <template>
-                ¿Que tipo de juegos de mesa te gustan?
+                Quali tipi di giochi da tavolo ti piacciono?
             </template>
         </category>
         
         <category>
-            <that>QUE TIPO DE JUEGOS DE MESA TE GUSTAN</that>
-            <pattern><set>juegosdemesa</set></pattern>
+            <that>QUALE TIPO DI GIOCHI DA TAVOLA TI PIACE</that>
+            <pattern><set>giochidatavolo</set></pattern>
             <template>
                 <think><set name='fav_boardgame'><star/></set></think>
-                Esta bien.
+                Va bene.
             </template>
         </category>
         
         <category>
-            <pattern>JARDINERIA</pattern>
+            <pattern>GIARDINAGGIO</pattern>
             <template>
-                ¿Que tipo de plantas te gusta cultivar?
+                Che tipo di piante ti piace coltivare?
             </template>
         </category>
         
         <category>
-            <that>QUE TIPO DE PLANTAS TE GUSTA CULTIVAR</that>
-            <pattern><set>jardineria</set></pattern>
+            <that>CHE TIPO DI PIANTE TI PIACE COLTIVARE</that>
+            <pattern><set>GIARDINAGGIO</set></pattern>
             <template>
                 <think><set name='fav_plant'><star/></set></think>
-                Me encantaria cultivar plantas tambien.
+                Mi piacerebbe coltivare anche le piante.
             </template>
         </category>
         
         <category>
-            <pattern>ANIMALES</pattern>
+            <pattern>ANIMALI</pattern>
             <template>
-                ¿Que animales te gustan?
+                Quali animali ti piacciono?
             </template>
         </category>
         
         <category>
-            <that>QUE ANIMALES TE GUSTAN</that>
-            <pattern><set>animales</set></pattern>
+            <that>QUALI ANIMALI TI PIACCIONO</that>
+            <pattern><set>animali</set></pattern>
             <template>
                 <think><set name='fav_animal'><star/></set></think>
-                ¡<get name='fav_animal'/> son geniales!
+                <get name='fav_animal'/> sono fantastici!
             </template>
         </category>
         
         <category>
-            <pattern>VER PELICULAS</pattern>
+            <pattern>GUARDARE FILM</pattern>
             <template>
-                ¿Que tipo de peliculas te gustan?
+                Che tipo di film ti piacciono?
             </template>
         </category>
         
         <category>
-            <that>QUE TIPO DE PELICULAS TE GUSTAN</that>
-            <pattern><set>peliculas</set></pattern>
+            <that>CHE TIPO DI FILM TI</that>
+            <pattern><set>film</set></pattern>
             <template>
                 <think><set name='fav_movie'><star/></set></think>
-                ¡Me encanta el cine tambien!
+                Adoro anche il cinema!
             </template>
         </category>
         
         <category>
-            <pattern>IR AL CAMPO</pattern>
+            <pattern>VAI IN CAMPO</pattern>
             <template>
-                ¿Que te gusta del campo?
+                Cosa ti piace del campo?
             </template>
         </category>
         
         <category>
-            <that>QUE TE GUSTA DEL CAMPO</that>
+            <that>COSA TI PIACE DEL CAMPO</that>
             <pattern><set>campo</set></pattern>
             <template>
                 <think><set name='fav_country'><star/></set></think>
-                El campo es muy guay.
+                Il campo è molto bello.
             </template>
         </category>
         
         <category>
-            <pattern>TAREAS DEL HOGAR</pattern>
+            <pattern>COMPITI A CASA</pattern>
             <template>
-                ¿En que tipo de tareas del hogar estas interesado o interesada?
+                A quale tipo di faccende domestiche sei interessato?
             </template>
         </category>
         
         <category>
-            <that>EN QUE TIPO DE TAREAS DEL HOGAR ESTAS INTERESADO O INTERESADA</that>
-            <pattern><set>tareasdelhogar</set></pattern>
+            <that>A QUALE TIPO DI FACCENDE DOMESTICHE SEI INTERESSATO</that>
+            <pattern><set>compitiacasa</set></pattern>
             <template>
                 <think><set name='fav_housework'><star/></set></think>
             </template>
         </category>
         
         <category>
-            <pattern>MANUALIDADES</pattern>
+            <pattern>ARTIGIANATO</pattern>
             <template>
-                ¿Por que estas interesado o interesada en las manualidades?
+                Perché sei interessato all'artigianato?
             </template>
         </category>
         
         <category>
-            <that>POR QUE ESTAS INTERESADO O INTERESADA EN LAS MANUALIDADES</that>
+            <that>PERCHÉ SEI INTERESSATO ALL'ARTIGIANATO</that>
             <pattern>*</pattern>
             <template>
                 <think><set name='fav_handcraft'><star/></set></think>
@@ -347,18 +348,18 @@
         </category>
         
         <category>
-            <pattern>DEPORTE</pattern>
+            <pattern>SPORT</pattern>
             <template>
-                ¿Que tipo de deporte te interesa?
+                A quale tipo di sport sei interessato?
             </template>
         </category>
         
         <category>
-            <that>QUE TIPO DE DEPORTE TE INTERESA</that>
-            <pattern><set>deporte</set></pattern>
+            <that>A QUALE TIPO DI SPORT SEI INTERESSATO</that>
+            <pattern><set>sport</set></pattern>
             <template>
                 <think><set name='fav_sport'><star/></set></think>
-                <get name='fav_sport'/> es muy interesante.
+                <get name='fav_sport'/> è molto interessante.
             </template>
         </category>
 	</topic>
