@@ -18,18 +18,18 @@
     </category>
     
     <category>
-        <pattern>* ¿COME STAI</pattern>
+        <pattern>* COME STAI</pattern>
         <template>Sto bene. Come stai?</template>
     </category>
     
     <category>
-        <that>* ¿COME STAI ^</that>   
+        <that>* COME STAI ^</that>   
         <pattern>^ BENE ^</pattern>
         <template>Anche io. Come ti senti oggi?</template>
     </category>
     
     <category>
-        <pattern>^ E TU?</pattern>
+        <pattern>^ E TU</pattern>
         <template><srai><star index = "1"/> BENE <star index = "2"/></srai></template>
     </category>
     
