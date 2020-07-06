@@ -3,7 +3,7 @@
 	<!-- In case the coach has no answer -->
     <category>
     <pattern>*</pattern>
-    <template>Scusa, non ti ho capito.</template>
+    <template><srai>* QUALCOSA ^</srai></template>
     </category>
     
     <!-- Start of conversation -->
@@ -62,21 +62,35 @@
     </category>
     
     <category>
-        <pattern>SI</pattern>
         <that>^ IL TUO NOME ^</that>
+        <pattern>SI</pattern>
         <template><srai>CIAO <get name="username"></get></srai></template>
     </category>
     
     <category>
-        <pattern>NO</pattern>
         <that>^ IL TUO NOME ^</that>
+        <pattern>NO</pattern>
         <template>
             <think><set name='topic'>NOME</set></think>
             Come ti chiami?
         </template>
     </category>
     
-    
+    <category>
+        <pattern>GRAZIE</pattern>
+        <template>Prego.</template>
+    </category>
+
+    <category>
+        <pattern>OK</pattern>
+        <template>Adoro che ci capiamo.</template>
+    </category>
+
+    <category>
+        <pattern>VA BENE</pattern>
+        <template><srai>OK</srai></template>
+    </category>
+
     <!-- Possible questions to get the name of the user -->
     <topic name='NAME'>
         
@@ -91,14 +105,6 @@
         
         <category>
             <pattern>* MIO NOME ES *</pattern>
-            <template>
-                <srai>SONO <star index="2"/></srai>
-                <think><set name='topic'></set></think>
-            </template>
-        </category>
-        
-        <category>
-            <pattern>* CHIAMO *</pattern>
             <template>
                 <srai>SONO <star index="2"/></srai>
                 <think><set name='topic'></set></think>
@@ -143,11 +149,11 @@
       <pattern>* QUALCOSA ^</pattern>
       <template> 
         <random>
-            <li> Parlami dei tuoi figli.<srai>^ I MIEI FIGLI ^</srai></li>
-            <li> Parlami dei tuoi nipoti.<srai>^ I MIEI NIPOTI ^</srai></li>
-            <li> Parlami dei tuoi animali domestici.<srai>^ I MIEI ANIMALI ^</srai></li>
-            <li> Parlami dei tuoi amici.<srai>^ MIO AMICO</srai></li>
-            <li> Parlami dei tuoi hobby. <srai>^ I MIEI HOBBY</srai></li>
+            <li> Non ti ho capito bene. Cosa ne pensi se parliamo dei tuoi figli.<srai>^ I MIEI FIGLI ^</srai></li>
+            <li> Non ti ho capito bene. Cosa ne pensi se parliamo dei tuoi nipoti.<srai>^ I MIEI NIPOTI ^</srai></li>
+            <li> Non ti ho capito bene. Cosa ne pensi se parliamo dei tuoi animali.<srai>^ I MIEI ANIMALI ^</srai></li>
+            <li> Non ti ho capito bene. Cosa ne pensi se parliamo dei tuoi amici.<srai>^ MIO AMICO</srai></li>
+            <li> Non ti ho capito bene. Cosa ne pensi se parliamo dei tuoi hobby. <srai>^ I MIEI HOBBY</srai></li>
         </random>
       </template>
     </category>
@@ -158,13 +164,13 @@
     </category>
     
     <category>
-        <pattern>* NOTICIAS ^</pattern>
+        <pattern>* NOTIZIA ^</pattern>
         <template>
             Puoi accedere ad alcune notizie qui:
             <random>
-                <li><link><text>BBC News</text><url>https://www.bbc.com/news</url></link></li>
-                <li><link><text>The Sun</text><url>https://www.thesun.co.uk</url></link></li>
-                <li><link><text>Daily Mail</text><url>https://www.dailymail.co.uk/home/index.html</url></link></li>
+                <li><link><text>RaiNews</text><url>https://www.rainews.it/</url></link></li>
+                <li><link><text>TGCOM24</text><url>https://www.tgcom24.mediaset.it/?refresh_ce</url></link></li>
+                <li><link><text>ilsole 24ore</text><url>https://www.ilsole24ore.com/sez/italia</url></link></li>
             </random>
         </template>
     </category>
@@ -179,8 +185,13 @@
     <topic name="BOOKS">
         
         <category>
-            <pattern>ANCH'IO</pattern>
+            <pattern>ANCHE IO</pattern>
             <template>Che tipo di libri ti piacciono?</template>
+        </category>
+
+         <category>
+            <pattern>ANCH'IO</pattern>
+            <template><srai>ANCHE IO</srai></template>
         </category>
         
         <category>
