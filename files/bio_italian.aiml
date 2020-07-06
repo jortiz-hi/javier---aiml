@@ -11,12 +11,20 @@
     
     <category>
         <that>LPAREN INDICA SÌ O NO RPAREN</that>
-	    <pattern>SÍ ^</pattern>
+	    <pattern>SI ^</pattern>
 	    <template>
 	        <think><set name='children'>yes</set></think>
 	        <think><set name='topic'>CHILDREN</set></think>
 	        È fantastico. Quanti figli hai?
 	    </template>
+    </category>
+
+    <category>
+        <that>LPAREN INDICA SÌ O NO RPAREN</that>
+        <pattern>SÌ</pattern>
+        <template>
+            <srai>SI ^</srai>
+        </template>
     </category>
     
     <category>
@@ -47,7 +55,7 @@
     
     <category>
         <that>LPAREN SI TIENES INDICA SÌ O INDICA NO RPAREN</that>
-	    <pattern>SÌ ^</pattern>
+	    <pattern>SI ^</pattern>
 	    <template>
 	        <think><set name="grandchildren">yes</set></think>
 	        <think><set name='topic'>GRANDCHILDREN</set></think>
@@ -55,6 +63,14 @@
 	    </template>
     </category>
     
+<category>
+        <that>LPAREN SI TIENES INDICA SÌ O INDICA NO RPAREN</that>
+        <pattern>SÌ ^</pattern>
+        <template>
+            <srai>SI ^</srai>
+        </template>
+    </category>
+
     <category>
         <that>LPAREN SI TIENES INDICA SÌ O INDICA NO RPAREN</that>
 	    <pattern>$NO ^</pattern>
@@ -75,7 +91,7 @@
     <!-- Question to start married topic -->
     <category>
         <that>MA SEI SPOSATO</that>
-	    <pattern>SÌ ^</pattern>
+	    <pattern>SI ^</pattern>
 	    <template>
 	        <think><set name="married">yes</set></think>
 	        <think><set name='topic'>MARRIED</set></think>
@@ -85,6 +101,14 @@
 	    </template>
     </category>
     
+<category>
+        <that>MA SEI SPOSATO</that>
+        <pattern>SÌ ^</pattern>
+        <template>
+            <srai>SI ^</srai>
+        </template>
+    </category>
+
     <category>
         <that>MA SEI SPOSATO</that>
 	    <pattern>$NO ^</pattern>
@@ -168,7 +192,7 @@
     </category>
 
     <category>
-        <that>HAI UN AMICO CHE DI SOLITO INCONTRI</that>
+        <that>^ HAI UN AMICO CHE DI SOLITO INCONTRI</that>
         <pattern>SI ^</pattern>
         <template>
             <think><set name='topic'>FRIEND</set></think>
@@ -176,8 +200,16 @@
         </template>
     </category>
     
+<category>
+        <that>^ HAI UN AMICO CHE DI SOLITO INCONTRI</that>
+        <pattern>SÌ ^</pattern>
+        <template>
+            <srai>SI ^</srai>
+        </template>
+    </category>
+
     <category>
-        <that>HAI UN AMICO CHE DI SOLITO INCONTRI</that>
+        <that>^ HAI UN AMICO CHE DI SOLITO INCONTRI</that>
         <pattern>NO ^</pattern>
         <template>
             Va bene avere tempo per te stesso.
@@ -185,6 +217,14 @@
         </template>
     </category>
     
+    <category>
+        <that>COSA NE PENSI SE PARLIAMO DEI TUOI AMICI. HAI UN AMICO CHE DI SOLITO INCONTRI</that>
+        <pattern>NO ^</pattern>
+        <template>
+            Va bene avere tempo per te stesso.
+            <srai>^ I MIEI ANIMALI</srai>
+        </template>
+    </category>
     
     <!-- Question about pets -->
     
@@ -288,9 +328,33 @@
     	         Mi piacerebbe incontrarli. Qual è il tuo preferito?
      	    </template>
         </category>
+
+        <category>
+            <pattern>* *</pattern>
+            <template>
+               <think><set name='fav_children'>0</set></think>
+               Sì, è difficile scegliere. Qual è il migliore?
+            </template>
+        </category>
         
         <category>
             <pattern>* NON NE HO *</pattern>
+            <template>
+               <think><set name='fav_children'>0</set></think>
+               Sì, è difficile scegliere. Qual è il migliore?
+            </template>
+        </category>
+
+        <category>
+            <pattern>^ NON NE HO *</pattern>
+            <template>
+               <think><set name='fav_children'>0</set></think>
+               Sì, è difficile scegliere. Qual è il migliore?
+            </template>
+        </category>
+
+        <category>
+            <pattern>^ NON NE HO ^</pattern>
             <template>
                <think><set name='fav_children'>0</set></think>
                Sì, è difficile scegliere. Qual è il migliore?
@@ -318,6 +382,7 @@
         </category>
         
         <category>
+            <that>QUAL È IL TUO PREFERITO</that>
             <pattern>*</pattern>
             <template>
                 <think><set name='fav_child'><star/></set></think>
@@ -332,12 +397,13 @@
         </category>
         
         <category>
-            <that>* QUALCUNO DI LORO VIVE A BREVE DISTANZA DA TE</that>
+            <that>^ QUALCUNO DI LORO VIVE A BREVE DISTANZA DA TE</that>
             <pattern>*</pattern>
             <template>
     	           <think><set name='ans1'><star/></set></think>
     	           <condition name='ans1'>
-    	               <li value='yes'>Oms?</li>
+    	               <li value='si'>Oms?</li>
+                       <li value='sì'>Oms?</li>
     	               <li value='no'>Puoi sempre effettuare una videochiamata per vederli.</li>
     	               <li>Ha ha ha. Buono a sapersi</li>
     	           </condition>
@@ -384,22 +450,35 @@
     	        </condition>
             </template>
         </category>
+
+        <category>
+            <that>QUANTI NIPOTI HAI</that>
+            <pattern>^ HO *</pattern>
+            <template>
+                <think><set name='ngrandchild'><star/><map name="stringnum"><star index= '2'/></map></set></think>
+                <condition name='ngrandchild'>
+                    <li value='1'>Qual è il nome di tuo nipoti?</li>
+                    <li value='one'>Qual è il nome di tuo nipoti?</li>
+                    <li>Wow. Quali sono i nomi dei tuoi nipoti?</li>
+                </condition>
+            </template>
+        </category>
         
         <category>
             <that>QUANTI NIPOTI HAI</that>
             <pattern>*</pattern>
             <template>
-                <think><set name='ngrandchild'><star/></set></think>
+                <think><set name='ngrandchild'><star/><map name="stringnum"><star index= '2'/></map></set></think>
                 <condition name='ngrandchild'>
     	            <li value='1'>Qual è il nome di tuo nipoti?</li>
     	            <li value='one'>Qual è il nome di tuo nipoti?</li>
-    	            <li>Wow. Quali sono i nomi dei tuoi nipoti?</li>
+    	            <li>Wow. Dimmi il nome di due di loro</li>
     	        </condition>
             </template>
         </category>
     
         <category>
-    	    <that>QUAL È IL NOME DI *</that>
+    	    <that>QUAL È IL NOME DI  tuo*</that>
     	    <pattern>*</pattern>
     	    <template>
     	        <think><set name='name_grandchildren'><star/></set><set name='topic'></set></think>
@@ -408,7 +487,7 @@
         </category>
         
         <category>
-    	    <that>COME SI CHIAMANO I TUOI FIGLI *</that>
+    	    <that>DIMMI IL NOME DI DUE DI LORO</that>
     	    <pattern>* E *</pattern>
     	    <template>
     	        <think><set name='name_grandchildren'><star/> <star index='2'/></set></think>
@@ -418,6 +497,22 @@
 	    
 	    <category>
             <pattern>* NON NE HO *</pattern>
+            <template>
+               <think><set name='fav_grandchildren'>0</set></think>
+               Sì, è difficile scegliere. Qual è il migliore?
+            </template>
+        </category>
+
+        <category>
+            <pattern>^ NON NE HO *</pattern>
+            <template>
+               <think><set name='fav_grandchildren'>0</set></think>
+               Sì, è difficile scegliere. Qual è il migliore?
+            </template>
+        </category>
+
+        <category>
+            <pattern>^ NON NE HO ^</pattern>
             <template>
                <think><set name='fav_grandchildren'>0</set></think>
                Sì, è difficile scegliere. Qual è il migliore?
@@ -445,6 +540,7 @@
         </category>
         
         <category>
+            <that>QUAL È IL TUO PREFERITO</that>
             <pattern>*</pattern>
             <template>
                 <think><set name='fav_grandchildren'><star/></set></think>
@@ -544,6 +640,14 @@
 	            <get name='supporter'/> vive vicino a te?
 	        </template>
         </category>
+
+        <category>
+            <that>SEI UNA FAMIGLIA</that>
+            <pattern>SÌ ^</pattern>
+            <template>
+                <srai>SI ^</srai>
+            </template>
+        </category>
         
         <category>
 	        <that>SEI UNA FAMIGLIA</that>
@@ -561,6 +665,14 @@
 	            Quindi è più facile ricevere il supporto necessario.
 				Vive con te?
 	        </template>
+        </category>
+
+        <category>
+            <that>* VIVE VICINO A TE</that>
+            <pattern>SÌ ^</pattern>
+            <template>
+                <srai>SI ^</srai>
+            </template>
         </category>
         
         <category>
@@ -613,6 +725,14 @@
                 Scrivi l'attività di supporto.
             </template>
         </category>
+
+        <category>
+            <that>VIVE CON TE</that>
+            <pattern>SÌ ^</pattern>
+            <template>
+                 <srai>SI ^</srai>
+            </template>
+        </category>
         
         <category>
             <that>* SCRIVI L'ATTIVITÀ DI SUPPORTO</that>
@@ -651,7 +771,7 @@
         
         <category>
             <that>DI SOLITO TI SENTI TRISTE O DEPRESSO</that>
-            <pattern>SÍ ^</pattern>
+            <pattern>SÌ ^</pattern>
             <template>
                 <srai>SI ^</srai>
             </template>
@@ -704,7 +824,7 @@
         
         <category>
             <that>* VIVE VICINO A TE</that>
-            <pattern>SÍ ^</pattern>
+            <pattern>SÌ ^</pattern>
             <template><srai>SI ^</srai></template>
         </category>
         
@@ -756,7 +876,7 @@
         
         <category>
             <that>FANTASTICO, VORRESTI INVITARE * A WELLCO</that>
-            <pattern>SÍ ^</pattern>
+            <pattern>SÌ ^</pattern>
             <template><srai>SI ^</srai></template>
         </category>
         
