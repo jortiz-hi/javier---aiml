@@ -4,8 +4,27 @@
 	
     	<category>
     	    <pattern>^ MIEI HOBBY</pattern>
-    	    <template>
-    	        Sei interessato ad attività all'aperto?
+    	    <template><random>
+    	        <li>Sei interessato ad attività all'aperto?</li>
+                 <li>
+                        <think><set name='topic'>DAILY</set></think>
+                        Di solito svolgi attività quotidiane?
+                        <ul>
+                            <li>Guardare la tv</li>
+                            <li> Leggi libri </li>
+                             <li> Ascolta la musica </li>
+                             <li> Paint </li>
+                             <li> Giardinaggio </li>
+                             <li> Prenditi cura degli animali </li>
+                             <li> Gioca a giochi da tavolo </li>
+                             <li> Guarda i film </li>
+                             <li> Vai al campo </li>
+                             <li> Lavori domestici </li>
+                             <li> Sport </li>
+                        </ul>
+                        Dì quello che corrisponde
+                    </li>
+                </random>
     	    </template>
         </category>
 
@@ -20,6 +39,14 @@
         </category>
 
         <category>
+            <that> SEI INTERESSATO AD ATTIVITÀ ALL'APERTO</that>
+            <pattern>SÌ ^</pattern>
+            <template>
+                <srai>SI ^</srai>
+            </template>
+        </category>
+
+        <category>
             <that>SI PREGA DI RISPONDERE SÌ O NO. SEI INTERESSATO AD ATTIVITÀ ALL'APERTO</that>
             <pattern>SI ^</pattern>
             <template>
@@ -30,11 +57,19 @@
         </category>
         
         <category>
+            <that>SI PREGA DI RISPONDERE SÌ O NO. SEI INTERESSATO AD ATTIVITÀ ALL'APERTO</that>
+            <pattern>SÌ ^</pattern>
+            <template>
+                <srai>SI ^</srai>
+            </template>
+        </category>
+
+        <category>
             <that>SEI INTERESSATO AD ATTIVITÀ ALL'APERTO</that>
             <pattern>NO ^</pattern>
             <template>
                 <think><set name='outdoor_activities'>no</set></think>
-                Che peccato! Di solito svolgi attività quotidiane?
+                Che peccato! È molto importante. Di solito svolgi attività quotidiane?
             </template>
         </category>
 
@@ -43,8 +78,8 @@
             <pattern>NO ^</pattern>
             <template>
                 <think><set name='topic'>OUTDOOR</set></think>
-                <think><set name='outdoor_activities'>yes</set></think>
-                Che peccato! Di solito svolgi attività quotidiane?
+                <think><set name='outdoor_activities'>no</set></think>
+                Che peccato! È molto importante. Di solito svolgi attività quotidiane?
             </template>
         </category>
         
@@ -58,18 +93,26 @@
         </category>
         
         <category>
-            <that>DI </that>
+            <that>DI SOLITO SVOLGI ATTIVITÀ QUOTIDIANE</that>
             <pattern>SI ^</pattern>
             <template>
                 <think><set name='topic'>DAILY</set></think>
                 Che tipo di attività fai di solito?
             </template>
         </category>
+
+        <category>
+            <that>DI SOLITO SVOLGI ATTIVITÀ QUOTIDIANE</that>
+            <pattern>SÌ ^</pattern>
+            <template>
+                <srai>SI ^</srai>
+            </template>
+        </category>
         
         <category>
             <that>DI SOLITO SVOLGI ATTIVITÀ QUOTIDIANE</that>
             <pattern>NO ^</pattern>
-            <template>Che peccato.</template>
+            <template>Ricorda che è molto importante svolgere attività quotidiane per rimanere in salute.</template>
         </category>
 	
 	<topic name='OUTDOOR'>
@@ -125,7 +168,7 @@
             <pattern><set>fq_italian</set></pattern>
             <template>
                 <think><set name='activity_fq'><star/></set></think>
-                <star/> è un buon ritmo.
+                <star/> è un buon ritmo. Ma ricorda che dovremmo sempre cercare di superare i nostri obiettivi.
                 <set name='topic'></set>
             </template>
         </category>
@@ -148,11 +191,11 @@
 	        <template>
 	            <think><set name='fav_daily'><star index='2'></star></set></think>
 	            <get name='fav_daily'/> è interessante.
-	            <srai><get name='fav_daily'/></srai>
 	        </template>
         </category>
         
         <category>
+            <that>^ DÌ QUELLO CHE CORRISPONDE</that>
             <pattern>GUARDARE LA TV</pattern>
             <template>
                 Quali programmi ti piacciono?
@@ -164,13 +207,25 @@
             <pattern><set>televisionitalian</set></pattern>
             <template>
             <think><set name='fav_tvshow'><star/></set></think>
-            Ya veo...
+            È ottimo. Sono d'accordo con te
+            <think><set name='topic'></set></think>
+            
+            </template>
+        </category>
+
+        <category>
+            <that>QUALI PROGRAMMI TI PIACCIONO</that>
+            <pattern>*</pattern>
+            <template>
+            <think><set name='fav_tvshow'><star/></set></think>
+            È ottimo. Sono d'accordo con te
             <think><set name='topic'></set></think>
             
             </template>
         </category>
         
         <category>
+            <that>^ DÌ QUELLO CHE CORRISPONDE</that>
             <pattern>LEGGERE LIBRI</pattern>
             <template>
                 Cosa ti piace leggere?
@@ -186,8 +241,29 @@
             <think><set name='topic'></set></think>
             </template>
         </category>
+
+        <category>
+            <that>COSA TI PIACE LEGGERE</that>
+            <pattern>* <set>tipodilibri</set></pattern>
+            <template>
+                <think><set name='fav_book'><star/></set></think>
+                Interessante.
+            <think><set name='topic'></set></think>
+            </template>
+        </category>
+
+        <category>
+            <that>COSA TI PIACE LEGGERE</that>
+            <pattern>* </pattern>
+            <template>
+                <think><set name='fav_book'><star/></set></think>
+                Interessante.
+            <think><set name='topic'></set></think>
+            </template>
+        </category>
         
         <category>
+            <that>^ DÌ QUELLO CHE CORRISPONDE</that>
             <pattern>ASCOLTA LA RADIO</pattern>
             <template>
                 quali programmi ti piacciono?
@@ -205,6 +281,7 @@
         </category>
 	    
 	    <category>
+            <that>^ DÌ QUELLO CHE CORRISPONDE</that>
 	        <pattern>ASCOLTARE LA MUSICA</pattern>
 	        <template>
 	            Che tipo di musica ti piace?
@@ -220,8 +297,29 @@
                 <think><set name='topic'></set></think>
             </template>
         </category>
-        
+
         <category>
+            <that>CHE TIPO DI MUSICA TI PIACE</that>
+            <pattern>* <set>musica</set></pattern>
+            <template>
+                <think><set name='fav_music'><star/></set></think>
+                Freddo.
+                <think><set name='topic'></set></think>
+            </template>
+        </category>
+
+         <category>
+            <that>CHE TIPO DI MUSICA TI PIACE</that>
+            <pattern>*</pattern>
+            <template>
+                <think><set name='fav_music'><star/></set></think>
+                Freddo.
+                <think><set name='topic'></set></think>
+            </template>
+        </category>
+
+        <category>
+            <that>^ DÌ QUELLO CHE CORRISPONDE</that>
             <pattern>DIPINGERE</pattern>
             <template>
                 Che tipo di pittura ti piace?
@@ -236,8 +334,27 @@
                 Dipingere <get name='fav_painting'/> è divertente.
             </template>
         </category>
+
+        <category>
+            <that>CHE TIPO DI PITTURA TI PIACE</that>
+            <pattern>* <set>dipinti</set></pattern>
+            <template>
+                <think><set name='fav_painting'><star/></set></think>
+                Dipingere <get name='fav_painting'/> è divertente.
+            </template>
+        </category>
+
+        <category>
+            <that>CHE TIPO DI PITTURA TI PIACE</that>
+            <pattern>*</pattern>
+            <template>
+                <think><set name='fav_painting'><star/></set></think>
+                Dipingere <get name='fav_painting'/> è divertente.
+            </template>
+        </category>
         
         <category>
+            <that>^ DÌ QUELLO CHE CORRISPONDE</that>
             <pattern>GIOCA GIOCHI DA TAVOLO</pattern>
             <template>
                 Quali tipi di giochi da tavolo ti piacciono?
@@ -252,8 +369,27 @@
                 Va bene.
             </template>
         </category>
+
+        <category>
+            <that>QUALE TIPO DI GIOCHI DA TAVOLA TI PIACE</that>
+            <pattern>* <set>giochidatavolo</set></pattern>
+            <template>
+                <think><set name='fav_boardgame'><star/></set></think>
+                Va bene.
+            </template>
+        </category>
         
         <category>
+            <that>QUALE TIPO DI GIOCHI DA TAVOLA TI PIACE</that>
+            <pattern>*</pattern>
+            <template>
+                <think><set name='fav_boardgame'><star/></set></think>
+                Va bene.
+            </template>
+        </category>
+
+        <category>
+            <that>^ DÌ QUELLO CHE CORRISPONDE</that>
             <pattern>GIARDINAGGIO</pattern>
             <template>
                 Che tipo di piante ti piace coltivare?
@@ -268,8 +404,27 @@
                 Mi piacerebbe coltivare anche le piante.
             </template>
         </category>
+
+        <category>
+            <that>CHE TIPO DI PIANTE TI PIACE COLTIVARE</that>
+            <pattern> * <set>GIARDINAGGIO</set></pattern>
+            <template>
+                <think><set name='fav_plant'><star/></set></think>
+                Mi piacerebbe coltivare anche le piante.
+            </template>
+        </category>
+
+        <category>
+            <that>CHE TIPO DI PIANTE TI PIACE COLTIVARE</that>
+            <pattern>*</pattern>
+            <template>
+                <think><set name='fav_plant'><star/></set></think>
+                Mi piacerebbe coltivare anche le piante.
+            </template>
+        </category>
         
         <category>
+            <that>^ DÌ QUELLO CHE CORRISPONDE</that>
             <pattern>ANIMALI</pattern>
             <template>
                 Quali animali ti piacciono?
@@ -284,8 +439,27 @@
                 <get name='fav_animal'/> sono fantastici!
             </template>
         </category>
+
+        <category>
+            <that>QUALI ANIMALI TI PIACCIONO</that>
+            <pattern>* <set>animali</set></pattern>
+            <template>
+                <think><set name='fav_animal'><star/></set></think>
+                <get name='fav_animal'/> sono fantastici!
+            </template>
+        </category>
+
+        <category>
+            <that>QUALI ANIMALI TI PIACCIONO</that>
+            <pattern>*</pattern>
+            <template>
+                <think><set name='fav_animal'><star/></set></think>
+                <get name='fav_animal'/> sono fantastici!
+            </template>
+        </category>
         
         <category>
+            <that>^ DÌ QUELLO CHE CORRISPONDE</that>
             <pattern>GUARDARE FILM</pattern>
             <template>
                 Che tipo di film ti piacciono?
@@ -300,8 +474,27 @@
                 Adoro anche il cinema!
             </template>
         </category>
+
+        <category>
+            <that>CHE TIPO DI FILM TI</that>
+            <pattern>* <set>film</set></pattern>
+            <template>
+                <think><set name='fav_movie'><star/></set></think>
+                Adoro anche il cinema!
+            </template>
+        </category>
+
+        <category>
+            <that>CHE TIPO DI FILM TI</that>
+            <pattern>*</pattern>
+            <template>
+                <think><set name='fav_movie'><star/></set></think>
+                Adoro anche il cinema!
+            </template>
+        </category>
         
         <category>
+            <that>^ DÌ QUELLO CHE CORRISPONDE</that>
             <pattern>VAI IN CAMPO</pattern>
             <template>
                 Cosa ti piace del campo?
@@ -316,8 +509,27 @@
                 Il campo è molto bello.
             </template>
         </category>
+
+        <category>
+            <that>COSA TI PIACE DEL CAMPO</that>
+            <pattern>* <set>campo</set></pattern>
+            <template>
+                <think><set name='fav_country'><star/></set></think>
+                Il campo è molto bello.
+            </template>
+        </category>
+
+        <category>
+            <that>COSA TI PIACE DEL CAMPO</that>
+            <pattern>*</pattern>
+            <template>
+                <think><set name='fav_country'><star/></set></think>
+                Il campo è molto bello.
+            </template>
+        </category>
         
         <category>
+            <that>^ DÌ QUELLO CHE CORRISPONDE</that>
             <pattern>COMPITI A CASA</pattern>
             <template>
                 A quale tipo di faccende domestiche sei interessato?
@@ -331,14 +543,48 @@
                 <think><set name='fav_housework'><star/></set></think>
             </template>
         </category>
+
+        <category>
+            <that>A QUALE TIPO DI FACCENDE DOMESTICHE SEI INTERESSATO</that>
+            <pattern>* <set>compitiacasa</set></pattern>
+            <template>
+                <think><set name='fav_housework'><star/></set></think>
+            </template>
+        </category>
+
+        <category>
+            <that>A QUALE TIPO DI FACCENDE DOMESTICHE SEI INTERESSATO</that>
+            <pattern>*</pattern>
+            <template>
+                <think><set name='fav_housework'><star/></set></think>
+            </template>
+        </category>
+        
         
         <category>
+            <that>^ DÌ QUELLO CHE CORRISPONDE</that>
             <pattern>ARTIGIANATO</pattern>
             <template>
                 Perché sei interessato all'artigianato?
             </template>
         </category>
         
+        <category>
+            <that>PERCHÉ SEI INTERESSATO ALL'ARTIGIANATO</that>
+            <pattern>* <set>artigianato</set></pattern>
+            <template>
+                <think><set name='fav_handcraft'><star/></set></think>
+            </template>
+        </category>
+
+        <category>
+            <that>PERCHÉ SEI INTERESSATO ALL'ARTIGIANATO</that>
+            <pattern><set>artigianato</set></pattern>
+            <template>
+                <think><set name='fav_handcraft'><star/></set></think>
+            </template>
+        </category>
+
         <category>
             <that>PERCHÉ SEI INTERESSATO ALL'ARTIGIANATO</that>
             <pattern>*</pattern>
@@ -348,6 +594,7 @@
         </category>
         
         <category>
+            <that>^ DÌ QUELLO CHE CORRISPONDE</that>
             <pattern>SPORT</pattern>
             <template>
                 A quale tipo di sport sei interessato?
@@ -357,6 +604,24 @@
         <category>
             <that>A QUALE TIPO DI SPORT SEI INTERESSATO</that>
             <pattern><set>sport</set></pattern>
+            <template>
+                <think><set name='fav_sport'><star/></set></think>
+                <get name='fav_sport'/> è molto interessante.
+            </template>
+        </category>
+
+        <category>
+            <that>A QUALE TIPO DI SPORT SEI INTERESSATO</that>
+            <pattern>* <set>sport</set></pattern>
+            <template>
+                <think><set name='fav_sport'><star/></set></think>
+                <get name='fav_sport'/> è molto interessante.
+            </template>
+        </category>
+
+        <category>
+            <that>A QUALE TIPO DI SPORT SEI INTERESSATO</that>
+            <pattern>*</pattern>
             <template>
                 <think><set name='fav_sport'><star/></set></think>
                 <get name='fav_sport'/> è molto interessante.
