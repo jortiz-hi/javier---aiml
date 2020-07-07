@@ -165,7 +165,7 @@
         
         <category>
             <that>^ QUANTO SPESSO LO FAI</that>
-            <pattern><set>fq_italian</set></pattern>
+            <pattern><set>fqitalian</set></pattern>
             <template>
                 <think><set name='activity_fq'><star/></set></think>
                 <star/> è un buon ritmo. Ma ricorda che dovremmo sempre cercare di superare i nostri obiettivi.
@@ -398,7 +398,7 @@
         
         <category>
             <that>CHE TIPO DI PIANTE TI PIACE COLTIVARE</that>
-            <pattern><set>GIARDINAGGIO</set></pattern>
+            <pattern><set>giardinaggio</set></pattern>
             <template>
                 <think><set name='fav_plant'><star/></set></think>
                 Mi piacerebbe coltivare anche le piante.
@@ -407,7 +407,7 @@
 
         <category>
             <that>CHE TIPO DI PIANTE TI PIACE COLTIVARE</that>
-            <pattern> * <set>GIARDINAGGIO</set></pattern>
+            <pattern> * <set>giardinaggio</set></pattern>
             <template>
                 <think><set name='fav_plant'><star/></set></think>
                 Mi piacerebbe coltivare anche le piante.
