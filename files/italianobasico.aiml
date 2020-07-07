@@ -18,8 +18,18 @@
     </category>
     
     <category>
+        <pattern>BUON POMERIGGIO ^</pattern>
+        <template><srai>Ciao <get name="username"></get></srai></template>
+    </category>
+    
+    <category>
+        <pattern>BUONA NOTTE ^</pattern>
+        <template><srai>Ciao <get name="username"></get></srai></template>
+    </category>
+    
+    <category>
         <pattern>* COME STAI</pattern>
-        <template>Sto bene. Come stai?</template>
+        <template>Sto bene. Come ti senti oggi?</template>
     </category>
     
     <category>
@@ -34,18 +44,27 @@
     </category>
     
     <category>
+            <that>COME TI SENTI OGGI</that>
             <pattern>* <set>emozioni</set> *</pattern>
             <template>Festeggio che tu stia <star index = "2"/> oggi. È importante evitare cattivi pensieri.</template>
     </category>
     
     <category>
+            <that>COME TI SENTI OGGI</that>
             <pattern>* <set>emozioni</set></pattern>
             <template>Festeggio che tu stia <star index = "2"/> oggi. È importante evitare cattivi pensieri.</template>
     </category>
     
     <category>
+            <that>COME TI SENTI OGGI</that>
             <pattern><set>emozioni</set></pattern>
             <template>Festeggio che tu stia <star/> oggi. È importante evitare cattivi pensieri.</template>
+    </category>
+    
+    <category>
+            <that>COME TI SENTI OGGI</that>
+            <pattern>*</pattern>
+            <template>Ricorda che è importante evitare cattivi pensieri.</template>
     </category>
     
     <category>
@@ -65,6 +84,12 @@
         <that>^ IL TUO NOME ^</that>
         <pattern>SI</pattern>
         <template><srai>CIAO <get name="username"></get></srai></template>
+    </category>
+    
+    <category>
+        <that>^ IL TUO NOME ^</that>
+        <pattern>SÌ</pattern>
+        <template><srai>SI</srai></template>
     </category>
     
     <category>
@@ -149,11 +174,11 @@
       <pattern>* QUALCOSA ^</pattern>
       <template> 
         <random>
-            <li> Non ti ho capito bene. Cosa ne pensi se parliamo dei tuoi figli.<srai>^ I MIEI FIGLI ^</srai></li>
-            <li> Non ti ho capito bene. Cosa ne pensi se parliamo dei tuoi nipoti.<srai>^ I MIEI NIPOTI ^</srai></li>
-            <li> Non ti ho capito bene. Cosa ne pensi se parliamo dei tuoi animali.<srai>^ I MIEI ANIMALI ^</srai></li>
-            <li> Non ti ho capito bene. Cosa ne pensi se parliamo dei tuoi amici.<srai>^ MIO AMICO</srai></li>
-            <li> Non ti ho capito bene. Cosa ne pensi se parliamo dei tuoi hobby. <srai>^ I MIEI HOBBY</srai></li>
+            <li> Cosa ne pensi se parliamo dei tuoi figli.<srai>^ I MIEI FIGLI</srai></li>
+            <li> Cosa ne pensi se parliamo dei tuoi nipoti.<srai>^ I MIEI NIPOTI</srai></li>
+            <li> Cosa ne pensi se parliamo dei tuoi animali.<srai>^ I MIEI ANIMALI</srai></li>
+            <li> Cosa ne pensi se parliamo dei tuoi amici.<srai>^ MIO AMICO</srai></li>
+            <li> Cosa ne pensi se parliamo dei tuoi hobby. <srai>^ I MIEI HOBBY</srai></li>
         </random>
       </template>
     </category>
