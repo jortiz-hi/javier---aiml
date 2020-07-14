@@ -1,0 +1,33 @@
+0,*,*,*,<srai>* SOMETHING ^</srai>,basicenglish.aiml
+0,HI ^,*,*,"Hi#Comma<get name=""username""/>#Comma how are you?",basicenglish.aiml
+0,HELLO ^,*,*,"<srai>HI <get name=""username""/></srai>",basicenglish.aiml
+0,* HOW ARE YOU,*,*,I am fine. And you?,basicenglish.aiml
+0,# FINE ^,*,*,Me too. How are feeling today?,basicenglish.aiml
+0,* AND YOU,*,*,"<srai><star index=""1""/> FINE <star index=""2""/></srai>",basicenglish.aiml
+0,* <set>emotions</set> *,*,*,"I celebrate that you are <star index=""2""/> today. It is important to avoid bad thoughts.",basicenglish.aiml
+0,* <set>emotions</set>,*,*,"I celebrate that you are <star index=""2""/> today. It is important to avoid bad thoughts.",basicenglish.aiml
+0,<set>emotions</set>,*,*,I celebrate that you are <star/> today. It is important to avoid bad thoughts.,basicenglish.aiml
+0,^ YOUR NAME ^,*,*,"My name is Welky. Your name is <get name=""username""/>#Comma right?",basicenglish.aiml
+0,YES,^ YOUR NAME ^,*,"<srai>HI <get name=""username""/></srai>",basicenglish.aiml
+0,NO,^ YOUR NAME ^,*,"<think><set name=""topic"">NAME</set></think>            What is your name?",basicenglish.aiml
+0,THANKS,*,*,You are welcome,basicenglish.aiml
+0,THANK YOU,*,*,<srai>THANKS</srai>,basicenglish.aiml
+0,OK,*,*,I am delighted to hear that,basicenglish.aiml
+0,SURE,*,*,<srai>OK</srai>,basicenglish.aiml
+0,I AM *,*,NAME,"<think><set name=""username""><star index=""1""/></set></think><srai>HI <get name=""username""/></srai><think><set name=""topic""/></think>",basicenglish.aiml
+0,* NAME IS *,*,NAME,"<srai>I AM <star index=""2""/></srai><think><set name=""topic""/></think>",basicenglish.aiml
+0,*,*,NAME,"<srai>I AM <star/></srai><think><set name=""topic""/></think>",basicenglish.aiml
+0,WELKY,*,*,<random><li>Yes?</li><li>Tell me</li></random>,basicenglish.aiml
+0,* DOING NOW ^,*,*,<random><li>I am talking to you.</li><li>I am having a good time talking to you.</li></random>,basicenglish.aiml
+0,* SOMETHING ^,*,*,<random><li>Tell me about your children.<srai>^ MY CHILDREN</srai></li><li> Tell me about your grandchildren.<srai>^ MY GRANDCHILDREN</srai></li><li> Tell me about your pets.<srai>^ MY PET</srai></li><li> Tell me about your friends.<srai>^ MY FRIEND</srai></li><li> Tell me about your hobbies. <srai>^ MY HOBBIES</srai></li></random>,basicenglish.aiml
+0,* TALK ^,*,*,<srai>* SOMETHING ^</srai>,basicenglish.aiml
+0,* NEWS ^,*,*,You can look for news in The Internet,basicenglish.aiml
+0,* BOOKS,*,*,"Sure#Comma i love reading.  <think><set name=""topic"">BOOKS</set></think>",basicenglish.aiml
+0,ME TOO,*,BOOKS,And what types of books do you like?,basicenglish.aiml
+0,I LOVE READING <set>booktypes</set> ^,*,BOOKS,Yes#Comma <star/> books are my preferred too.,basicenglish.aiml
+0,I LIKE READING <set>booktypes</set> ^,*,BOOKS,Yes#Comma <star/> books are my preferred too.,basicenglish.aiml
+0,* YOU READING ^,*,BOOKS,I am reading Harry Potter and the Philosopher's Stone.It is a bit old by i love it. And you?,basicenglish.aiml
+0,_ AM READING *,*,BOOKS,"<star index=""2""/> is also a good book",basicenglish.aiml
+0,BYE ^,*,*,<random><li>Bye.</li><li>See you soon.</li><li>A pleasure to talk to you.</li></random>,basicenglish.aiml
+0,GOOD BYE ^,*,*,<srai>BYE ^</srai>,basicenglish.aiml
+0,* END THE CONVERSATION,*,*,<srai>BYE ^</srai>,basicenglish.aiml

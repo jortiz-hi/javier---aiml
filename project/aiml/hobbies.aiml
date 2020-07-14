@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	<!-- insert your AIML categories here -->
+	
+    	<category>
+    	    <pattern>^ MY HOBBIES</pattern>
+    	    <template>
+    	        <random>
+        	        <li>Are you interested in outdoor activities?</li>
+        	        <li>
+        	            <think><set name='topic'>DAILY</set></think>
+                            Which activities do you do in your daily life?:
+                            <ul>
+                                <li>Watch television</li>
+                                <li>Reading books</li>
+                                <li>Listening to music</li>
+                                <li>Painting</li>
+                                <li>Play board games</li>
+                                <li>Gardening</li>
+                                <li>Caring for animals</li>
+                                <li>Watch movies</li>
+                                <li>Go to the countryside</li>
+                                <li>Housework activities</li>
+                                <li>Sport</li>
+                            </ul>
+                            Say the one corresponding to you
+        	       </li>
+    	       </random>
+    	    </template>
+        </category>
+
+        <category>
+            <that>ARE YOU INTERESTED IN OUTDOOR ACTIVITIES</that>
+            <pattern>yes ^</pattern>
+            <template>
+                <think><set name='topic'>OUTDOOR</set></think>
+                <think><set name='outdoor_activities'>yes</set></think>
+                Oh, what outdoor activity are you interested in?
+            </template>
+        </category>
+        
+        <category>
+            <that>PLEASE, ANSWER YES OR NO.ARE YOU INTERESTED IN OUTDOOR ACTIVITIES</that>
+            <pattern>yes ^</pattern>
+            <template>
+                <think><set name='topic'>OUTDOOR</set></think>
+                <think><set name='outdoor_activities'>yes</set></think>
+                Oh, what outdoor activity are you interested in?
+            </template>
+        </category>
+        
+        <category>
+            <that>ARE YOU INTERESTED IN OUTDOOR ACTIVITIES</that>
+            <pattern>no ^</pattern>
+            <template>
+                <think><set name='outdoor_activities'>no</set></think>
+                That's a pity! Do you usually do any activity in your daily life?
+            </template>
+        </category>
+        
+        <category>
+            <that>PLEASE, ANSWER YES OR NO.ARE YOU INTERESTED IN OUTDOOR ACTIVITIES</that>
+            <pattern>no ^</pattern>
+            <template>
+                <think><set name='outdoor_activities'>no</set></think>
+                That's a pity! Do you usually do any activity in your daily life?
+            </template>
+        </category>
+        
+        <category>
+            <that>ARE YOU INTERESTED IN OUTDOOR ACTIVITIES</that>
+            <pattern>*</pattern>
+            <template>
+                Please, answer yes or no.
+                <srai>^ MY HOBBIES</srai>
+            </template>
+        </category>
+        
+        <category>
+            <that>DO YOU USUALLY DO ANY ACTIVITY IN YOUR DAILY LIFE</that>
+            <pattern>Yes ^</pattern>
+            <template>
+                <think><set name='topic'>DAILY</set></think>
+                What kind of activity do you usually do?
+            </template>
+        </category>
+        
+        <category>
+            <that>DO YOU USUALLY DO ANY ACTIVITY IN YOUR DAILY LIFE</that>
+            <pattern>No ^</pattern>
+            <template>Remember that it is very important to do daily activities to stay healthy.</template>
+        </category>
+	
+	<topic name='OUTDOOR'>
+	    
+        
+        <category>
+            <that>^ WHAT OUTDOOR ACTIVITY ARE YOU INTERESTED IN</that>
+            <pattern><set>out_activities</set></pattern>
+            <template>
+                <think><set name='fav_out_activity'><star/></set></think>
+                Wow, <star/> is really interesting.
+                With which frecuency?
+            </template>
+        </category>
+        
+        <category>
+            <that>^ WHAT OUTDOOR ACTIVITY ARE YOU INTERESTED IN</that>
+            <pattern>IN <set>out_activities</set></pattern>
+            <template>
+                <srai><star/></srai>
+            </template>
+        </category>
+        
+        <category>
+            <that>^ WHAT OUTDOOR ACTIVITY ARE YOU INTERESTED IN</that>
+            <pattern>^ <set>like</set> <set>out_activities</set></pattern>
+            <template>
+                <srai><star index='3'/></srai>
+            </template>
+        </category>
+        
+        <category>
+            <that>^ WHAT OUTDOOR ACTIVITY ARE YOU INTERESTED IN</that>
+            <pattern>^ <set>like</set> *</pattern>
+            <template>
+                <think><set name='fav_out_activity'><star index='3'></star></set></think>
+                That's cool! I wish I could make any outdoor activity too.
+                With which frecuency?
+            </template>
+        </category>
+        
+        <category>
+            <that>^ WHAT OUTDOOR ACTIVITY ARE YOU INTERESTED IN</that>
+            <pattern>*</pattern>
+            <template>
+                Sorry I didn't understand. What outdoor activity are you interested in?
+            </template>
+        </category>
+        
+        
+        <category>
+            <that>^ WITH WHICH FRECUENCY</that>
+            <pattern><set>fq</set></pattern>
+            <template>
+                <think><set name='activity_fq'><star/></set></think>
+                <star/> is a good pace. But remember that we always have to try to overcome our own goals.
+            </template>
+        </category>
+        
+        <category>
+            <that>^ WITH WHICH FRECUENCY</that>
+            <pattern>*</pattern>
+            <template>
+                Remember that we always have to try to overcome our own goals.
+            </template>
+        </category>
+	    
+	</topic>
+	
+	<topic name='DAILY'>
+	    
+	    <category>
+	        <that>^ WHAT KIND OF ACTIVITY DO YOU USUALLY DO</that>
+	        <pattern>^ <set>dailyactivity</set></pattern>
+	        <template>
+	            <think><set name='fav_daily'><star index='2'></star></set></think>
+	            <get name='fav_daily'/> is interesting.
+	            <srai><get name='fav_daily'/></srai>
+	        </template>
+        </category>
+        
+        <category>
+            <that>* SAY THE ONE CORRESPONDING TO YOU</that>
+            <pattern>WATCH TELEVISION</pattern>
+            <template>
+                Which programs do you like?
+            </template>
+        </category>
+        
+        <category>
+            <that>WHICH PROGRAMS DO YOU LIKE</that>
+            <pattern>* <set>television</set></pattern>
+            <template>
+            <think><set name='fav_tvshow'><star index="2"/></set></think>
+            I love this kind of tv programs. They are the best
+            </template>
+        </category>
+        
+        <category>
+            <that>WHICH PROGRAMS DO YOU LIKE</that>
+            <pattern><set>television</set></pattern>
+            <template>
+            <think><set name='fav_tvshow'><star/></set></think>
+            I love this kind of tv programs. They are the best
+            </template>
+        </category>
+        
+        <category>
+            <that>WHICH PROGRAMS DO YOU LIKE</that>
+            <pattern>*</pattern>
+            <template>
+            <think><set name='fav_tvshow'><star/></set></think>
+            I love this kind of tv programs. They are the best
+            </template>
+        </category>
+        
+        <category>
+            <that>* SAY THE ONE CORRESPONDING TO YOU</that>
+            <pattern>READING BOOKS</pattern>
+            <template>
+                What do you like to read about?
+            </template>
+        </category>
+        
+        <category>
+            <that>WHAT DO YOU LIKE TO READ ABOUT</that>
+            <pattern>* <set>booktypes</set></pattern>
+            <template>
+                <think><set name='fav_book'><star index="2"/></set></think>
+                I love this kind of books and starting new books
+            </template>
+        </category>
+        
+        <category>
+            <that>WHAT DO YOU LIKE TO READ ABOUT</that>
+            <pattern><set>booktypes</set></pattern>
+            <template>
+                <think><set name='fav_book'><star/></set></think>
+                I love this kind of books and starting new books
+            </template>
+        </category>
+        
+        <category>
+            <that>WHAT DO YOU LIKE TO READ ABOUT</that>
+            <pattern>*</pattern>
+            <template>
+                <think><set name='fav_book'><star/></set></think>
+                I love this kind of books and starting new books
+            </template>
+        </category>
+	    
+	    <category>
+	        <that>* SAY THE ONE CORRESPONDING TO YOU</that>
+	        <pattern>LISTENING TO MUSIC</pattern>
+	        <template>
+	            Which kind of music do you like?
+	        </template>
+        </category>
+        
+        <category>
+            <that>WHICH KIND OF MUSIC DO YOU LIKE</that>
+            <pattern>* <set>music</set></pattern>
+            <template>
+                <think><set name='fav_music'><star index="2"/></set></think>
+                I love this kind of music. It always change my mind
+            </template>
+        </category>
+        
+        <category>
+            <that>WHICH KIND OF MUSIC DO YOU LIKE</that>
+            <pattern><set>music</set></pattern>
+            <template>
+                <think><set name='fav_music'><star/></set></think>
+                I love this kind of music. It always change my mind
+            </template>
+        </category>
+        
+        <category>
+            <that>WHICH KIND OF MUSIC DO YOU LIKE</that>
+            <pattern>*</pattern>
+            <template>
+                <think><set name='fav_music'><star/></set></think>
+                I love this kind of music. It always change my mind
+            </template>
+        </category>
+        
+        
+        <category>
+            <that>* SAY THE ONE CORRESPONDING TO YOU</that>
+            <pattern>PAINTING</pattern>
+            <template>
+                What kind of painting do you like?
+            </template>
+        </category>
+        
+        <category>
+            <that>WHAT KIND OF PAINTING DO YOU LIKE</that>
+            <pattern>* <set>paintings</set></pattern>
+            <template>
+                <think><set name='fav_painting'><star index="2"/></set></think>
+                <get name='fav_painting'/> painting is cool.
+            </template>
+        </category>
+        
+        <category>
+            <that>WHAT KIND OF PAINTING DO YOU LIKE</that>
+            <pattern><set>paintings</set></pattern>
+            <template>
+                <think><set name='fav_painting'><star/></set></think>
+                <get name='fav_painting'/> painting is cool.
+            </template>
+        </category>
+        
+        <category>
+            <that>WHAT KIND OF PAINTING DO YOU LIKE</that>
+            <pattern>*</pattern>
+            <template>
+                <think><set name='fav_painting'><star/></set></think>
+                <get name='fav_painting'/> painting is cool.
+            </template>
+        </category>
+        
+        <category>
+            <that>* SAY THE ONE CORRESPONDING TO YOU</that>
+            <pattern>PLAY BOARD GAMES</pattern>
+            <template>
+                What kind of board games do you like?
+            </template>
+        </category>
+        
+        <category>
+            <that>WHAT KIND OF BOARD GAMES DO YOU LIKE</that>
+            <pattern>* <set>boardgame</set></pattern>
+            <template>
+                <think><set name='fav_boardgame'><star index="2"/></set></think>
+                That's alright.
+            </template>
+        </category>
+        
+        <category>
+            <that>WHAT KIND OF BOARD GAMES DO YOU LIKE</that>
+            <pattern><set>boardgame</set></pattern>
+            <template>
+                <think><set name='fav_boardgame'><star/></set></think>
+                That's alright.
+            </template>
+        </category>
+        
+        <category>
+            <that>WHAT KIND OF BOARD GAMES DO YOU LIKE</that>
+            <pattern>*</pattern>
+            <template>
+                <think><set name='fav_boardgame'><star/></set></think>
+                That's alright.
+            </template>
+        </category>
+        
+        <category>
+            <that>* SAY THE ONE CORRESPONDING TO YOU</that>
+            <pattern>GARDENING</pattern>
+            <template>
+                What kind of plants do you like to cultivate?
+            </template>
+        </category>
+        
+        <category>
+            <that>WHAT KIND OF PLANTS DO YOU LIKE TO CULTIVATE</that>
+            <pattern>* <set>gardening</set></pattern>
+            <template>
+                <think><set name='fav_plant'><star index="2"/></set></think>
+                I'd love to cultivate too.
+            </template>
+        </category>
+        
+        <category>
+            <that>WHAT KIND OF PLANTS DO YOU LIKE TO CULTIVATE</that>
+            <pattern><set>gardening</set></pattern>
+            <template>
+                <think><set name='fav_plant'><star/></set></think>
+                I'd love to cultivate too.
+            </template>
+        </category>
+        
+        <category>
+            <that>WHAT KIND OF PLANTS DO YOU LIKE TO CULTIVATE</that>
+            <pattern>*</pattern>
+            <template>
+                <think><set name='fav_plant'><star/></set></think>
+                I'd love to cultivate too.
+            </template>
+        </category>
+        
+        <category>
+            <that>* SAY THE ONE CORRESPONDING TO YOU</that>
+            <pattern>CARING FOR ANIMALS</pattern>
+            <template>
+                What animals do you like?
+            </template>
+        </category>
+        
+        <category>
+            <that>WHAT ANIMALS DO YOU LIKE</that>
+            <pattern>* <set>animals</set></pattern>
+            <template>
+                <think><set name='fav_animal'><star index="2"/></set></think>
+                <get name='fav_animal'/> are great!
+            </template>
+        </category>
+        
+        <category>
+            <that>WHAT ANIMALS DO YOU LIKE</that>
+            <pattern><set>animals</set></pattern>
+            <template>
+                <think><set name='fav_animal'><star/></set></think>
+                <get name='fav_animal'/> are great!
+            </template>
+        </category>
+        
+        <category>
+            <that>WHAT ANIMALS DO YOU LIKE</that>
+            <pattern>*</pattern>
+            <template>
+                <think><set name='fav_animal'><star/></set></think>
+                <get name='fav_animal'/> are great!
+            </template>
+        </category>
+        
+        <category>
+            <that>* SAY THE ONE CORRESPONDING TO YOU</that>
+            <pattern>WATCH MOVIES</pattern>
+            <template>
+                What kind of movies do you like?
+            </template>
+        </category>
+        
+        <category>
+            <that>WHAT KIND OF MOVIES DO YOU LIKE</that>
+            <pattern>* <set>movies</set></pattern>
+            <template>
+                <think><set name='fav_movie'><star index="2"/></set></think>
+                I love cinema too!
+            </template>
+        </category>
+        
+        <category>
+            <that>WHAT KIND OF MOVIES DO YOU LIKE</that>
+            <pattern><set>movies</set></pattern>
+            <template>
+                <think><set name='fav_movie'><star/></set></think>
+                I love cinema too!
+            </template>
+        </category>
+        
+        <category>
+            <that>WHAT KIND OF MOVIES DO YOU LIKE</that>
+            <pattern>*</pattern>
+            <template>
+                <think><set name='fav_movie'><star/></set></think>
+                I love cinema too!
+            </template>
+        </category>
+        
+        <category>
+            <that>* SAY THE ONE CORRESPONDING TO YOU</that>
+            <pattern>GO TO THE COUNTRYSIDE</pattern>
+            <template>
+                What do you like about the countryside?
+            </template>
+        </category>
+        
+        <category>
+            <that>WHAT DO YOU LIKE ABOUT THE COUNTRYSIDE</that>
+            <pattern>* <set>countryside</set></pattern>
+            <template>
+                <think><set name='fav_country'><star index="2"/></set></think>
+                Countryside is very cool.
+            </template>
+        </category>
+        
+        <category>
+            <that>WHAT DO YOU LIKE ABOUT THE COUNTRYSIDE</that>
+            <pattern><set>countryside</set></pattern>
+            <template>
+                <think><set name='fav_country'><star/></set></think>
+                Countryside is very cool.
+            </template>
+        </category>
+        
+        <category>
+            <that>WHAT DO YOU LIKE ABOUT THE COUNTRYSIDE</that>
+            <pattern>*</pattern>
+            <template>
+                <think><set name='fav_country'><star/></set></think>
+                Countryside is very cool.
+            </template>
+        </category>
+        
+        <category>
+            <that>* SAY THE ONE CORRESPONDING TO YOU</that>
+            <pattern>HOUSEWORK ACTIVITIES</pattern>
+            <template>
+                Which kind of housework activity do you usually do?
+            </template>
+        </category>
+        
+        <category>
+            <that>WHICH KIND OF HOUSEWORK ACTIVITY DO YOU USUALLY DO</that>
+            <pattern>* <set>housework</set></pattern>
+            <template>
+                <think><set name='fav_housework'><star index="2"/></set></think>
+                It is quite boring to do housework
+            </template>
+        </category>
+        
+        <category>
+            <that>WHICH KIND OF HOUSEWORK ACTIVITY DO YOU USUALLY DO</that>
+            <pattern><set>housework</set></pattern>
+            <template>
+                <think><set name='fav_housework'><star/></set></think>
+                It is quite boring to do housework
+            </template>
+        </category>
+        
+        <category>
+            <that>WHICH KIND OF HOUSEWORK ACTIVITY DO YOU USUALLY DO</that>
+            <pattern>*</pattern>
+            <template>
+                <think><set name='fav_housework'><star/></set></think>
+                It is quite boring to do housework
+            </template>
+        </category>
+        
+        
+        <category>
+            <that>* SAY THE ONE CORRESPONDING TO YOU</that>
+            <pattern>SPORT</pattern>
+            <template>
+                What kind of sport are you interested in?
+            </template>
+        </category>
+        
+        <category>
+            <that>WHAT KIND OF SPORT ARE YOU INTERESTED IN</that>
+            <pattern>* <set>sport</set></pattern>
+            <template>
+                <think><set name='fav_sport'><star index="2"/></set></think>
+                It is a very interesting sport. 
+            </template>
+        </category>
+        
+        <category>
+            <that>WHAT KIND OF SPORT ARE YOU INTERESTED IN</that>
+            <pattern><set>sport</set></pattern>
+            <template>
+                <think><set name='fav_sport'><star/></set></think>
+                <get name='fav_sport'/> is very interesting.
+            </template>
+        </category>
+        
+        <category>
+            <that>WHAT KIND OF SPORT ARE YOU INTERESTED IN</that>
+            <pattern>*</pattern>
+            <template>
+                <think><set name='fav_sport'><star/></set></think>
+                It is a very interesting sport.  
+            </template>
+        </category>
+	</topic>
+</aiml>

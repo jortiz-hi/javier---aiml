@@ -1,0 +1,6 @@
+BotName:WelkyT
+BotLocation:Madrid
+gender:male
+BotMaster:Tamara Martin
+organization:HI-IBERIA
+version:0.0.1

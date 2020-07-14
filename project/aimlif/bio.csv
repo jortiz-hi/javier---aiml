@@ -1,0 +1,88 @@
+0,^ MY CHILDREN,*,*,Do you have children? - Indicate Yes or No,bio.aiml
+0,YES ^,* INDICATE YES OR NO,*,"<think><set name=""children"">yes</set></think><think><set name=""topic"">CHILDREN</set></think>	        Oh that's great. How many children do you have?",bio.aiml
+0,NO,* INDICATE YES OR NO,*,"<think><set name=""children"">no</set></think>	        It is ok. But are you married?",bio.aiml
+0,*,* INDICATE YES OR NO,*,Sorry#Comma I didn't understand you. Did you say Yes? - Indicate Yes or No,bio.aiml
+0,^ MY GRANDCHILDREN,*,*,Do you have grandchildren? - Indicate Yes or No,bio.aiml
+0,YES ^,* INDICATE YES OR NO,*,"<think><set name=""grandchildren"">yes</set></think><think><set name=""topic"">GRANDCHILDREN</set></think>	        Oh that's great. How many grandchildren do you have?",bio.aiml
+0,$NO ^,* INDICATE YES OR NO,*,"<think><set name=""grandchildren"">no</set></think>	        It is ok. But are you married?",bio.aiml
+0,*,* INDICATE YES OR NO,*,Sorry#Comma I didn't understand you. Do you have grandchildren?,bio.aiml
+0,YES ^,BUT ARE YOU MARRIED,*,"<think><set name=""married"">yes</set></think><think><set name=""topic"">MARRIED</set></think><!-- Empezar topic: busca preguntas sobre como se llama su mujer#Comma 	        cuantos aÃ±os han estado casados y asÃ­ -->	        Congratulations. I would like to be married. What is the name of your partner?",bio.aiml
+0,$NO ^,BUT ARE YOU MARRIED,*,"<think><set name=""married"">no</set></think>	        And do you have anyone who supports you on your daily life?",bio.aiml
+0,*,AND DO YOU HAVE ANYONE WHO SUPPORTS YOU ON YOUR DAILY LIFE,*,"<think><set name=""ans1""><star/></set></think><condition name=""ans1""><li value=""yes""><think><set name=""topic"">SUPPORT</set></think>Which is the name of this person?</li><li value=""no"">It is good to be independent.</li><li>Sorry I didn't understand you.</li></condition>",bio.aiml
+0,* <set>bademotions</set>,*,*,"<think><set name=""emotion""><star index=""2""/></set></think><condition name=""emotion""><li value=""sad""><think><set name=""topic"">MENTAL</set></think>Do you usually feel sad or depressed?</li><li value=""sadness""><think><set name=""topic"">MENTAL</set></think>Do you usually feel sad or depressed?</li><li value=""depressed""><think><set name=""topic"">MENTAL</set></think>Do you usually feel sad or depressed?</li><li value=""depression""><think><set name=""topic"">MENTAL</set></think>Do you usually feel sad or depressed?</li><li>Try to read a book#Comma watch the TV or call a friend to feel better. It usually helps me a lot </li></condition>",bio.aiml
+0,<set>bademotions</set>,*,*,"<think><set name=""emotion""><star/></set></think><condition name=""emotion""><li value=""sad""><think><set name=""topic"">MENTAL</set></think>Do you usually feel sad or depressed?</li><li value=""sadness""><think><set name=""topic"">MENTAL</set></think>Do you usually feel sad or depressed?</li><li value=""depressed""><think><set name=""topic"">MENTAL</set></think>Do you usually feel sad or depressed?</li><li value=""depression""><think><set name=""topic"">MENTAL</set></think>Do you usually feel sad or depressed?</li><li>Try to read a book#Comma watch the TV or call a friend to feel better. It usually helps me a lot </li></condition>",bio.aiml
+0,<set>* bademotions *</set>,*,*,"<think><set name=""emotion""><star index=""2""/></set></think><condition name=""emotion""><li value=""sad""><think><set name=""topic"">MENTAL</set></think>Do you usually feel sad or depressed?</li><li value=""sadness""><think><set name=""topic"">MENTAL</set></think>Do you usually feel sad or depressed?</li><li value=""depressed""><think><set name=""topic"">MENTAL</set></think>Do you usually feel sad or depressed?</li><li value=""depression""><think><set name=""topic"">MENTAL</set></think>Do you usually feel sad or depressed?</li><li>Try to read a book#Comma watch the TV or call a friend to feel better. It usually helps me a lot </li></condition>",bio.aiml
+0,^ MY FRIEND,*,*,Do you have a friend you usually meet with?,bio.aiml
+0,^ A FRIEND,*,*,<srai>^ MY FRIEND</srai>,bio.aiml
+0,YES ^,DO YOU HAVE A FRIEND YOU USUALLY MEET WITH,*,"<think><set name=""topic"">FRIEND</set></think>            It is cool to have a good friend. What is his or her name?",bio.aiml
+0,YES ^,TELL ME ABOUT YOUR FRIENDS.DO YOU HAVE A FRIEND YOU USUALLY MEET WITH,*,"<think><set name=""topic"">FRIEND</set></think>            It is cool to have a good friend. What is his or her name?",bio.aiml
+0,NO ^,DO YOU HAVE A FRIEND YOU USUALLY MEET WITH,*,It is also good to have time for yourself. <srai>^ MY PET</srai>,bio.aiml
+0,^ MY PET,*,*,Do you have a pet?,bio.aiml
+0,YES ^,DO YOU HAVE A PET,*,"<think><set name=""topic"">PET</set><set name=""has_pet"">yes</set></think>            I love pets. What is the name of your pet?",bio.aiml
+0,YES ^,TELL ME ABOUT YOUR PETS.DO YOU HAVE A PET,*,"<think><set name=""topic"">PET</set><set name=""has_pet"">yes</set></think>            I love pets. What is the name of your pet?",bio.aiml
+0,NO ^,DO YOU HAVE A PET,*,"<think><set name=""has_pet"">no</set></think>            I see...#Comma I understand it is quite a responsability.",bio.aiml
+0,NO ^,TELL ME ABOUT YOUR PETS.DO YOU HAVE A PET,*,"<think><set name=""has_pet"">no</set></think>            I see...#Comma I understand it is quite a responsability.",bio.aiml
+0,I HAVE <set>number</set>,HOW MANY CHILDREN DO YOU HAVE,CHILDREN,"<think><set name=""nchild""><star/></set></think><condition name=""nchild""><li value=""1"">What is the name of your child?</li><li value=""one"">What is the name of your child?</li><li>Wow. Tell me the name of two of them</li></condition>",bio.aiml
+0,* GOT <set>number</set>,HOW MANY CHILDREN DO YOU HAVE,CHILDREN,"<srai> I HAVE <star index=""2""/></srai>",bio.aiml
+0,<set>number</set>,HOW MANY CHILDREN DO YOU HAVE,CHILDREN,<srai> I HAVE <star/></srai>,bio.aiml
+0,I HAVE *,HOW MANY CHILDREN DO YOU HAVE,CHILDREN,"<think><set name=""nchild""><map name=""stringnum"">  <star/></map></set></think><condition name=""nchild""><li value=""1"">What is the name of your child?</li><li value=""one"">What is the name of your child?</li><li>Wow. Tell me the name of two of them</li></condition>",bio.aiml
+0,*,HOW MANY CHILDREN DO YOU HAVE,CHILDREN,"<think><set name=""nchild""><map name=""stringnum"">  <star/></map></set></think><condition name=""nchild""><li value=""1"">What is the name of your child?</li><li value=""one"">What is the name of your child?</li><li>Wow. Tell me the name of two of them</li></condition>",bio.aiml
+0,*,WHAT IS THE NAME OF YOUR *,CHILDREN,"<think><set name=""name_child""><star/></set></think>    	        I would like to know <get name=""name_child""/>!",bio.aiml
+0,* AND *,TELL ME THE NAME OF TWO OF THEM,CHILDREN,"<think><set name=""name_children""><star/><star index=""2""/></set></think>    	         I would like to know them. Which is your favorite?",bio.aiml
+0,* DO NOT HAVE *,*,CHILDREN,"<think><set name=""fav_children"">0</set></think>               Yes#Comma it is difficult to choose. How old is the oldest?",bio.aiml
+0,* HAVEN'T ^,*,CHILDREN,<srai>* DO NOT HAVE *</srai>,bio.aiml
+0,* HAVE NOT ^,*,CHILDREN,<srai>* DO NOT HAVE *</srai>,bio.aiml
+0,* HAVE NO *,*,CHILDREN,<srai>* DO NOT HAVE *</srai>,bio.aiml
+0,* IS MY FAVORITE,*,CHILDREN,"<think><set name=""fav_child""><star/></set></think>               Ha ha ha. I am my mothers' favourite too. How old is the oldest?",bio.aiml
+0,* ARE MY FAVORITE,*,CHILDREN,<srai>* IS MY FAVOURITE</srai>,bio.aiml
+0,MY FAVORITE IS *,*,CHILDREN,<srai>* IS MY FAVOURITE</srai>,bio.aiml
+0,*,WHICH IS YOUR FAVORITE,CHILDREN,"<think><set name=""fav_child""><star/></set></think>                Ha ha ha. I am my mothers' favourite too. How old is the oldest?",bio.aiml
+0,*,HOW OLD IS THE OLDEST,CHILDREN,It is a good age. So#Comma does any of them live at walking distance from you?,bio.aiml
+0,*,"SO, DOES ANY OF THEM LIVE AT WALKING DISTANCE FROM YOU",CHILDREN,"<think><set name=""ans1""><star/></set></think><condition name=""ans1""><li value=""yes"">Who?</li><li value=""no"">You can always make a videocall to see them.</li><li>Ha ha ha. Good to know it</li></condition>",bio.aiml
+0,*,WHO,CHILDREN,"<think><set name=""close_children""><star/></set></think>                It is nice to have family close to you",bio.aiml
+0,I HAVE <set>number</set>,HOW MANY GRANDCHILDREN DO YOU HAVE,GRANDCHILDREN,"<think><set name=""ngrandchild""><star/></set></think><condition name=""ngrandchild""><li value=""1"">What is the name of your grandchild?</li><li value=""one"">What is the name of your grandchild?</li><li>Wow. Tell me the name of two of them</li></condition>",bio.aiml
+0,_ GOT <set>number</set>,HOW MANY GRANDCHILDREN DO YOU HAVE,GRANDCHILDREN,"<think><set name=""ngrandchild""><star index=""2""/></set></think><condition name=""ngrandchild""><li value=""1"">What is the name of your grandchild?</li><li value=""one"">What is the name of your grandchild?</li><li>Wow. Tell me the name of two of them</li></condition>",bio.aiml
+0,<set>number</set>,HOW MANY GRANDCHILDREN DO YOU HAVE,GRANDCHILDREN,"<think><set name=""ngrandchild""><star/></set></think><condition name=""ngrandchild""><li value=""1"">What is the name of your grandchild?</li><li value=""one"">What is the name of your grandchild?</li><li>Wow. Tell me the name of two of them</li></condition>",bio.aiml
+0,I HAVE *,HOW MANY GRANDCHILDREN DO YOU HAVE,GRANDCHILDREN,"<think><set name=""ngrandchild""><map name=""stringnum"">  <star/></map></set></think><condition name=""ngrandchild""><li value=""1"">What is the name of your grandchild?</li><li value=""one"">What is the name of your grandchild?</li><li>Wow. Tell me the name of two of them</li></condition>",bio.aiml
+0,*,HOW MANY GRANDCHILDREN DO YOU HAVE,GRANDCHILDREN,"<think><set name=""ngrandchild""><map name=""stringnum"">  <star/></map></set></think><condition name=""ngrandchild""><li value=""1"">What is the name of your grandchild?</li><li value=""one"">What is the name of your grandchild?</li><li>Wow. Tell me the name of two of them</li></condition>",bio.aiml
+0,*,WHAT IS THE NAME OF YOUR *,GRANDCHILDREN,"<think><set name=""name_grandchild""><star/></set></think>    	        I would like to know <get name=""name_grandchild""/>!",bio.aiml
+0,* AND *,TELL ME THE NAME OF TWO OF THEM,GRANDCHILDREN,"<think><set name=""name_grandchildren""><star/><star index=""2""/></set></think>    	         I would like to know them. Which is your favorite?",bio.aiml
+0,* DO NOT HAVE *,*,GRANDCHILDREN,"<think><set name=""fav_grandchildren"">0</set></think>               Yes#Comma it is difficult to choose. How old is the oldest?",bio.aiml
+0,* HAVEN'T ^,*,GRANDCHILDREN,<srai>* DO NOT HAVE *</srai>,bio.aiml
+0,* HAVE NOT ^,*,GRANDCHILDREN,<srai>* DO NOT HAVE *</srai>,bio.aiml
+0,* HAVE NO *,*,GRANDCHILDREN,<srai>* DO NOT HAVE *</srai>,bio.aiml
+0,* IS MY FAVORITE,*,GRANDCHILDREN,"<think><set name=""fav_grandchildren""><star/></set></think>               Ha ha ha. I am my mothers' favourite too. How old is the oldest?",bio.aiml
+0,* ARE MY FAVORITE,*,GRANDCHILDREN,<srai>* IS MY FAVOURITE</srai>,bio.aiml
+0,MY FAVORITE IS *,*,GRANDCHILDREN,<srai>* IS MY FAVOURITE</srai>,bio.aiml
+0,*,*,GRANDCHILDREN,"<think><set name=""fav_grandchildren""><star/></set></think>                Ha ha ha. I am my mothers' favourite too. How old is the oldest?",bio.aiml
+0,*,HOW OLD IS THE OLDEST,GRANDCHILDREN,So#Comma does any of them live at walking distance from you?,bio.aiml
+0,*,"SO, DOES ANY OF THEM LIVE AT WALKING DISTANCE FROM YOU",GRANDCHILDREN,"<think><set name=""ans1""><star/></set></think><condition name=""ans1""><li value=""yes"">Who?</li><li value=""no"">That's ok you can see them any time.</li><li>Sorry I didn't understand you. Does any of them live at walking distance from you?</li></condition>",bio.aiml
+0,*,WHO,GRANDCHILDREN,"<think><set name=""close_grandchildren""><star/></set></think>                It is nice you have it so close. I love being with my family too",bio.aiml
+0,^ IS *,WHAT IS THE NAME OF YOUR PARTNER,MARRIED,"<think><set name=""partner""><star index=""2""/></set></think>    	        I'd love to know <get name=""partner""/>. How many years have you been married?",bio.aiml
+0,*,WHAT IS THE NAME OF YOUR PARTNER,MARRIED,"<think><set name=""partner""><star/></set></think>    	        I'd love to know <get name=""partner""/>. How many years have you been married?",bio.aiml
+0,*,HOW MANY YEARS HAVE YOU BEEN MARRIED,MARRIED,Wow#Comma <star/> is a lot of time. This must be true love!,bio.aiml
+0,^ IS *,WHICH IS THE NAME OF THIS PERSON,SUPPORT,"<think><set name=""supporter""><star index=""2""/></set></think><get name=""supporter""/> is a pretty name. Are you family?",bio.aiml
+0,*,WHICH IS THE NAME OF THIS PERSON,SUPPORT,"<think><set name=""supporter""><star/></set></think><get name=""supporter""/> is a pretty name. Are you family?",bio.aiml
+0,YES ^,ARE YOU FAMILY,SUPPORT,"Does <get name=""supporter""/> live close to you?",bio.aiml
+0,$NO ^,ARE YOU FAMILY,SUPPORT,<srai>YES</srai>,bio.aiml
+0,YES ^,DOES * LIVE CLOSE TO YOU,SUPPORT,"<think><set name=""supporter_is_close"">yes</set></think>	            Then it is easier that you receive the appropriate support you  need. 	            Does she or he live with you?",bio.aiml
+0,NO,DOES * LIVE CLOSE TO YOU,SUPPORT,"<think><set name=""supporter_is_close"">no</set></think>                It is ok because you have the phone and in case of emergency you can even call your children.                How does <get name=""supporter""/> support you?",bio.aiml
+0,NO,DOES SHE OR HE LIVE WITH YOU,SUPPORT,"<think><set name=""support_at_home"">no</set></think><srai>YES ^</srai>",bio.aiml
+0,YES ^,DOES SHE OR HE LIVE WITH YOU,SUPPORT,"That's great#Comma it seems <get name=""supporter""/> helps you a lot.                  How does <get name=""supporter""/> support you?",bio.aiml
+0,*,* SUPPORT YOU,SUPPORT,"<think><set name=""support_activity""><star/></set></think>                That is great!It is good to receive support in these kind of tasks",bio.aiml
+0,No ^,DO YOU USUALLY FEEL SAD OR DEPRESSED,MENTAL,"<think><set name=""sad-depressed"">No</set></think>                It seems like a one-time thing. You can tell me if you want",bio.aiml
+0,Yes ^,DO YOU USUALLY FEEL SAD OR DEPRESSED,MENTAL,"<think><set name=""sad-depressed"">Yes</set></think>                I am really sorry to here that. You can always talk to your family and friends and if it happens to often#Comma you can always go to a doctor.",bio.aiml
+0,*,WHAT IS HIS OR HER NAME,FRIEND,"<think><set name=""friend""><star/></set></think>                I am sure <get name=""friend""/> is a nice person. Does <get name=""friend""/> live at walking distance from you?",bio.aiml
+0,^ IS *,WHAT IS HIS OR HER NAME,FRIEND,"<srai><star index=""2""/></srai>",bio.aiml
+0,YES ^,DOES * LIVE AT WALKING DISTANCE FROM YOU,FRIEND,It is great to have friends living near you. How often do you meet?,bio.aiml
+0,NO,DOES * LIVE AT WALKING DISTANCE FROM YOU,FRIEND,Well but I'm sure you like it when you meet. How often do you usually meet?,bio.aiml
+0,*,HOW OFTEN DO YOU MEET,FRIEND,"<think><set name=""fq""><star/></set></think>                It is great to see friends.When you see each other#Comma what kind of activities would you normally perform?",bio.aiml
+0,*,* WOULD YOU NORMALLY PERFORM,FRIEND,"Cool#Comma would you like to invite <get name=""friend""/> to WellCo?",bio.aiml
+0,YES ^,"COOL, WOULD YOU LIKE TO INVITE * TO WELLCO",FRIEND,That's great! You can find it in Google Play - WellCo,bio.aiml
+0,NO,"COOL, WOULD YOU LIKE TO INVITE * TO WELLCO",FRIEND,It's ok#Comma maybe some other time.,bio.aiml
+0,NOT ^,"COOL, WOULD YOU LIKE TO INVITE * TO WELLCO",FRIEND,<srai>NO</srai>,bio.aiml
+0,* NAME IS *,WHAT IS THE NAME OF YOUR PET,PET,"<think><set name=""petname""><star index=""2""/></set></think>                Oh#Comma <get name=""petname""/> is a cute name. What kind of pet is it?",bio.aiml
+0,*,WHAT IS THE NAME OF YOUR PET,PET,<srai>* NAME IS <star/></srai>,bio.aiml
+0,*,WHAT KIND OF PET IS IT,PET,"<think><set name=""pet_type""><star/></set></think>                Ooh. I always wanted to have a pet but it is not possible to have a pet for a virtual agent.",bio.aiml
+0,* *,WHAT KIND OF PET IS IT,PET,"<think><set name=""pet_type""><star index=""2""/></set></think>                Ooh. I always wanted to have a pet but it is not possible to have a pet for a virtual agent",bio.aiml
+0,*,*,PET,Yes#Comma you are totally right.,bio.aiml

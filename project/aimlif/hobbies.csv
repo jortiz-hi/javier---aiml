@@ -1,0 +1,60 @@
+0,^ MY HOBBIES,*,*,"<random><li>Are you interested in outdoor activities?</li><li><think><set name=""topic"">DAILY</set></think>                            Which activities do you do in your daily life?:                 <ul><li>Watch television</li><li>Reading books</li><li>Listening to music</li><li>Painting</li><li>Play board games</li><li>Gardening</li><li>Caring for animals</li><li>Watch movies</li><li>Go to the countryside</li><li>Housework activities</li><li>Sport</li></ul>                            Say the one corresponding to you        	 </li></random>",hobbies.aiml
+0,yes ^,ARE YOU INTERESTED IN OUTDOOR ACTIVITIES,*,"<think><set name=""topic"">OUTDOOR</set></think><think><set name=""outdoor_activities"">yes</set></think>                Oh#Comma what outdoor activity are you interested in?",hobbies.aiml
+0,yes ^,"PLEASE, ANSWER YES OR NO.ARE YOU INTERESTED IN OUTDOOR ACTIVITIES",*,"<think><set name=""topic"">OUTDOOR</set></think><think><set name=""outdoor_activities"">yes</set></think>                Oh#Comma what outdoor activity are you interested in?",hobbies.aiml
+0,no ^,ARE YOU INTERESTED IN OUTDOOR ACTIVITIES,*,"<think><set name=""outdoor_activities"">no</set></think>                That's a pity! Do you usually do any activity in your daily life?",hobbies.aiml
+0,no ^,"PLEASE, ANSWER YES OR NO.ARE YOU INTERESTED IN OUTDOOR ACTIVITIES",*,"<think><set name=""outdoor_activities"">no</set></think>                That's a pity! Do you usually do any activity in your daily life?",hobbies.aiml
+0,*,ARE YOU INTERESTED IN OUTDOOR ACTIVITIES,*,Please#Comma answer yes or no.     <srai>^ MY HOBBIES</srai>,hobbies.aiml
+0,Yes ^,DO YOU USUALLY DO ANY ACTIVITY IN YOUR DAILY LIFE,*,"<think><set name=""topic"">DAILY</set></think>                What kind of activity do you usually do?",hobbies.aiml
+0,No ^,DO YOU USUALLY DO ANY ACTIVITY IN YOUR DAILY LIFE,*,Remember that it is very important to do daily activities to stay healthy.,hobbies.aiml
+0,<set>out_activities</set>,^ WHAT OUTDOOR ACTIVITY ARE YOU INTERESTED IN,OUTDOOR,"<think><set name=""fav_out_activity""><star/></set></think>                Wow#Comma <star/> is really interesting.                With which frecuency?",hobbies.aiml
+0,IN <set>out_activities</set>,^ WHAT OUTDOOR ACTIVITY ARE YOU INTERESTED IN,OUTDOOR,<srai><star/></srai>,hobbies.aiml
+0,^ <set>like</set> <set>out_activities</set>,^ WHAT OUTDOOR ACTIVITY ARE YOU INTERESTED IN,OUTDOOR,"<srai><star index=""3""/></srai>",hobbies.aiml
+0,^ <set>like</set> *,^ WHAT OUTDOOR ACTIVITY ARE YOU INTERESTED IN,OUTDOOR,"<think><set name=""fav_out_activity""><star index=""3""/></set></think>                That's cool! I wish I could make any outdoor activity too.                With which frecuency?",hobbies.aiml
+0,*,^ WHAT OUTDOOR ACTIVITY ARE YOU INTERESTED IN,OUTDOOR,Sorry I didn't understand. What outdoor activity are you interested in?,hobbies.aiml
+0,<set>fq</set>,^ WITH WHICH FRECUENCY,OUTDOOR,"<think><set name=""activity_fq""><star/></set></think><star/> is a good pace. But remember that we always have to try to overcome our own goals.",hobbies.aiml
+0,*,^ WITH WHICH FRECUENCY,OUTDOOR,Remember that we always have to try to overcome our own goals.,hobbies.aiml
+0,^ <set>dailyactivity</set>,^ WHAT KIND OF ACTIVITY DO YOU USUALLY DO,DAILY,"<think><set name=""fav_daily""><star index=""2""/></set></think><get name=""fav_daily""/> is interesting.	 <srai><get name=""fav_daily""/></srai>",hobbies.aiml
+0,WATCH TELEVISION,* SAY THE ONE CORRESPONDING TO YOU,DAILY,Which programs do you like?,hobbies.aiml
+0,* <set>television</set>,WHICH PROGRAMS DO YOU LIKE,DAILY,"<think><set name=""fav_tvshow""><star index=""2""/></set></think>            I love this kind of tv programs. They are the best",hobbies.aiml
+0,<set>television</set>,WHICH PROGRAMS DO YOU LIKE,DAILY,"<think><set name=""fav_tvshow""><star/></set></think>            I love this kind of tv programs. They are the best",hobbies.aiml
+0,*,WHICH PROGRAMS DO YOU LIKE,DAILY,"<think><set name=""fav_tvshow""><star/></set></think>            I love this kind of tv programs. They are the best",hobbies.aiml
+0,READING BOOKS,* SAY THE ONE CORRESPONDING TO YOU,DAILY,What do you like to read about?,hobbies.aiml
+0,* <set>booktypes</set>,WHAT DO YOU LIKE TO READ ABOUT,DAILY,"<think><set name=""fav_book""><star index=""2""/></set></think>                I love this kind of books and starting new books",hobbies.aiml
+0,<set>booktypes</set>,WHAT DO YOU LIKE TO READ ABOUT,DAILY,"<think><set name=""fav_book""><star/></set></think>                I love this kind of books and starting new books",hobbies.aiml
+0,*,WHAT DO YOU LIKE TO READ ABOUT,DAILY,"<think><set name=""fav_book""><star/></set></think>                I love this kind of books and starting new books",hobbies.aiml
+0,LISTENING TO MUSIC,* SAY THE ONE CORRESPONDING TO YOU,DAILY,Which kind of music do you like?,hobbies.aiml
+0,* <set>music</set>,WHICH KIND OF MUSIC DO YOU LIKE,DAILY,"<think><set name=""fav_music""><star index=""2""/></set></think>                I love this kind of music. It always change my mind",hobbies.aiml
+0,<set>music</set>,WHICH KIND OF MUSIC DO YOU LIKE,DAILY,"<think><set name=""fav_music""><star/></set></think>                I love this kind of music. It always change my mind",hobbies.aiml
+0,*,WHICH KIND OF MUSIC DO YOU LIKE,DAILY,"<think><set name=""fav_music""><star/></set></think>                I love this kind of music. It always change my mind",hobbies.aiml
+0,PAINTING,* SAY THE ONE CORRESPONDING TO YOU,DAILY,What kind of painting do you like?,hobbies.aiml
+0,* <set>paintings</set>,WHAT KIND OF PAINTING DO YOU LIKE,DAILY,"<think><set name=""fav_painting""><star index=""2""/></set></think><get name=""fav_painting""/> painting is cool.",hobbies.aiml
+0,<set>paintings</set>,WHAT KIND OF PAINTING DO YOU LIKE,DAILY,"<think><set name=""fav_painting""><star/></set></think><get name=""fav_painting""/> painting is cool.",hobbies.aiml
+0,*,WHAT KIND OF PAINTING DO YOU LIKE,DAILY,"<think><set name=""fav_painting""><star/></set></think><get name=""fav_painting""/> painting is cool.",hobbies.aiml
+0,PLAY BOARD GAMES,* SAY THE ONE CORRESPONDING TO YOU,DAILY,What kind of board games do you like?,hobbies.aiml
+0,* <set>boardgame</set>,WHAT KIND OF BOARD GAMES DO YOU LIKE,DAILY,"<think><set name=""fav_boardgame""><star index=""2""/></set></think>                That's alright.",hobbies.aiml
+0,<set>boardgame</set>,WHAT KIND OF BOARD GAMES DO YOU LIKE,DAILY,"<think><set name=""fav_boardgame""><star/></set></think>                That's alright.",hobbies.aiml
+0,*,WHAT KIND OF BOARD GAMES DO YOU LIKE,DAILY,"<think><set name=""fav_boardgame""><star/></set></think>                That's alright.",hobbies.aiml
+0,GARDENING,* SAY THE ONE CORRESPONDING TO YOU,DAILY,What kind of plants do you like to cultivate?,hobbies.aiml
+0,* <set>gardening</set>,WHAT KIND OF PLANTS DO YOU LIKE TO CULTIVATE,DAILY,"<think><set name=""fav_plant""><star index=""2""/></set></think>                I'd love to cultivate too.",hobbies.aiml
+0,<set>gardening</set>,WHAT KIND OF PLANTS DO YOU LIKE TO CULTIVATE,DAILY,"<think><set name=""fav_plant""><star/></set></think>                I'd love to cultivate too.",hobbies.aiml
+0,*,WHAT KIND OF PLANTS DO YOU LIKE TO CULTIVATE,DAILY,"<think><set name=""fav_plant""><star/></set></think>                I'd love to cultivate too.",hobbies.aiml
+0,CARING FOR ANIMALS,* SAY THE ONE CORRESPONDING TO YOU,DAILY,What animals do you like?,hobbies.aiml
+0,* <set>animals</set>,WHAT ANIMALS DO YOU LIKE,DAILY,"<think><set name=""fav_animal""><star index=""2""/></set></think><get name=""fav_animal""/> are great!",hobbies.aiml
+0,<set>animals</set>,WHAT ANIMALS DO YOU LIKE,DAILY,"<think><set name=""fav_animal""><star/></set></think><get name=""fav_animal""/> are great!",hobbies.aiml
+0,*,WHAT ANIMALS DO YOU LIKE,DAILY,"<think><set name=""fav_animal""><star/></set></think><get name=""fav_animal""/> are great!",hobbies.aiml
+0,WATCH MOVIES,* SAY THE ONE CORRESPONDING TO YOU,DAILY,What kind of movies do you like?,hobbies.aiml
+0,* <set>movies</set>,WHAT KIND OF MOVIES DO YOU LIKE,DAILY,"<think><set name=""fav_movie""><star index=""2""/></set></think>                I love cinema too!",hobbies.aiml
+0,<set>movies</set>,WHAT KIND OF MOVIES DO YOU LIKE,DAILY,"<think><set name=""fav_movie""><star/></set></think>                I love cinema too!",hobbies.aiml
+0,*,WHAT KIND OF MOVIES DO YOU LIKE,DAILY,"<think><set name=""fav_movie""><star/></set></think>                I love cinema too!",hobbies.aiml
+0,GO TO THE COUNTRYSIDE,* SAY THE ONE CORRESPONDING TO YOU,DAILY,What do you like about the countryside?,hobbies.aiml
+0,* <set>countryside</set>,WHAT DO YOU LIKE ABOUT THE COUNTRYSIDE,DAILY,"<think><set name=""fav_country""><star index=""2""/></set></think>                Countryside is very cool.",hobbies.aiml
+0,<set>countryside</set>,WHAT DO YOU LIKE ABOUT THE COUNTRYSIDE,DAILY,"<think><set name=""fav_country""><star/></set></think>                Countryside is very cool.",hobbies.aiml
+0,*,WHAT DO YOU LIKE ABOUT THE COUNTRYSIDE,DAILY,"<think><set name=""fav_country""><star/></set></think>                Countryside is very cool.",hobbies.aiml
+0,HOUSEWORK ACTIVITIES,* SAY THE ONE CORRESPONDING TO YOU,DAILY,Which kind of housework activity do you usually do?,hobbies.aiml
+0,* <set>housework</set>,WHICH KIND OF HOUSEWORK ACTIVITY DO YOU USUALLY DO,DAILY,"<think><set name=""fav_housework""><star index=""2""/></set></think>                It is quite boring to do housework",hobbies.aiml
+0,<set>housework</set>,WHICH KIND OF HOUSEWORK ACTIVITY DO YOU USUALLY DO,DAILY,"<think><set name=""fav_housework""><star/></set></think>                It is quite boring to do housework",hobbies.aiml
+0,*,WHICH KIND OF HOUSEWORK ACTIVITY DO YOU USUALLY DO,DAILY,"<think><set name=""fav_housework""><star/></set></think>                It is quite boring to do housework",hobbies.aiml
+0,SPORT,* SAY THE ONE CORRESPONDING TO YOU,DAILY,What kind of sport are you interested in?,hobbies.aiml
+0,* <set>sport</set>,WHAT KIND OF SPORT ARE YOU INTERESTED IN,DAILY,"<think><set name=""fav_sport""><star index=""2""/></set></think>                It is a very interesting sport.",hobbies.aiml
+0,<set>sport</set>,WHAT KIND OF SPORT ARE YOU INTERESTED IN,DAILY,"<think><set name=""fav_sport""><star/></set></think><get name=""fav_sport""/> is very interesting.",hobbies.aiml
+0,*,WHAT KIND OF SPORT ARE YOU INTERESTED IN,DAILY,"<think><set name=""fav_sport""><star/></set></think>                It is a very interesting sport.",hobbies.aiml
