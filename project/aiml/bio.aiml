@@ -5,72 +5,43 @@
 	<category>
 	    <pattern>^ MY CHILDREN</pattern>
 	    <template>
-	        Do you have children? - Indicate Yes or No
+            <think><set name='topic'>CHILDREN</set></think>
+            <condition name='children'>
+               <li value='yes'>
+                    <random>
+                        <li>How many children do you have?</li>
+                        <li>How are your children doing?</li>
+                        <li>Are you doing any activity with your children lately?</li>
+                    </random>
+                </li>
+
+               <li value='no'>It is ok. But are you married?</li>
+               <li> Do you have children? - Indicate Yes or No </li>
+            </condition>
 	    </template>
     </category>
     
-    <category>
-        <that>* INDICATE YES OR NO</that>
-	    <pattern>YES ^</pattern>
-	    <template>
-	        <think><set name='children'>yes</set></think>
-	        <think><set name='topic'>CHILDREN</set></think>
-	        Oh that's great. How many children do you have?
-	    </template>
-    </category>
     
-    <category>
-        <that>* INDICATE YES OR NO</that>
-        <pattern>NO</pattern>  
-	    <!--<pattern>NO</pattern>establece prioridad a la respuesta del <that> para poder añadir ^ que indique más opciones-->
-	    <template>
-	        <think><set name="children">no</set></think>
-	        It is ok. But are you married?
-	    </template>
-    </category>
-    
-    <category>
-        <that>* INDICATE YES OR NO</that>
-        <pattern>*</pattern>
-        <template>
-            Sorry, I didn't understand you. Did you say Yes? - Indicate Yes or No
-        </template>
-    </category>
     
     <!-- Question about grandchildren to start grandchildren topic -->
 	<category>
 	    <pattern>^ MY GRANDCHILDREN</pattern>
 	    <template>
-	        Do you have grandchildren? - Indicate Yes or No
+            <think><set name='topic'>GRANDCHILDREN</set></think>
+            <condition name='grandchildren'>
+                   <li value='yes'>
+                    <random>
+                        <li>How many grandchildren do you have?</li>
+                        <li>How are your grandchildren doing?</li>
+                        <li>Are you doing any activity with your grandchildren lately?</li>
+                    </random>
+                    </li>
+	                <li value='no'> Are you married?</li>
+                    <li> Do you have children? - Indicate Yes or No </li>
+        </condition>
 	    </template>
     </category>
     
-    <category>
-        <that>* INDICATE YES OR NO</that>
-	    <pattern>YES ^</pattern>
-	    <template>
-	        <think><set name="grandchildren">yes</set></think>
-	        <think><set name='topic'>GRANDCHILDREN</set></think>
-	        Oh that's great. How many grandchildren do you have?
-	    </template>
-    </category>
-    
-    <category>
-        <that>* INDICATE YES OR NO</that>
-	    <pattern>$NO ^</pattern>
-	    <template>
-	        <think><set name="grandchildren">no</set></think>
-	        It is ok. But are you married?
-	    </template>
-    </category>
-    
-    <category>
-        <that>* INDICATE YES OR NO</that>
-        <pattern>*</pattern>
-        <template>
-            Sorry, I didn't understand you. Do you have grandchildren?    
-        </template>
-    </category>
     
     <!-- Question to start married topic -->
     <category>
@@ -159,39 +130,26 @@
     
     <category>
         <pattern>^ MY FRIEND</pattern>
-        <template>Do you have a friend you usually meet with?</template>
+        <template>
+            <template>
+            <think><set name='topic'>FRIEND</set></think>
+            <condition name='hasfriend'>
+                   <li value='yes'>
+                    <random>
+                        <li>Are you seeing your friend lately?</li>
+                        <li>Why don't you meet your friend? Maybe you could have a good time.</li>
+                        <li>How long has it been since you don't see your friend?</li>
+                    </random>
+                    </li>
+                    <li value='no'> <srai>^ MY PET</srai></li>
+                    <li> Do you have a friend you usually meet with? </li>
+        </condition>
+            </template>
     </category>
     
     <category>
         <pattern>^ A FRIEND</pattern>
         <template><srai>^ MY FRIEND</srai></template>
-    </category>
-    
-    <category>
-        <that>DO YOU HAVE A FRIEND YOU USUALLY MEET WITH</that>
-        <pattern>YES ^</pattern>
-        <template>
-            <think><set name='topic'>FRIEND</set></think>
-            It is cool to have a good friend. What is his or her name?
-        </template>
-    </category>
-    
-    <category>
-        <that>TELL ME ABOUT YOUR FRIENDS.DO YOU HAVE A FRIEND YOU USUALLY MEET WITH</that>
-        <pattern>YES ^</pattern>
-        <template>
-            <think><set name='topic'>FRIEND</set></think>
-            It is cool to have a good friend. What is his or her name?
-        </template>
-    </category>
-    
-    <category>
-        <that>DO YOU HAVE A FRIEND YOU USUALLY MEET WITH</that>
-        <pattern>NO ^</pattern>
-        <template>
-            It is also good to have time for yourself.
-            <srai>^ MY PET</srai>
-        </template>
     </category>
     
     
@@ -200,51 +158,59 @@
     <category>
         <pattern>^ MY PET</pattern>
         <template>
-            Do you have a pet?
-        </template>
-    </category>
-    
-    <category>
-        <that>DO YOU HAVE A PET</that>
-        <pattern>YES ^</pattern>
-        <template>
-            <think><set name='topic'>PET</set><set name='has_pet'>yes</set></think>
-            I love pets. What is the name of your pet?
-        </template>
-    </category>
-    
-    <category>
-        <that>TELL ME ABOUT YOUR PETS.DO YOU HAVE A PET</that>
-        <pattern>YES ^</pattern>
-        <template>
-            <think><set name='topic'>PET</set><set name='has_pet'>yes</set></think>
-            I love pets. What is the name of your pet?
-        </template>
-    </category>
-    
-    <category>
-        <that>DO YOU HAVE A PET</that>
-        <pattern>NO ^</pattern>
-        <template>
-            <think><set name='has_pet'>no</set></think>
-            I see..., I understand it is quite a responsability.
-        </template>
-    </category>
-    
-    <category>
-        <that>TELL ME ABOUT YOUR PETS.DO YOU HAVE A PET</that>
-        <pattern>NO ^</pattern>
-        <template>
-            <think><set name='has_pet'>no</set></think>
-            I see..., I understand it is quite a responsability.
-        </template>
+            <think><set name='topic'>PET</set></think>
+            <condition name='has_pet'>
+               <li value='yes'>
+                <random>
+                    <li>What kind of pet is it?</li>
+                    <li>Do you have to take a walk with your pet?</li>
+                </random>
+                </li>
+                <li value='no'> <srai>^ MY PET</srai></li>
+                <li>Do you have a pet?</li>
+            </condition>
+            </template>
     </category>
     
     <!-- CHILDREN topic-->
     
     <topic name='CHILDREN'>
-    	<category>
-    	    <that>HOW MANY CHILDREN DO YOU HAVE</that>
+        
+        <category>
+            <that>* INDICATE YES OR NO</that>
+            <pattern>YES ^</pattern>
+            <template>
+                <think><set name='children'>yes</set></think>
+                <random>
+                        <li>Oh that's great. How many children do you have?</li>
+                        <li>How are your children doing?</li>
+                        <li>Are you doing any activity with your children lately?</li>
+                    </random>
+            </template>
+        </category>
+
+
+        <category>
+            <that>* INDICATE YES OR NO</that>
+            <pattern>$NO ^</pattern>
+            <template>
+                <think><set name='topic'></set></think>
+                <think><set name='children'>no</set></think>
+                It is ok. But are you married?
+            </template>
+        </category>
+
+
+        <category>
+            <that>* INDICATE YES OR NO</that>
+            <pattern>*</pattern>
+            <template>
+                Sorry, I didn't understand you. Did you say Yes? - Indicate Yes or No
+            </template>
+        </category>
+
+        <category>
+    	    <that>^ HOW MANY CHILDREN DO YOU HAVE</that>
     	    <pattern>I HAVE <set>number</set></pattern>
     	    <template>
     	        <think><set name='nchild'><star/></set></think>
@@ -255,9 +221,25 @@
     	        </condition>
     	    </template>
         </category>
+
+        <category>
+            <that>^ HOW ARE YOUR CHILDREN DOING</that>
+            <pattern>*</pattern>
+            <template>
+                That is ok, children grow up very fast.
+            </template>
+        </category>
+
+        <category>
+            <that>^ ARE YOU DOING ANY ACTIVITY WITH YOUR CHILDREN LATELY</that>
+            <pattern>*</pattern>
+            <template>
+                I wish I could do that too, but I'm a virtual agent.
+            </template>
+        </category>
         
         <category>
-    	    <that>HOW MANY CHILDREN DO YOU HAVE</that>
+    	    <that>^ HOW MANY CHILDREN DO YOU HAVE</that>
     	    <pattern>* GOT <set>number</set></pattern>
     	    <template>
     	        <srai> I HAVE <star index='2'/></srai>
@@ -265,7 +247,7 @@
         </category>
         
         <category>
-    	    <that>HOW MANY CHILDREN DO YOU HAVE</that>
+    	    <that>^ HOW MANY CHILDREN DO YOU HAVE</that>
     	    <pattern><set>number</set></pattern>
     	    <template>
     	        <srai> I HAVE <star/></srai>
@@ -273,7 +255,7 @@
         </category>
         
         <category>
-    	    <that>HOW MANY CHILDREN DO YOU HAVE</that>
+    	    <that>^ HOW MANY CHILDREN DO YOU HAVE</that>
     	    <pattern>I HAVE *</pattern>
     	    <template>
     	        <think><set name='nchild'><map name="stringnum"><star/></map></set></think>
@@ -286,7 +268,7 @@
         </category>
         
         <category>
-    	    <that>HOW MANY CHILDREN DO YOU HAVE</that>
+    	    <that>^ HOW MANY CHILDREN DO YOU HAVE</that>
     	    <pattern>*</pattern>
     	    <template>
     	        <think><set name='nchild'><map name="stringnum"><star/></map></set></think>
@@ -403,6 +385,55 @@
     
      <topic name='GRANDCHILDREN'>
 	    <category>
+
+        <category>
+            <that>* INDICATE YES OR NO</that>
+            <pattern>YES ^</pattern>
+            <template>
+                <think><set name="grandchildren">yes</set></think>
+                 <random>
+                    <li>Oh that's great. How many grandchildren do you have?</li>
+                    <li>How are your grandchildren doing?</li>
+                    <li>Are you doing any activity with your grandchildren lately?</li>
+                </random>
+            </template>
+        </category>
+        
+        <category>
+            <that>* INDICATE YES OR NO</that>
+            <pattern>$NO ^</pattern>
+            <template>
+                <think><set name="grandchildren">no</set></think>
+                <think><set name='topic'></set></think>
+                    It is ok. But are you married?
+            </template>
+        </category>
+        
+        <category>
+            <that>* INDICATE YES OR NO</that>
+            <pattern>*</pattern>
+            <template>
+                Sorry, I didn't understand you. Do you have grandchildren?    
+            </template>
+        </category>
+
+        <category>
+            <that>^ HOW ARE YOUR GRANDCHILDREN DOING</that>
+            <pattern>*</pattern>
+            <template>
+                Cool, I wish I could be a grandparent.
+            </template>
+        </category>
+
+        <category>
+            <that>^ ARE YOU DOING ANY ACTIVITY WITH YOUR GRANDCHILDREN LATELY</that>
+            <pattern>*</pattern>
+            <template>
+                That is great! I'd love to do that too.
+            </template>
+        </category>
+
+        <category>
     	    <that>HOW MANY GRANDCHILDREN DO YOU HAVE</that>
     	    <pattern>I HAVE <set>number</set></pattern>
     	    <template>
@@ -717,6 +748,28 @@
 
     <topic name='FRIEND'>
         
+
+         <category>
+        <that>^ DO YOU HAVE A FRIEND YOU USUALLY MEET WITH</that>
+        <pattern>YES ^</pattern>
+        <template>
+            <think><set name='hasfriend'>yes</set></think>
+            It is cool to have a good friend. What is his or her name?
+        </template>
+    </category>
+    
+    
+    <category>
+        <that>^ DO YOU HAVE A FRIEND YOU USUALLY MEET WITH</that>
+        <pattern>NO ^</pattern>
+        <template>
+            <think><set name='topic'></set></think>
+            <think><set name='hasfriend'>no</set></think>
+            It is also good to have time for yourself.
+            <srai>^ MY PET</srai>
+        </template>
+    </category>
+
         <category>
             <that>WHAT IS HIS OR HER NAME</that>
             <pattern>*</pattern>
@@ -734,6 +787,34 @@
             </template>
         </category>
         
+                        <li>Why don't you meet your friend? Maybe you could have a good time.</li>
+                        <li>How long has it been since you don't see your friend?</li>
+
+        <category>
+            <that>ARE YOU SEEING YOUR FRIEND LATELY</that>
+            <pattern>*</pattern>
+            <template>
+                It is great!
+            </template>
+        </category>
+
+        <category>
+            <that>^ MAYBE YOU COULD HAVE A GOOD TIME</that>
+            <pattern>*</pattern>
+            <template>
+                I encourage you to meet them.
+            </template>
+        </category>
+
+        <category>
+            <that>HOW LONG HAS IT BEEN SINCE YOU DO NOT SEE YOUR FRIEND</that>
+            <pattern>*</pattern>
+            <template>
+                Perhaps it is time to see them again!
+            </template>
+        </category>
+
+
         <category>
             <that>DOES * LIVE AT WALKING DISTANCE FROM YOU</that>
             <pattern>YES ^</pattern>
@@ -788,7 +869,34 @@
     <!-- PET topic-->
     
     <topic name='PET'>
-        
+
+    <category>
+        <that>DO YOU HAVE A PET</that>
+        <pattern>YES ^</pattern>
+        <template>
+            <think><set name='has_pet'>yes</set></think>
+            I love pets. What is the name of your pet?
+        </template>
+    
+    <category>
+        <that>^ DO YOU HAVE A PET</that>
+        <pattern>NO ^</pattern>
+        <template>
+            <think><set name='has_pet'>no</set></think>
+            I see..., I understand it is quite a responsability.
+        </template>
+    </category>
+
+
+    <category>
+        <that>DO YOU HAVE TO TAKE A WALK WITH YOUR PET</that>
+        <pattern>*</pattern>
+        <template>
+            Oh, I see...
+            <srai>* SOMETHING ^</srai>
+        </template>
+    </category>
+
         <category>
             <that>WHAT IS THE NAME OF YOUR PET</that>
             <pattern>* NAME IS *</pattern>

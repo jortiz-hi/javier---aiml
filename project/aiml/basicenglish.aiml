@@ -145,10 +145,10 @@
       <pattern>* SOMETHING ^</pattern>
       <template> 
         <random>
-            <li>Tell me about your children.<srai>^ MY CHILDREN</srai></li>
-            <li> Tell me about your grandchildren.<srai>^ MY GRANDCHILDREN</srai></li>
-            <li> Tell me about your pets.<srai>^ MY PET</srai></li>
-            <li> Tell me about your friends.<srai>^ MY FRIEND</srai></li>
+            <li> Tell me about your children. <srai>^ MY CHILDREN</srai></li>
+            <li> Tell me about your grandchildren. <srai>^ MY GRANDCHILDREN</srai></li>
+            <li> Tell me about your pets. <srai>^ MY PET</srai></li>
+            <li> Tell me about your friends. <srai>^ MY FRIEND</srai></li>
             <li> Tell me about your hobbies. <srai>^ MY HOBBIES</srai></li>
         </random>
       </template>
