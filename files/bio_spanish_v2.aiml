@@ -1,0 +1,1021 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    
+<!-- Question about children to start children topic -->
+	<category>
+	    <pattern>^ MIS HIJOS</pattern>
+	    <template>
+            <think><set name='topic'>CHILDREN</set></think>
+            <condition name='nchild'>
+               <li value= '0'> ¿Tienes hijos? - Indica Si o No </li>
+               <li value= 'unknown'> ¿Tienes hijos? - Indica Si o No </li>
+               <li>
+                    <random>
+                        <li>¿Como estan tus hijos?</li>
+                        <li>¿Has visto a tus hijos esta semana?</li>
+                        <li>¿Tienes algun plan con tus hijos hoy?</li>
+                    </random>
+                </li>
+            </condition>
+        </template>
+    </category>
+    </category>
+    
+    <!-- Question about grandchildren to start grandchildren topic -->
+	<category>
+	    <pattern>^ MIS NIETOS</pattern>
+	    <template>
+            <think><set name='topic'>GRANDCHILDREN</set></think>
+            <condition name='ngrandchild'>
+                   <li value='0'> ¿Tienes nietos? - Indica Si o No </li>
+                    <li value='unknown'> ¿Tienes nietos? - Indica Si o No </li>
+                    <li>
+                    <random>
+                        <li>¿Como estan tus nietos?</li>
+                        <li>¿Has visto a tus nietos esta semana?</li>
+                        <li>¿Tienes algun plan con tus nietos hoy?</li>
+                    </random>
+                    </li>
+                    
+        </condition>
+        </template>
+    </category>
+    
+    <!-- Question to start married topic -->
+    <category>
+        <that>^ ¿ESTAS CASADO O CASADA</that>
+	    <pattern>SI ^</pattern>
+	    <template>
+	        <think><set name="married">yes</set></think>
+	        <think><set name='topic'>MARRIED</set></think>
+	        <!-- Empezar topic: busca preguntas sobre como se llama su mujer, 
+	        cuantos aÃ±os han estado casados y asÃ­ -->
+	        Enhorabuena. Me gustaría estar casado. ¿Cómo se llama tu pareja?
+	    </template>
+    </category>
+    
+    <category>
+        <that>^ ¿ESTAS CASADO O CASADA</that>
+	    <pattern>$NO ^</pattern>
+	    <template>
+	        <think><set name="married">no</set></think>
+	        ¿Y cuentas con alguien que te apoye en la vida diaria?
+	    </template>
+    </category>
+    
+    <category>
+        <that>¿Y CUENTAS CON ALGUIEN QUE TE APOYE EN LA VIDA DIARIA</that>
+	    <pattern>*</pattern>
+	    <template>
+	        <think><set name='ans1'><star/></set></think>
+    	           <condition name='ans1'>
+    	               <li value='yes'><think><set name='topic'>SUPPORT</set></think>¿Cuál es el nombre de esta persona?</li>
+    	               <li value='no'>Está bien ser independiente.</li>
+    	               <li>Lo siento, no te he entendido.</li>
+    	           </condition>
+	    </template>
+    </category>
+    
+    
+    <!-- Question about bad emotions-->
+    <!-- Salir de un topic: <think><set name='topic'></set> -->
+    <category>
+            <pattern>* <set>malasemociones</set></pattern>
+            <template>
+                <think><set name='emotion'><star index = "2"/></set></think>
+                <condition name='emotion'>
+                    <li value='Sad'><think><set name='topic'>MENTAL</set></think>¿Sueles sentirte triste o deprimido?</li>
+                    <li value='Sadness'><think><set name='topic'>MENTAL</set></think>¿Sueles sentirte triste o deprimido?</li>
+                    <li value='Depressed'><think><set name='topic'>MENTAL</set></think>¿Sueles sentirte triste o deprimido?</li>
+                    <li value='Depression'><think><set name='topic'>MENTAL</set></think>¿Sueles sentirte triste o deprimido?</li>
+                    <li>Intenta leer un libro, mirar la TV o llamar a algún amigo para sentirte mejor. Eso normalmente me ayuda mucho. </li>
+                </condition>
+            </template>
+    </category>
+    
+    
+    <category>
+            <pattern><set>malasemociones</set></pattern>
+            <template>
+                <think><set name='emotion'><star/></set></think>
+                <condition name='emotion'>
+                    <li value='Sad'><think><set name='topic'>MENTAL</set></think>¿Sueles sentirte triste o deprimido?</li>
+                    <li value='Sadness'><think><set name='topic'>MENTAL</set></think>¿Sueles sentirte triste o deprimido?</li>
+                    <li value='Depressed'><think><set name='topic'>MENTAL</set></think>¿Sueles sentirte triste o deprimido?</li>
+                    <li value='Depression'><think><set name='topic'>MENTAL</set></think>¿Sueles sentirte triste o deprimido?</li>
+                    <li>Intenta leer un libro, mirar la TV o llamar a algún amigo para sentirte mejor. Eso normalmente me ayuda mucho. </li>
+                </condition>
+            </template>
+    </category>
+    
+    <category>
+            <pattern><set>* malasemociones *</set></pattern>
+            <template>
+                <think><set name='emotion'><star index = "2"/></set></think>
+                <condition name='emotion'>
+                    <li value='Sad'><think><set name='topic'>MENTAL</set></think>¿Sueles sentirte triste o deprimido?</li>
+                    <li value='Sadness'><think><set name='topic'>MENTAL</set></think>¿Sueles sentirte triste o deprimido?</li>
+                    <li value='Depressed'><think><set name='topic'>MENTAL</set></think>¿Sueles sentirte triste o deprimido?</li>
+                    <li value='Depression'><think><set name='topic'>MENTAL</set></think>¿Sueles sentirte triste o deprimido?</li>
+                    <li>Intenta leer un libro, mirar la TV o llamar a algún amigo para sentirte mejor. Eso normalmente me ayuda mucho. </li>
+                </condition>
+            </template>
+    </category>
+    
+    
+    
+    <!-- Question about friends to meet with -->
+    
+    <category>
+        <pattern>^ MI AMIGO</pattern>
+        <template>
+            <think><set name='topic'>FRIEND</set></think>
+            <condition name='hasfriend'>
+                   <li value='yes'>
+                    <random>
+                        <li>¿Estás viendo a tus amigos ultimamente?</li>
+                        <li>¿Por que no quedas con tu amigo? Quizas paseis un buen rato.</li>
+                        <li>¿Hace cuanto tiempo no ves a tu amigo?</li>
+                    </random>
+                    </li>
+                    <li value='no'> <srai>^ MY PET</srai></li>
+                    <li> ¿Tienes algun amigo con el que normalmente quedas? </li>
+        </condition>
+            </template>
+    </category>
+    
+    <category>
+        <pattern>^ UN AMIGO</pattern>
+        <template><srai>^ MI AMIGO</srai></template>
+    </category>
+    
+    <category>
+        <pattern>^ UNA AMIGA</pattern>
+        <template><srai>^ MI AMIGO</srai></template>
+    </category>
+
+    <category>
+        <pattern>^ MI AMIGA</pattern>
+        <template><srai>^ MI AMIGO</srai></template>
+    </category>
+    
+    
+    <!-- Question about pets -->
+    
+    <category>
+        <pattern>^ MI MASCOTA</pattern>
+        <template>
+            <think><set name='topic'>PET</set></think>
+            <condition name='has_pet'>
+               <li value='yes'>
+                <random>
+                    <li>¿Que clase de mascota tienes?</li>
+                    <li>¿Tienes que pasear a tu mascota?</li>
+                </random>
+                </li>
+                <li value='no'> <srai>^ MI MASCOTA</srai></li>
+                <li>¿Tienes mascota?</li>
+            </condition>
+            </template>
+    </category>
+
+    
+    <!-- CHILDREN topic-->
+    
+    <topic name='CHILDREN'>
+
+         <category>
+            <that>* INDICA SI O NO</that>
+            <pattern>SI ^</pattern>
+            <template>
+                <think><set name='children'>yes</set></think>
+                <random>
+                        <li>¡Eso es genial!. ¿Cuantos hijos tienes?</li>
+                        <li>¿Que tal estan?</li>
+                        <li>¿Haceis alguna actividad ultimamente?</li>
+                    </random>
+            </template>
+        </category>
+
+        <category>
+            <that>* INDICA SI O NO</that>
+            <pattern>SÍ ^</pattern>
+            <template>
+                <srai>SI ^</srai>
+            </template>
+        </category>
+
+        <category>
+            <that>* INDICA SI O NO</that>
+            <pattern>$NO ^</pattern>
+            <template>
+                <think><set name='topic'></set></think>
+                <think><set name='children'>no</set></think>
+                Está bien. ¿Estas casado o casada?
+            </template>
+        </category>
+
+
+        <category>
+            <that>* INDICATE YES OR NO</that>
+            <pattern>*</pattern>
+            <template>
+                Perdona, no te he entendido. ¿Has dicho que sí? - Indica Si o No
+            </template>
+        </category>
+    	<category>
+    	    <that>^ CUANTOS HIJOS TIENES</that>
+    	    <pattern>TENGO <set>numero</set></pattern>
+    	    <template>
+    	        <think><set name='nchild'><star/></set></think>
+    	        <condition name='nchild'>
+    	            <li value='1'>¿Cuál es el nombre de tu hijo?</li>
+    	            <li value='one'>¿Cuál es el nombre de tu hijo?</li>
+    	            <li>Wow. ¿Cuáles son los nombres de tus hijos?</li>
+    	        </condition>
+    	    </template>
+        </category>
+        
+        <category>
+            <that>^ ¿HAS VISTO A TUS HIJOS ESTA SEMANA </that>
+            <pattern>*</pattern>
+            <template>
+                Está bien, los niños crecen muy rápido.
+            </template>
+        </category>
+
+        <category>
+            <that>^ ¿TIENES ALGUN PLAN CON TUS HIJOS HOY</that>
+            <pattern>*</pattern>
+            <template>
+                Ojalá poder hacerlo también, pero soy un agente virtual.
+            </template>
+        </category>
+
+        <category>
+    	    <that>^ ¿CUANTOS HIJOS TIENES</that>
+    	    <pattern>* TENGO <set>number</set></pattern>
+    	    <template>
+    	        <srai>TENGO <star index='2'/></srai>
+    	    </template>
+        </category>
+        
+        <category>
+    	    <that>^ ¿CUANTOS HIJOS TIENES</that>
+    	    <pattern><set>number</set></pattern>
+    	    <template>
+    	        <srai>TENGO <star/></srai>
+    	    </template>
+        </category>
+        
+        <category>
+    	    <that>^ ¿CUANTOS HIJOS TIENES</that>
+    	    <pattern>TENGO *</pattern>
+    	    <template>
+    	        <think><set name='nchild'><map name="stringnum"><star/></map></set></think>
+    	        <condition name='nchild'>
+    	            <li value='1'>¿Cuál es el nombre de tu hijo?</li>
+                    <li value='one'>¿Cuál es el nombre de tu hijo?</li>
+                    <li>Wow. ¿Cuáles son los nombres de tus hijos?</li>
+    	        </condition>
+    	    </template>
+        </category>
+        
+        <category>
+            <that>^ ¿CUANTOS HIJOS TIENES</that>
+            <pattern>*</pattern>
+            <template>
+                <think><set name='nchild'><map name="stringnum"><star/></map></set></think>
+                <condition name='nchild'>
+                    <li value='1'>¿Cuál es el nombre de tu hijo?</li>
+                    <li value='one'>¿Cuál es el nombre de tu hijo?</li>
+                    <li>Wow. ¿Cuáles son los nombres de tus hijos?</li>
+                </condition>
+            </template>
+        </category>
+    
+        <category>
+    	    <that>^ ¿CUAL ES EL NOMBRE DE TU *</that>
+    	    <pattern>*</pattern>
+    	    <template>
+    	        <think><set name='name_children'><star/></set></think>
+    	        Me encantaría conocer a <get name='name_children'/>!
+    	    </template>
+        </category>
+        
+        <category>
+    	    <that>¿CUALES SON LOS NOMBRES DE TUS HIJOS *</that>
+    	    <pattern>* Y *</pattern>
+    	    <template>
+    	        <think><set name='name_children'><star/> <star index='2'/></set></think>
+    	         Me gustaría conocerlos. ¿Cual es tu favorito?
+     	    </template>
+        </category>
+        
+        <category>
+            <pattern>* NO TENGO *</pattern>
+            <template>
+               <think><set name='fav_children'>0</set></think>
+               Sí, es difícil elegir. ¿Cuál es el mayor?
+            </template>
+        </category>
+        
+        <category>
+            <pattern>* ES MI FAVORITO</pattern>
+            <template>
+               <think><set name='fav_child'><star/></set></think>
+               Ha ha ha. Yo soy el favorito de mi madre también. ¿Cuántos años tiene el mayor?
+            </template>
+        </category>
+        
+        <category>
+            <pattern>* SON MIS FAVORITOS</pattern>
+            <template><srai>* ES MI FAVORITO</srai>
+            </template>
+        </category>
+        
+        <category>
+    	    <pattern>MI FAVORITO ES *</pattern>
+    	    <template><srai>* ES MI FAVORITO</srai>
+    	    </template>
+        </category>
+        
+        <category>
+            <that>¿CUAL ES TU FAVORITO</that>
+            <pattern>*</pattern>
+            <template>
+                <think><set name='fav_child'><star/></set></think>
+                Ha ha ha. Yo soy el favorito de mi madre también. ¿Cuántos años tiene el mayor?
+            </template>
+        </category>
+        
+        <category>
+            <that>¿CUANTOS AÑOS TIENE EL MAYOR</that>
+            <pattern>*</pattern>
+            <template>Es una buena edad. Entonces, ¿alguno de ellos vive a una corta distancia de ti?</template>
+        </category>
+        
+        <category>
+            <that>* ALGUNO DE ELLOS VIVE A UNA CORTA DISTANCIA DE TI</that>
+            <pattern>*</pattern>
+            <template>
+    	           <think><set name='ans1'><star/></set></think>
+    	           <condition name='ans1'>
+    	               <li value='yes'>¿Quién?</li>
+    	               <li value='no'>Siempre puedes hacer una video llamada para verlos.</li>
+    	               <li>Ha ha ha. Está bien saberlo</li>
+    	           </condition>
+            </template>
+        </category>
+        
+        <category>
+            <that>¿QUIEN</that>
+            <pattern>*</pattern>
+            <template>
+                <think><set name='close_children'><star/></set></think>
+                Está bien tener a familiares cerca de ti.
+            </template>
+        </category>
+        
+    </topic>
+    
+    
+    <!-- GRANDCHILDREN topic -->
+    
+     <topic name='GRANDCHILDREN'>
+
+        <category>
+            <that>* INDICA SI O NO</that>
+            <pattern>SI ^</pattern>
+            <template>
+                <think><set name="grandchildren">yes</set></think>
+                 <random>
+                    <li>Oh eso está genial. ¿Cuantos nietos tienes?</li>
+                    <li>¿Como estan tus nietos?</li>
+                    <li>Are you doing any activity with your grandchildren lately?</li>
+                </random>
+            </template>
+        </category>
+        
+        <category>
+            <that>* INDICATE YES OR NO</that>
+            <pattern>$NO ^</pattern>
+            <template>
+                <think><set name="grandchildren">no</set></think>
+                <think><set name='topic'></set></think>
+                    It is ok. But are you married?
+            </template>
+        </category>
+        
+        <category>
+            <that>* INDICATE YES OR NO</that>
+            <pattern>*</pattern>
+            <template>
+                Sorry, I didn't understand you. Do you have grandchildren?    
+            </template>
+        </category>
+
+        <category>
+            <that>^ ¿TIENES ALGUN PLAN CON TUS HIJOS HOY</that>
+            <pattern>*</pattern>
+            <template>
+                Ojalá poder hacerlo también, pero soy un agente virtual.
+            </template>
+        </category>
+
+        <category>
+            <that>^ ¿COMO ESTAN TUS NIETOS</that>
+            <pattern>*</pattern>
+            <template>
+                Qué bien! Me encantaría hacer eso también.
+            </template>
+        </category>
+
+        <category>
+            <that>^ ¿HAS VISTO A TUS NIETOS ESTA SEMANA</that>
+            <pattern>*</pattern>
+            <template>
+                Eso está bien! Me encantaría hacer eso a mí también.
+            </template>
+        </category>
+
+	    <category>
+    	    <that>CUANTOS NIETOS TIENES</that>
+    	    <pattern>^ TENGO <set>numero</set></pattern>
+    	    <template>
+    	        <think><set name='ngrandchild'><star/></set></think>
+    	        <condition name='ngrandchild'>
+    	            <li value='1'>¿Cuál es el nombre de tu nieto?</li>
+    	            <li value='one'>¿Cuál es el nombre de tu nieto?</li>
+    	            <li>Wow. ¿Cuáles son los nombres de tus nietos?</li>
+    	        </condition>
+    	    </template>
+        </category>
+        
+        <category>
+            <that>CUANTOS NIETOS TIENES</that>
+            <pattern><set>numero</set></pattern>
+            <template>
+                <think><set name='ngrandchild'><star/></set></think>
+                <condition name='ngrandchild'>
+                    <li value='1'>¿Cuál es el nombre de tu nieto?</li>
+                    <li value='one'>¿Cuál es el nombre de tu nieto?</li>
+                    <li>Wow. ¿Cuáles son los nombres de tus nietos?</li>
+                </condition>
+            </template>
+        </category>
+        
+        <category>
+            <that>CUANTOS NIETOS TIENES</that>
+            <pattern>*</pattern>
+            <template>
+                <think><set name='ngrandchild'><star/></set></think>
+                <condition name='ngrandchild'>
+                    <li value='1'>¿Cuál es el nombre de tu nieto?</li>
+                    <li value='one'>¿Cuál es el nombre de tu nieto?</li>
+                    <li>Wow. ¿Cuáles son los nombres de tus nietos?</li>
+                </condition>
+            </template>
+        </category>
+    
+        <category>
+    	    <that>^ ¿CUAL ES EL NOMBRE DE TU *</that>
+    	    <pattern>*</pattern>
+    	    <template>
+    	        <think><set name='name_grandchildren'><star/></set><set name='topic'></set></think>
+    	        ¡Me gustaría conocer a <get name='name_grandchildren'/>!
+    	    </template>
+        </category>
+        
+        <category>
+    	    <that>^ ¿CUALES SON LOS NOMBRES DE TUS *</that>
+    	    <pattern>* Y *</pattern>
+    	    <template>
+    	        <think><set name='name_grandchildren'><star/> <star index='2'/></set></think>
+    	         Me gustaría conocerlos. ¿Cuál es tu favorito?
+    	   </template>
+	    </category>
+	    
+	    <category>
+            <pattern>* NO TENGO *</pattern>
+            <template>
+               <think><set name='fav_grandchildren'>0</set></think>
+               Sí, es difícil elegir. ¿Cuántos años tiene el mayor?
+            </template>
+        </category>
+	    
+	    <category>
+            <pattern>* ES MI FAVORITO</pattern>
+            <template>
+               <think><set name='fav_grandchildren'><star/></set></think>
+               Ha ha ha. Yo soy el favorito de mi madre también. ¿Cuántos años tiene el mayor?
+            </template>
+        </category>
+        
+        <category>
+            <pattern>* SON MIS FAVORITOS</pattern>
+            <template><srai>* ES MI FAVORITO</srai>
+            </template>
+        </category>
+        
+        <category>
+    	    <pattern>MI FAVORITO ES *</pattern>
+    	    <template><srai>* ES MI FAVORITO</srai>
+    	    </template>
+        </category>
+        
+        <category>
+            <pattern>*</pattern>
+            <template>
+                <think><set name='fav_grandchildren'><star/></set></think>
+                Ha ha ha. Yo soy el favorito de mi madre también. ¿Cuántos años tiene el mayor?
+            </template>
+        </category>
+        
+        <category>
+            <that>¿CUANTOS AÑOS TIENE EL MAYOR</that>
+            <pattern>*</pattern>
+            <template>¿Vive alguno de ellos cerca de ti?</template>
+        </category>
+        
+        <category>
+            <that>ALGUNO DE ELLOS VIVE A UNA CORTA DISTANCIA DE TI</that>
+            <pattern>*</pattern>
+            <template>
+    	           <think><set name='ans1'><star/></set></think>
+                   <condition name='ans1'>
+                       <li value='si'>¿Quién?</li>
+                       <li value='sí'>¿Quién?</li>
+                       <li value='no'>Está bien puede verlos cuando quieras.</li>
+                       <li>Lo siento no te he entendido. ¿Alguno de ellos vive a una corta distancia de ti?</li>
+                   </condition>
+            </template>
+        </category>
+        
+        <category>
+            <that>¿QUIEN</that>
+            <pattern>*</pattern>
+            <template>
+                <think><set name='close_grandchildren'><star/></set></think>
+                Está bien tenerlos cerca. A mi también me encanta estar con mi familia.
+            </template>
+        </category>
+    </topic>
+    
+    
+        <!-- MARRIED topic-->
+    
+    <topic name='MARRIED'>
+        
+        <category>
+            <that>¿CÓMO SE LLAMA TU PAREJA</that>
+            <pattern>^ ES *</pattern>
+            <template>
+                <think><set name='partner'><star index='2'/></set></think>
+                Me gustaría conocer a <get name='partner'/>. ¿Cuántos años lleváis casados?
+            </template>
+        </category>
+        
+        <category>
+            <that>¿CÓMO SE LLAMA TU PAREJA</that>
+            <pattern>*</pattern>
+            <template>
+                <think><set name='partner'><star/></set></think>
+                Me gustaría conocer a <get name='partner'/>. ¿Cuántos años lleváis casados?
+            </template>
+        </category>
+        
+        <category>
+            <that>¿CUÁNTOS AÑOS LLEVÁIS CASADOS</that>
+            <pattern>*</pattern>
+            <template>
+                Madre mía, <star/> eso es mucho tiempo. ¡Lo vuestro es amor verdadero!
+            </template>
+        </category>
+        
+    </topic>
+    
+    
+    <!-- SUPPORT topic -->
+    
+    <topic name='SUPPORT'>
+        
+        <category>
+            <that>¿CUÁL ES EL NOMBRE DE ESTA PERSONA</that>
+            <pattern>^ ES *</pattern>
+            <template>
+                <think><set name='supporter'><star index='2'/></set></think>
+                <get name='supporter'/> es un nombre bonito. ¿Sois familia?
+            </template>
+        </category>
+        
+        <category>
+            <that>¿CUÁL ES EL NOMBRE DE ESTA PERSONA</that>
+            <pattern>*</pattern>
+            <template>
+                <think><set name='supporter'><star/></set></think>
+                <get name='supporter'/> es un nombre bonito. ¿Sois familia?
+            </template>
+        </category>
+        
+        <category>
+            <that>¿SOIS FAMILIA</that>
+            <pattern>SI ^</pattern>
+            <template>
+                ¿Vive <get name='supporter'/> cerca de ti?
+            </template>
+        </category>
+        
+        <category>
+            <that>¿SOIS FAMILIA</that>
+            <pattern>SÍ ^</pattern>
+            <template>
+                <srai>SI ^</srai>
+            </template>
+        </category>
+        
+        <category>
+            <that>¿SOIS FAMILIA</that>
+            <pattern>$NO ^</pattern>
+            <template>
+                <srai>SI</srai>
+            </template>
+        </category>
+        
+        <category>
+            <that>¿VIVE * CERCA DE TI</that>
+            <pattern>SI ^</pattern>
+            <template>
+                <think><set name ='supporter_is_close'>yes</set></think>
+                Entonces es más fácil recibir el apoyo necesario. 
+                ¿Vive contigo?
+            </template>
+        </category>
+        
+        <category>
+            <that>¿VIVE * CERCA DE TI</that>
+            <pattern>SÍ ^</pattern>
+            <template>
+                <srai>SI ^</srai>
+            </template>
+        </category>
+        
+        <category>
+           <that>¿VIVE * CERCA DE TI</that>
+           <pattern>NO</pattern>
+           <template>
+                <think><set name ='supporter_is_close'>no</set></think>
+                Está bien porque tienes teléfono y en caso de emergencia puedes incluso llamar a tus hijos.
+                ¿Cómo <get name='supporter'/> te apoya?
+                <ul>
+                    <li>Me acompaña al médico</li>
+                    <li>Me ducha</li>
+                    <li>Me viste</li>
+                    <li>Me asea</li>
+                    <li>Me cocina</li>
+                    <li>Me limpia</li>
+                    <li>Me compra</li>
+                    <li>Me hace companía</li>
+                </ul>
+                Di la que corresponda.
+            </template>
+        </category>
+        
+        <category>
+            <that>¿VIVE CONTIGO</that>
+            <pattern>NO</pattern>
+            <template>
+                <think><set name='support_at_home'>no</set></think>
+                <srai>SI ^</srai>
+            </template>
+        </category>
+        
+        <category>
+            <that>¿VIVE CONTIGO</that>
+            <pattern>SI ^</pattern>
+            <think><set name='support_at_home'>yes</set></think>
+            <template>
+                 Genial, parece que <get name='supporter'/> te ayuda mucho. 
+                 ¿Cómo <get name='supporter'/> te apoya?
+                 <ul>
+                    <li>Me acompaña al médico.</li>
+                    <li>Me ducha.</li>
+                    <li>Me viste.</li>
+                    <li>Me asea.</li>
+                    <li>Me cocina.</li>
+                    <li>Me limpia.</li>
+                    <li>Me compra.</li>
+                    <li>Me hace compañía.</li>
+                </ul>
+                Di la que corresponda.
+            </template>
+        </category>
+        
+        <category>
+            <that>¿VIVE CONTIGO</that>
+            <pattern>SÍ ^</pattern>
+            <template>
+                 <srai>SI ^</srai>
+            </template>
+        </category>
+        
+        <category>
+            <that>* DI LA QUE CORRESPONDA</that>
+            <pattern>*</pattern>
+            <template>
+                <think><set name='support_activity'><star/></set></think>
+                ¡Eso es genial! Está bien recibir ayuda en ese tipo de tareas.
+            </template>
+        </category>
+        
+    </topic>
+    
+    
+    <!-- MENTAL topic-->
+    
+    <topic name='MENTAL'>
+        
+        <category>
+            <that>¿Sueles sentirte así</that>
+            <pattern>NO ^</pattern>
+            <template>
+                <think><set name='sad-depressed'>No</set></think>
+                Parece algo pasajero. No te preocupes
+                <think><set name='topic'></set></think>
+            </template>
+        </category>
+        
+        <category>
+            <that>¿Sueles sentirte así</that>
+            <pattern>SI ^</pattern>
+            <template>
+                <think><set name='sad-depressed'>Yes</set></think>
+                Qué pena me da oír esto. Bueno, siempre puedes contar estas cosas a tu familia y amigos y si ocurre con frecuencia, ve al doctor.
+            </template>
+        </category>
+        
+        <category>
+            <that>¿Sueles sentirte así</that>
+            <pattern>SÍ ^</pattern>
+            <template>
+                <srai>SI ^</srai>
+            </template>
+        </category>
+    </topic>
+
+
+
+    <!-- FRIEND topic-->
+
+    <topic name='FRIEND'>
+
+        <category>
+        <that>^ ¿TIENES ALGUN AMIGO CON EL NORMALMENTE QUEDAS</that>
+        <pattern>SI ^</pattern>
+        <template>
+            <think><set name='hasfriend'>yes</set></think>
+            Está muy bien tener amigos. ¿Cuál es su nombre?
+        </template>
+    </category>
+    
+    
+    <category>
+        <that>^ ¿TIENES ALGUN AMIGO CON EL NORMALMENTE QUEDAS</that>
+        <pattern>NO ^</pattern>
+        <template>
+            <think><set name='topic'></set></think>
+            <think><set name='hasfriend'>no</set></think>
+            Está bien tener tiempo para uno mismo.
+            <srai>^ MI MASCOTA</srai>
+        </template>
+    </category>
+        <category>
+            <that>^ ¿CUÁL ES SU NOMBRE</that>
+            <pattern>*</pattern>
+            <template>
+                <think><set name='friend'><star/></set></think>
+                Estoy seguro de que <get name='friend'/> es una gran persona. Vive <get name='friend'/> cerca de ti?
+            </template>
+        </category>
+        
+        <category>
+            <that>¿CUÁL ES SU NOMBRE</that>
+            <pattern>^ ES *</pattern>
+            <template>
+                <srai><star index='2'/></srai>
+            </template>
+        </category>
+        
+        <category>
+            <that>¿CUÁL ES SU NOMBRE</that>
+            <pattern>SE LLAMA *</pattern>
+            <template>
+                <srai><star/></srai>
+            </template>
+        </category>
+        
+        <category>
+            <that>VIVE * CERCA DE TI</that>
+            <pattern>SI ^</pattern>
+            <template>Es bueno tener a los amigos cerca. ¿Con qué frecuencia os veis?
+            <ul>
+                <li>diariamente</li>
+                <li>algunas veces</li>
+                <li>semanalmente</li>
+            </ul>
+            Selecciona una
+            </template>
+        </category>
+        
+        <category>
+            <that>VIVE * CERCA DE TI</that>
+            <pattern>SÍ ^</pattern>
+            <template><srai>SI ^</srai></template>
+        </category>
+        
+        <category>
+            <that>VIVE * CERCA DE TI</that>
+            <pattern>NO</pattern>
+            <template>Bueno, pero estoy segura de que os encanta juntaros. ¿Con qué frecuencia os veis? 
+            <ul>
+                <li>diariamente</li>
+                <li>algunas veces</li>
+                <li>semanalmente</li>
+            </ul>
+            Selecciona una
+            </template>
+        </category>
+        
+        <category>
+            <that>^ SELECCIONA UNA</that>
+            <pattern>*</pattern>
+            <template>
+                <think><set name='fq'><star/></set></think>
+                Está genial que almenos podáis veros <get name='fq'/>.
+                Cuando os juntáis, ¿qué actividades hacéis? 
+                <ul>
+                    <li>Merendar</li>
+                    <li>Ir a misa</li>
+                    <li>Ir de compras</li>
+                    <li>...</li>
+                </ul>
+                Selecciona una
+            </template>
+        </category>
+        
+        <category>
+            <that>^ SELECCIONA UNA</that>
+            <pattern>*</pattern>
+            <template>
+                Genial, te gustaría invitar a <get name='friend'/> a WellCo?
+            </template>
+        </category>
+        
+        <category>
+            <that>GENIAL, TE GUSTARÍA INVITAR A * A WELLCO</that>
+            <pattern>SI ^</pattern>
+            <template>Está genial. Pincha aquí para ver más información.
+            <url>https://play.google.com/store/apps/details?id=com.wellcoapp</url>
+            </template>
+        </category>
+        
+        <category>
+            <that>GENIAL, TE GUSTARÍA INVITAR A * A WELLCO</that>
+            <pattern>SÍ ^</pattern>
+            <template><srai>SI ^</srai></template>
+        </category>
+        
+        <category>
+            <that>GENIAL, TE GUSTARÍA INVITAR A * A WELLCO</that>
+            <pattern>NO</pattern>
+            <template>Está bien. En otro momento.</template>
+        </category>
+        
+        <category>
+            <that>GENIAL, TE GUSTARÍA INVITAR A * A WELLCO</that>
+            <pattern>NOT ^</pattern>
+            <template><srai>NO</srai></template>
+        </category>
+                        <li>¿Por que no quedas con tu amigo? Quizas paseis un buen rato.</li>
+                        <li>¿Hace cuanto tiempo no ves a tu amigo?</li>
+
+
+    <category> 
+            <that>^ ¿ESTÁS VIENDO A TUS AMIGOS ULTIMAMENTE</that>
+            <pattern>*</pattern>
+            <template>
+                <random>
+                    <li>Es bueno tener a los amigos cerca.</li>
+                    <li>Seguro que lo pasais genial!</li>
+                    <li>Podría estar bien, aunque si no te apetece tampoco pasa nada.</li>
+
+                    </random>
+                </template>
+    </category>
+
+    <category> 
+            <that>^ QUIZAS PASEIS UN BUEN RATO</that>
+            <pattern>*</pattern>
+            <template><random>
+                    <li>Es bueno tener a los amigos cerca.</li>
+                    <li>Seguro que lo pasais genial!</li>
+                    <li>Podría estar bien, aunque si no te apetece tampoco pasa nada.</li>
+
+                    </random></template>
+    </category>
+
+    <category> 
+            <that>^ ¿HACE CUANTO TIEMPO NO VES A TU AMIGO</that>
+            <pattern>*</pattern>
+            <template><random>
+                    <li>Es bueno tener a los amigos cerca.</li>
+                    <li>Seguro que lo pasais genial!</li>
+                    <li>Podría estar bien, aunque si no te apetece tampoco pasa nada.</li>
+
+                    </random></template>
+    </category>
+
+    </topic>
+    
+    <!-- PET topic-->
+    
+    <topic name='PET'>
+
+
+        <category>
+            <that>¿CUÁL ES EL NOMBRE DE TU MASCOTA</that>
+            <pattern>* NOMBRE ES *</pattern>
+            <template>
+                <think><set name='petname'><star index='2'></star></set></think>
+                Oh, <get name='petname'/> es un nombre precioso.
+                <ul>
+                    <li>Gato</li>
+                    <li>Pez</li>
+                    <li>Hamster</li>
+                    <li>Conejo</li>
+                    <li>Loro</li>
+                    <li>Cobaya</li>
+                    <li>Hurón</li>
+                    <li>Pájaro</li>
+                    <li>Perro</li>
+                </ul>
+                ¿Cuál de estos tipos es?
+            </template>
+        </category>
+        
+        
+        <category>
+            <that>¿CUÁL ES EL NOMBRE DE TU MASCOTA</that>
+            <pattern>^ SE LLAMA *</pattern>
+            <template><srai>* NOMBRE ES <star index = "2"/></srai></template>
+        </category>
+        
+        <category>
+            <that>¿TIENES QUE PASEAR A TU MASCOTA</that>
+            <pattern>*</pattern>
+            <template>Las mascotas son una responsabilidad como cualquier otra.</template>
+        </category>
+
+    <category>
+            <that>¿QUE CLASE DE MASCOTA TIENES</that>
+            <pattern>*</pattern>
+            <template><think><set name='pet_type'><star/></set></think>
+                Ooh. Yo siempre quise tener un <get name='pet_type'/> pero no es posible tener una mascota para un agente virtual.</template>
+        </category>
+
+        <category>
+            <that>¿CUÁL ES EL NOMBRE DE TU MASCOTA</that>
+            <pattern>*</pattern>
+            <template><srai>* NOMBRE ES <star/></srai></template>
+        </category>
+        
+        <category>
+            <that>* ¿CUÁL DE ESTOS TIPOS ES</that>
+            <pattern>*</pattern>
+            <template>
+                <think><set name='pet_type'><star/></set></think>
+                Ooh. Yo siempre quise tener un <get name='pet_type'/> pero no es posible tener una mascota para un agente virtual.
+            </template>
+        </category>
+        
+        <category>
+            <that>* ¿CUÁL DE ESTOS TIPOS ES</that>
+            <pattern>* *</pattern>
+            <template>
+                <think><set name='pet_type'><star index="2"/></set></think>
+                Ooh. Yo siempre quise tener un <get name='pet_type'/> pero no es posible tener una mascota para un agente virtual.
+            </template>
+        </category>
+        
+        <category>
+            <pattern>*</pattern>
+            <template>
+                <think><set name='topic'></set></think>
+               No se puede hacer otra cosa.
+            </template>
+        </category>
+        
+    </topic>
+    
+    
+</aiml>
